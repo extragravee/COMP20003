@@ -6,12 +6,12 @@ int fib(int n);
 int main (int argc, char *argv[]){
 	int n, ans;
 
-	printf("\n Enter a numer to get it's fibonacci: ");
+	printf("Enter a numer to get it's fibonacci: ");
 	scanf("%d", &n);
 
 	ans = fib(n);
 
-	printf("\nThe fibonacci of %d is %d. \n", n, ans);
+	printf("The fibonacci of %d is %d. \n", n, ans);
 
 	return 0;
 }
