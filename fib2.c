@@ -11,19 +11,20 @@ int main (int argc, char *argv[]){
 
 	ans = fib(n);
 
-	printf("\n The fibonacci of %d is %d. \n", n, ans);
+	printf("\nThe fibonacci of %d is %d. \n", n, ans);
 
 	return 0;
 }
 
 int fib(int n){
+	int i;
 	int nums[n+1];
 
 	// if (n==0) return 0;
 	// if (n==1) return 1;
 	nums[0] = 0;
 	nums[1] = 1;
-	for (int i=2; i<=n; i++){
+	for (i=2; i<=n; i++){
 		nums[i] = nums[i-1] + nums[i-2];
 	}
 
