@@ -16,7 +16,7 @@ int main(int argc, char** argv){
 
 	fgets(buffer, 256, stdin);
 	puts("==================================OUTPUT==================================");
-	printf("string: %s, length: %lu\n", buffer, strlen(buffer));
+	printf("buffer: %s | length: %lu\n", buffer, strlen(buffer));
 	int k = strlen(buffer);
 	buffer = realloc(buffer, k);
 	// printf("string: %s | length: %lu | size: %lu\n", buffer, strlen(buffer), sizeof(buffer));
