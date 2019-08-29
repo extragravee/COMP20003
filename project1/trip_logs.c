@@ -14,7 +14,8 @@ Function declerations abstracted to header file "trips_log.h"
 #define DELIM_REGEX "\r,"
 
 char** get_struct_member(struct trip* new_trip, int i);
-void print_the_fuckers(struct trip* new_trip);
+void print_trip(struct trip* new_trip);
+void free_struct(struct trip* trip);
 
 struct trip{
 	char* vendor_id; //Code to indicate the vendor which produced the record
@@ -44,56 +45,44 @@ struct trip{
 */
 struct trip* create_trip_record(char *buffer, char* field){ 
 	int cell_length;
-	// int counter = 2;
+	int counter = 2;
 
 	//create new trip struct object
 	struct trip* new_trip = (struct trip*) malloc(sizeof(struct trip));
 	//Store first column 
 	field = strtok(buffer, DELIM_REGEX);
 	cell_length = (int)strlen(field); 
-	printf("\nField: %s, Length: %d\n", field, cell_length);
 
 	//==================================
 	(new_trip->vendor_id) = (char *)malloc((sizeof(char)*cell_length)+1);
 	strcpy(new_trip->vendor_id, field);
-
 	char **temp;
-	temp = get_struct_member(new_trip, 2);
-	printf("\n temp: %p, struct->passenger_count: %p", temp, get_struct_member(new_trip, 2));
-	*temp = (char *)malloc(sizeof(char)*5);
-	strcpy(*temp, "heyo");
-	printf("\n *temp %s, struct->passenger_count %s", *temp, new_trip->passenger_count);
-	free(*temp);
-	// char *temp;
-	// store the rest of the columns in the new struct
-	// while((field = strtok(NULL, DELIM_REGEX))!=NULL){
-	// 	// cell_length = (int)strlen(field); 
-	// 	// printf("\nField: %s, Length: %d\n", field, cell_length);
-		
-	// 	// printf("temp: %p, struct %p\n", temp, new_trip->passenger_count);
-	// 	// temp = (char *) malloc((sizeof(char)*cell_length)+1);
-	// 	// printf("temp: %p, struct %p\n", temp, new_trip->passenger_count);
-	// 	// strcpy(*temp, field);
-	// 	// strcpy(get_struct_member(new_trip, counter), temp);
-	// 	// printf("%s \n", get_struct_member(new_trip, counter));
-	// 	// printf("%s\n", new_trip->passenger_count);
-	// 	// printf("Counter = %d\n", counter);
-	// 	counter++;
-	// }
 
-	// print_the_fuckers(new_trip);
-
-	free(new_trip->vendor_id); //for memtesting
+	//==================================
+	while ((field = strtok(NULL, DELIM_REGEX))!=NULL){
+		cell_length = (int)strlen(field);
+		temp = get_struct_member(new_trip, counter);
+		// printf("\n temp: %p, struct->passenger_count: %p", temp, get_struct_member(new_trip, counter));
+		*temp = (char *)malloc(sizeof(char)*cell_length+1);
+		strcpy(*temp, field);
+		counter++;
+		// free(*temp);
+	}
+	
+	print_trip(new_trip);
 	puts("\n");
 	return new_trip;
 }
 
-void print_the_fuckers(struct trip* new_trip){
+void print_trip(struct trip* new_trip){
 	int counter = 1;
 	puts("Printing=================\n");
 	while(counter<=18){
-		printf("%s\n", (char *)get_struct_member(new_trip, counter));
+		char **temp;
+		temp = get_struct_member(new_trip, counter);
+		printf("%s\n", *temp);
 		counter++;
+		free(*temp);
 	}
 }
 
