@@ -44,18 +44,45 @@ struct trip* create_trip_record(char *buffer, char* field){
 
 	//create new trip struct object
 	struct trip* new_trip = (struct trip*) malloc(sizeof(struct trip));
-
 	//Store first column 
 	field = strtok(buffer, DELIM_REGEX);
 	cell_length = (int)strlen(field); 
 	printf("\n%s, %d \n", field, cell_length);
-
-
+	(new_trip->vendor_id) = (char *)malloc(sizeof(char)*cell_length);
+	strcpy(new_trip->vendor_id, field);
+	printf("\n%s", new_trip->vendor_id);
+	free(new_trip->vendor_id);
+	free(new_trip);
 	//store the rest of the columns in the new struct
-	while((field = strtok(NULL, DELIM_REGEX))!=NULL){
-		cell_length = (int)strlen(field); 
-		printf("\n%s, %d <<<<<<<<<<<<<<<", field, cell_length);
-	}
+	// while((field = strtok(NULL, DELIM_REGEX))!=NULL){
+	// 	cell_length = (int)strlen(field); 
+	// 	printf("\n%s, %d <<<<<<<<<<<<<<<", field, cell_length);
+	// }
+
+
 	puts("\n");
 	return new_trip;
+}
+
+char* get_struct_member(struct trip* new_trip, int i){
+	switch(i){
+		case 1: return new_trip-> vendor_id;
+		case 2: return new_trip-> passenger_count;
+		case 3: return new_trip-> trip_distance;
+		case 4: return new_trip-> rate_code_ID;
+		case 5: return new_trip-> store_and_fwd_flag;
+		case 6: return new_trip-> pu_location_id;
+		case 7: return new_trip-> do_location_id;
+		case 8: return new_trip-> payment_type;
+		case 9: return new_trip-> fare_amount;
+		case 10: return new_trip-> extra;
+		case 11: return new_trip-> mta_tax;
+		case 12: return new_trip-> tip_amount;
+		case 13: return new_trip-> tolls_amount;
+		case 14: return new_trip-> improvement_surcharge;
+		case 15: return new_trip-> total_amount;
+		case 16: return new_trip-> pu_datetime;
+		case 17: return new_trip-> do_datetime;
+		case 18: return new_trip-> trip_duration;
+	}
 }
