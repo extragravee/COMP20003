@@ -1,9 +1,14 @@
-dict1: main.o bst.o
-	gcc -Wall -g main.o bst.o -o dict1
+dict1: main.o 
+	gcc -Wall -g main.o -o dict1
 	
 main.o: main.c
-	gcc -Wall -g main.c -o main.o 
-	valgrind --leak-check=full -v ./main.o infile.csv outfile.txt < input.txt
+	gcc -Wall -g main.c -o main.o -c
 
-bst.o: bst.c bst.h
-	gcc -Wall -g bst.c -o bst.o 
+runtest:
+	./dict1 infile.csv output.txt
+# 	./dict1 2018sample1_no_headers.csv output.txt
+
+runmemtest:
+	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt
+
+
