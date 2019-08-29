@@ -1,7 +1,7 @@
 /*
 Header file for bst.c includes bst dictionary structure and functions
 Structure
-Functions
+Functions declarations
 */
 
 /*
