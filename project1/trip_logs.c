@@ -12,10 +12,8 @@ Function declerations abstracted to header file "trips_log.h"
 #include "trip_logs.h"
 
 #define DELIM_REGEX "\r,"
-
-char** get_struct_member(struct trip* new_trip, int i);
-void print_trip(struct trip* new_trip);
-void free_struct(struct trip* trip);
+#define SECOND_FIELD 2
+#define NULLBYTE_SPACE 1
 
 struct trip{
 	char* vendor_id; //Code to indicate the vendor which produced the record
@@ -36,6 +34,7 @@ struct trip{
 	char* pu_datetime; //Date/time passengers were picked up
 	char* do_datetime; //Date/time passengers were dropped off
 	char* trip_duration; //Duration of the trip in minutes
+	
 };
 
 /* 
@@ -45,42 +44,46 @@ struct trip{
 */
 struct trip* create_trip_record(char *buffer, char* field){ 
 	int cell_length;
-	int counter = 2;
+	int counter = SECOND_FIELD;
 
-	//create new trip struct object
+	//allocate memory for new trip struct
 	struct trip* new_trip = (struct trip*) malloc(sizeof(struct trip));
-	//Store first column 
+
+	//Store first column, must be outside loop due to strtok functionality
 	field = strtok(buffer, DELIM_REGEX);
 	cell_length = (int)strlen(field); 
-
-	//==================================
-	(new_trip->vendor_id) = (char *)malloc((sizeof(char)*cell_length)+1);
+	(new_trip->vendor_id) = (char *)malloc((sizeof(char)*cell_length)+NULLBYTE_SPACE);
 	strcpy(new_trip->vendor_id, field);
-	char **temp;
 
-	//==================================
+	char **temp;
 	while ((field = strtok(NULL, DELIM_REGEX))!=NULL){
 		cell_length = (int)strlen(field);
 		temp = get_struct_member(new_trip, counter);
-		// printf("\n temp: %p, struct->passenger_count: %p", temp, get_struct_member(new_trip, counter));
 		*temp = (char *)malloc(sizeof(char)*cell_length+1);
 		strcpy(*temp, field);
 		counter++;
-		// free(*temp);
 	}
 	
-	print_trip(new_trip);
-	puts("\n");
 	return new_trip;
 }
 
 void print_trip(struct trip* new_trip){
 	int counter = 1;
-	puts("Printing=================\n");
+	puts("Printing=================");
 	while(counter<=18){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
 		printf("%s\n", *temp);
+		counter++;
+	}
+}
+
+void free_members_of_struct(struct trip* trip){
+	int counter = 1;
+
+	while(counter<=18){
+		char **temp;
+		temp = get_struct_member(trip, counter);
 		counter++;
 		free(*temp);
 	}

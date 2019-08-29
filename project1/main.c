@@ -9,6 +9,7 @@ Provides the skeleton tasks for the project
 #include <stdlib.h>
 #include <assert.h>
 #include "trip_logs.h"
+#include "bst.h"
 
 #define MAXFIELDSIZE 128
 #define MAXBUFFERSIZE 256
@@ -39,17 +40,23 @@ int main(int argc, char** argv){
 	assert(field);
 	
 	struct trip* new_trip;
-	//Loop through csv
+	struct bst* bst = NULL;
+
+	//Add all trip records to structs
+	//at the moment frees all members of each struct, and the struct itself too.
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
-		// printf("%lu: %s", linesize, buffer);
 		new_trip = create_trip_record(buffer, field);
+		bst = insert_node(bst, new_trip);
+		print_trip(new_trip);
+		// free_members_of_struct(new_trip); //function clears all mallocs inside the struct
+		free_tree(bst);
+		free(new_trip); // need for freeing all structs
 	}
 
-	free(new_trip); //-> for memcheck
 	fclose(datafile); //to clear out the file pointer
 	free(buffer); //to clear out the temp buffer memory allocated
 	free(field); //to clear the temp storage to store fields one by one within a single row
 	
-	puts("\n==================================OUTPUT==================================");
+	puts("==================================OUTPUT==================================");
 	return 0;
 }
