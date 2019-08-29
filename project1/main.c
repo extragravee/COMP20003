@@ -34,20 +34,22 @@ int main(int argc, char** argv){
 	size_t bufsize = MAXBUFFERSIZE;
 	size_t linesize;
 
-	//to clear the temp storage to store fields one by one within a single row
+	//temp storage to store fields one by one within a single row
 	char *field = (char *) malloc(sizeof(char)*MAXFIELDSIZE);
 	assert(field);
 	
+	struct trip* new_trip;
 	//Loop through csv
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
 		// printf("%lu: %s", linesize, buffer);
-		struct trip* new_trip = create_trip_record(buffer, field);
+		new_trip = create_trip_record(buffer, field);
 	}
-	
+
+	free(new_trip); //-> for memcheck
 	fclose(datafile); //to clear out the file pointer
 	free(buffer); //to clear out the temp buffer memory allocated
 	free(field); //to clear the temp storage to store fields one by one within a single row
 	
-	puts("==================================OUTPUT==================================");
+	puts("\n==================================OUTPUT==================================");
 	return 0;
 }
