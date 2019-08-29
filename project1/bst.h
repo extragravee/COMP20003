@@ -22,3 +22,4 @@ by default (if pointer is NULL), does nothing
 frees children recursively
 */
 void free_tree(struct bst* parent);
+

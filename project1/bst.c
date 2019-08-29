@@ -10,18 +10,29 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include "trip_logs.h"
 #include "bst.h"
 
 struct bst{
 	struct bst* left;
 	struct bst* right;
 	char* key;
-	struct trip* trip;
-
 };
 
+struct bst; 
 
+/*
+Takes parent pointer (null for the root), and returns tree with the 
+inserted node at the right position. Returns item in tree with it's
+left and right pointers set to NULL
+*/
+struct bst* insert_node(struct bst* parent, struct trip* new_trip);
+
+/*
+Takes node pointer and frees all of its children and itself
+by default (if pointer is NULL), does nothing
+frees children recursively
+*/
+void free_tree(struct bst* parent);
 /* inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){
 	int result;
