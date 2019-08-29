@@ -13,4 +13,4 @@ struct trip;
 /*
 Returns pointer to a (struct type object) trip based on the row of data provided (buffer)
 */
-struct trip* create_trip_record(char *buffer);
+struct trip* create_trip_record(char *buffer, char* field);

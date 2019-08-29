@@ -6,6 +6,7 @@ Function declerations abstracted to header file "trips_log.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <assert.h>
 
 #include "trip_logs.h"
@@ -38,13 +39,18 @@ struct trip{
 2. Transforms it into the a trip struct type object
 3. Passes the pointer to this new trip object back to main.c
 */
-struct trip* create_trip_record(char *buffer){
-	char *delim = (char *) malloc(sizeof(char)); //define pointer to delimitter
-	*delim = DELIM;
+struct trip* create_trip_record(char *buffer, char* field){ 
+	int cell_length;
 
-	puts("Success!");
+	field = strtok(buffer, "\r,");
+	// strcpy(field, strtok(buffer, delim)); //copy first part of buffer into 'field' column
+	cell_length = (int)strlen(field); 
+	printf("\n%s, %d <<<<<<<<<<<<<<<\n", field, cell_length);
 
-
-
-	free(delim);//free memory used for the delimitter pointer
+	// while((field)!=NULL){
+	// 	strcpy(field, strtok(NULL, delim));
+	// 	cell_length = (int)strlen(field); 
+	// 	printf("\n%s, %d <<<<<<<<<<<<<<<", field, cell_length);
+	// }
+	
 }

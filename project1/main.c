@@ -7,15 +7,16 @@ Provides the skeleton tasks for the project
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <assert.h>
 #include "trip_logs.h"
 
 #define MAXFIELDSIZE 128
+#define MAXBUFFERSIZE 256
+#define INFILE_ARG 1
 
 int main(int argc, char** argv){
 
-	char* buffer = (char *)malloc(sizeof(char)*256);
+	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
 	assert(buffer); //confirm if enough memory was available for buffer
 
 	puts("==================================OUTPUT==================================");
@@ -25,23 +26,22 @@ int main(int argc, char** argv){
 
 	//reading in the infile
 	FILE *datafile;
-	if((datafile = fopen(argv[1], "r"))==NULL){
+	if((datafile = fopen(argv[INFILE_ARG], "r"))==NULL){
 		printf("File does not exist in the current directory!\n");
 		exit(EXIT_FAILURE);
 	}
 	//now the file is open, and we have a pointer to the start of the file
-	size_t bufsize = 256;
+	size_t bufsize = MAXBUFFERSIZE;
 	size_t linesize;
 
 	//to clear the temp storage to store fields one by one within a single row
 	char *field = (char *) malloc(sizeof(char)*MAXFIELDSIZE);
 	assert(field);
 	
-
 	//Loop through csv
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
-		printf("%lu: %s", linesize, buffer);
-		struct trip* trip = create_trip_record(buffer);
+		// printf("%lu: %s", linesize, buffer);
+		struct trip* trip = create_trip_record(buffer, field);
 	}
 	
 	fclose(datafile); //to clear out the file pointer
