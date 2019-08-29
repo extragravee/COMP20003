@@ -11,7 +11,7 @@ Function declerations abstracted to header file "trips_log.h"
 
 #include "trip_logs.h"
 
-#define DELIM ','
+#define DELIM_REGEX "\r,"
 
 struct trip{
 	char* vendor_id; //Code to indicate the vendor which produced the record
@@ -42,15 +42,20 @@ struct trip{
 struct trip* create_trip_record(char *buffer, char* field){ 
 	int cell_length;
 
-	field = strtok(buffer, "\r,");
-	// strcpy(field, strtok(buffer, delim)); //copy first part of buffer into 'field' column
-	cell_length = (int)strlen(field); 
-	printf("\n%s, %d <<<<<<<<<<<<<<<\n", field, cell_length);
+	//create new trip struct object
+	struct trip* new_trip = (struct trip*) malloc(sizeof(struct trip));
 
-	// while((field)!=NULL){
-	// 	strcpy(field, strtok(NULL, delim));
-	// 	cell_length = (int)strlen(field); 
-	// 	printf("\n%s, %d <<<<<<<<<<<<<<<", field, cell_length);
-	// }
-	
+	//Store first column 
+	field = strtok(buffer, DELIM_REGEX);
+	cell_length = (int)strlen(field); 
+	printf("\n%s, %d \n", field, cell_length);
+
+
+	//store the rest of the columns in the new struct
+	while((field = strtok(NULL, DELIM_REGEX))!=NULL){
+		cell_length = (int)strlen(field); 
+		printf("\n%s, %d <<<<<<<<<<<<<<<", field, cell_length);
+	}
+	puts("\n");
+	return new_trip;
 }

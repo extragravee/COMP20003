@@ -20,9 +20,9 @@ int main(int argc, char** argv){
 	assert(buffer); //confirm if enough memory was available for buffer
 
 	puts("==================================OUTPUT==================================");
-	for (int i = 0; i < argc; i++) {
-		printf("argv[%d] = \"%s\"\n", i, argv[i]);
-	}
+	// for (int i = 0; i < argc; i++) {
+	// 	printf("argv[%d] = \"%s\"\n", i, argv[i]);
+	// }
 
 	//reading in the infile
 	FILE *datafile;
@@ -41,7 +41,7 @@ int main(int argc, char** argv){
 	//Loop through csv
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
 		// printf("%lu: %s", linesize, buffer);
-		struct trip* trip = create_trip_record(buffer, field);
+		struct trip* new_trip = create_trip_record(buffer, field);
 	}
 	
 	fclose(datafile); //to clear out the file pointer
