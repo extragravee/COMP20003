@@ -12,6 +12,7 @@ struct duplicate_ll{
 	struct duplicate_ll* next;
 };
 
+struct duplicate_ll* insert_duplicate(struct duplicate_ll* head, struct trip* trip);
 
 
 #endif

@@ -11,9 +11,8 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #include <string.h>
 #include <assert.h>
 #include "trip_logs.h"
-#include "duplicate_ll.h"
 #include "bst.h"
-
+#include "duplicate_ll.h"
 
 /* inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){
@@ -27,15 +26,18 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	
 		if(result < 0){
 			insert_here = &((*insert_here)->left);
-		} else if(result > 0){
+		} 
+		else if(result >= 0){
 			insert_here = &((*insert_here)->right);
-		} else if(result==0){
-			/*IMPLEMENT LINKED LIST HERE*/
-			(*insert_here)->duplicates = (struct duplicate_ll*)malloc(sizeof(struct duplicate_ll));
-			puts("LL created for the duplicate");
-			// free((*insert_here)->duplicates);
-			return parent;
-		}
+		} 
+		// else if(result==0){	
+		// 	/*IMPLEMENT LINKED LIST HERE*/
+		// 	// (*insert_here)->duplicates = (struct duplicate_ll*)malloc(sizeof(struct duplicate_ll));
+		// 	puts("LL created for the duplicate");
+		// 	// (*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
+		// 	// free((*insert_here)->duplicates);
+		// 	return parent;
+		// }
 	}
 
 	(*insert_here) = (struct bst*)malloc(sizeof(struct bst));
@@ -43,7 +45,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	(*insert_here)->right = NULL;
 	(*insert_here)->key = trip->pu_datetime;
 	(*insert_here)->trip = trip;
-	// (*insert_here)->duplicates = NULL;
+	(*insert_here)->duplicates = NULL;
 
 	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_distance);
 	return parent;
