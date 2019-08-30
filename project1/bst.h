@@ -1,3 +1,5 @@
+#ifndef BST_H
+#define BST_H
 /*
 Header file for bst.c includes bst dictionary structure and functions
 Structure
@@ -7,7 +9,12 @@ Functions declarations
 /*
 defines structure of binary tree nodes
 */
-struct bst; 
+struct bst{
+	struct bst* left;
+	struct bst* right;
+	struct trip* trip;
+	char* key;
+};
 
 /*
 Takes parent pointer (null for the root), and returns tree with the 
@@ -23,3 +30,4 @@ frees children recursively
 */
 void free_tree(struct bst* parent);
 
+#endif
