@@ -11,7 +11,7 @@ Provides the skeleton tasks for the project
 
 #include "trip_logs.h"
 #include "bst.h"
-
+#include "duplicate_ll.h"
 
 #define MAXFIELDSIZE 128
 #define MAXBUFFERSIZE 256
@@ -50,8 +50,8 @@ int main(int argc, char** argv){
 		new_trip = create_trip_record(buffer, field);
 		print_trip(new_trip);
 		bst = insert_node(bst, new_trip);
+		
 	}
-
 	free_tree(bst);//frees all nodes, structs, and struct members, and pointers
 	fclose(datafile); //to clear out the file pointer
 	free(buffer); //to clear out the temp buffer memory allocated

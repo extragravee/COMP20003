@@ -27,17 +27,21 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 		if(result < 0){
 			insert_here = &((*insert_here)->left);
 		} 
-		else if(result >= 0){
+		else if(result > 0){
 			insert_here = &((*insert_here)->right);
 		} 
-		// else if(result==0){	
-		// 	/*IMPLEMENT LINKED LIST HERE*/
-		// 	// (*insert_here)->duplicates = (struct duplicate_ll*)malloc(sizeof(struct duplicate_ll));
-		// 	puts("LL created for the duplicate");
-		// 	// (*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
-		// 	// free((*insert_here)->duplicates);
-		// 	return parent;
-		// }
+		else if(result==0){	
+
+			puts("LL created for the duplicate ");
+			// printf("%p<<<<<<<<<<\n", (*insert_here)->duplicates);
+			printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
+			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
+			
+			// printf("%p<<<<<<<<<<\n", (*insert_here)->duplicates);
+			print_duplicates((*insert_here)->duplicates);
+			// free((*insert_here)->duplicates);
+			return parent;
+		}
 	}
 
 	(*insert_here) = (struct bst*)malloc(sizeof(struct bst));
@@ -45,9 +49,11 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	(*insert_here)->right = NULL;
 	(*insert_here)->key = trip->pu_datetime;
 	(*insert_here)->trip = trip;
+	printf("\n%p\n==============================", trip);
 	(*insert_here)->duplicates = NULL;
 
-	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_distance);
+	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
+
 	return parent;
 }
 

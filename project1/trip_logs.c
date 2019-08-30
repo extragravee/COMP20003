@@ -51,7 +51,7 @@ void print_trip(struct trip* new_trip){
 	while(counter<=18){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
-		printf("%s %d\n", *temp, counter);
+		printf("%s\n", *temp);
 		counter++;
 	}
 }

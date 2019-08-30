@@ -14,5 +14,6 @@ struct duplicate_ll{
 
 struct duplicate_ll* insert_duplicate(struct duplicate_ll* head, struct trip* trip);
 
+void print_duplicates(struct duplicate_ll* head);
 
 #endif
