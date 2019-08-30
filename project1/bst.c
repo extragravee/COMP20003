@@ -11,12 +11,13 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #include <string.h>
 #include <assert.h>
 #include "trip_logs.h"
+#include "duplicate_ll.h"
 #include "bst.h"
 
 
 /* inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){
-	int result=0;
+	int result;
 
 	//pointer to the insert location
 	struct bst** insert_here = &parent;
@@ -30,7 +31,9 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 			insert_here = &((*insert_here)->right);
 		} else if(result==0){
 			/*IMPLEMENT LINKED LIST HERE*/
-			printf("Duplicate! Handle!\n");
+			(*insert_here)->duplicates = (struct duplicate_ll*)malloc(sizeof(struct duplicate_ll));
+			puts("LL created for the duplicate");
+			// free((*insert_here)->duplicates);
 			return parent;
 		}
 	}
@@ -40,6 +43,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	(*insert_here)->right = NULL;
 	(*insert_here)->key = trip->pu_datetime;
 	(*insert_here)->trip = trip;
+	// (*insert_here)->duplicates = NULL;
 
 	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_distance);
 	return parent;
@@ -57,9 +61,9 @@ void free_tree(struct bst* parent){
 	free(parent); //then free the struct
 }
 
-struct bst* search_dictionary(char* key, struct bst* root){
+// struct bst* search_dictionary(char* key, struct bst* root){
 
-}
+// }
 
 
 

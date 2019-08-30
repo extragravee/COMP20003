@@ -14,6 +14,7 @@ struct bst{
 	struct bst* right;
 	struct trip* trip;
 	char* key;
+	struct duplicate_ll* duplicates;
 };
 
 /*
