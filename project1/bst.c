@@ -13,13 +13,6 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #include "trip_logs.h"
 #include "bst.h"
 
-// struct bst{
-// 	struct bst* left;
-// 	struct bst* right;
-// 	struct trip* trip;
-// 	char* key;
-// };
-
 
 /* inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){
@@ -45,8 +38,8 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	}
 	(*insert_here)->left = NULL;
 	(*insert_here)->right = NULL;
-	(*insert_here)->key = trip->pu_datetime;
-	(*insert_here)->trip = trip;
+	//(*insert_here)->key = trip->pu_datetime;
+	//(*insert_here)->trip = trip;
 
 	printf("New node inserted! Key: %s, Trip: %s", trip->pu_datetime, trip->trip_distance);
 	return parent;
