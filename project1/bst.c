@@ -16,32 +16,32 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 
 /* inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){
-	int result;
+	int result=0;
 
 	//pointer to the insert location
 	struct bst** insert_here = &parent;
-
 	//till an empty node isn't reached, keep looking
 	while(*insert_here != NULL){
-		//if new node's key >, go right, if < go left, if == then add node in linkedlist
-		// result = strcmp((new_trip->pu_datetime), ((*insert_here)->key));
 		result = strcmp((trip->pu_datetime), ((*insert_here)->key));
+	
 		if(result < 0){
 			insert_here = &((*insert_here)->left);
 		} else if(result > 0){
 			insert_here = &((*insert_here)->right);
-		} else {
+		} else if(result==0){
 			/*IMPLEMENT LINKED LIST HERE*/
-			printf("Duplicate! Handle!");
+			printf("Duplicate! Handle!\n");
 			return parent;
 		}
 	}
+
+	(*insert_here) = (struct bst*)malloc(sizeof(struct bst));
 	(*insert_here)->left = NULL;
 	(*insert_here)->right = NULL;
-	//(*insert_here)->key = trip->pu_datetime;
-	//(*insert_here)->trip = trip;
+	(*insert_here)->key = trip->pu_datetime;
+	(*insert_here)->trip = trip;
 
-	printf("New node inserted! Key: %s, Trip: %s", trip->pu_datetime, trip->trip_distance);
+	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_distance);
 	return parent;
 }
 
@@ -53,7 +53,12 @@ void free_tree(struct bst* parent){
 	free_tree(parent->left);
 	free_tree(parent->right);
 	free_members_of_struct(parent->trip); //first free all members of the struct
+	free(parent->trip);
 	free(parent); //then free the struct
+}
+
+struct bst* search_dictionary(char* key, struct bst* root){
+
 }
 
 

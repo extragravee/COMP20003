@@ -48,13 +48,11 @@ int main(int argc, char** argv){
 	//at the moment frees all members of each struct, and the struct itself too.
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
 		new_trip = create_trip_record(buffer, field);
-		bst = insert_node(bst, new_trip);
 		print_trip(new_trip);
-		free_members_of_struct(new_trip); //function clears all mallocs inside the struct
-		// free_tree(bst);
-		free(new_trip); // need for freeing all structs
+		bst = insert_node(bst, new_trip);
 	}
 
+	free_tree(bst);//frees all nodes, structs, and struct members, and pointers
 	fclose(datafile); //to clear out the file pointer
 	free(buffer); //to clear out the temp buffer memory allocated
 	free(field); //to clear the temp storage to store fields one by one within a single row
