@@ -14,7 +14,7 @@ Takes parent pointer (null for the root), and returns tree with the
 inserted node at the right position. Returns item in tree with it's
 left and right pointers set to NULL
 */
-struct bst* insert_node(struct bst* parent, struct trip* new_trip);
+struct bst* insert_node(struct bst* parent, struct trip* trip);
 
 /*
 Takes node pointer and frees all of its children and itself

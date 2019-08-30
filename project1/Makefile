@@ -7,8 +7,8 @@ main.o: main.c trip_logs.h
 trip_logs.o: trip_logs.c trip_logs.h 
 	gcc -Wall -g trip_logs.c -o trip_logs.o -c
 
-# bst.o: bst.c bst.h trip_logs.h
-# 	gcc -Wall -g bst.c -o bst.o -c
+bst.o: bst.c bst.h trip_logs.h
+	gcc -Wall -g bst.c -o bst.o -c
 
 test:
 	./dict1 infile.csv output.txt
@@ -17,3 +17,6 @@ test:
 memtest:
 	valgrind --leak-check=full -v ./dict1 2018sample3_no_headers.csv output.txt
 
+backup:
+	gcc -Wall -g -o backup backup.c
+	valgrind --leak-check=full -v ./backup 2018sample3_no_headers.csv output.txt
