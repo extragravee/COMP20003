@@ -14,7 +14,7 @@ duplicate_ll.o: duplicate_ll.c trip_logs.h duplicate_ll.h
 	gcc -Wall -g duplicate_ll.c -o duplicate_ll.o -c
 
 test:
-	./dict1 infile.csv outfile.txt < input.txt
+	./dict1 2018sample1_no_headers.csv output.txt < input.txt
 
 memtest:
 	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt <input.txt

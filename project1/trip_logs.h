@@ -41,17 +41,22 @@ struct trip* create_trip_record(char *buffer, char* field);
 /*
 obtains a pointer, to the pointer that points to the memory being used to store the cell
 */
-char** get_struct_member(struct trip* new_trip, int i);
+char** get_struct_member(struct trip* new_trip, int column_number);
 
 /*
 prints all members of the struct
 */
-void print_trip(struct trip* new_trip);
+void print_trip(struct trip* new_trip, FILE* out_file);
 
 /*
 frees all the memory allocated for each member in the struct
 */
 void free_members_of_struct(struct trip* trip);
+
+/*
+returns name of field based on column number
+*/
+char* get_field_name(int column_number);
 
 
 #endif

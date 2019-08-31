@@ -2,8 +2,8 @@
 Provides the skeleton tasks for the project
 1. Opens a file
 2. Facilitates creation of trip objects
-3. Adds trip objects to the BST dictionary (handles duplicates with linked list)
-4. Performs search and writes to output file
+3. Adds trip objects to the BST dictionary (handles duplicates with linked list), then closes file
+4. Opens output file, performs search and writes to output file
 5. Closes file and frees all memory being used by the tree
 */
 
@@ -21,23 +21,20 @@ Provides the skeleton tasks for the project
 #define INFILE_ARG 1
 #define OUTFILE_ARG 2
 #define NULLBYTE_SPACE 1
+#define NEWLINE_CHAR '\n'
 
 int main(int argc, char** argv){
 	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
 	assert(buffer); //confirm if enough memory was available for buffer
 
-	for (int i = 0; i < argc; i++) {
-		printf("argv[%d] = \"%s\"\n", i, argv[i]);
-	}
+	// for (int i = 0; i < argc; i++) {
+	// 	printf("argv[%d] = \"%s\"\n", i, argv[i]);
+	// }
 
 	char *input;
 	input = (char*)malloc(sizeof(char)*MAXFIELDSIZE);
 	assert(input);
-	size_t buffsize = MAXFIELDSIZE;
-	size_t ls;
-	// int num = ftell(stdin);
-	// printf("%d\n", num);
-	// if(stdin){
+	
 
 	//reading in the infile
 	FILE *datafile;
@@ -53,31 +50,38 @@ int main(int argc, char** argv){
 	char *field = (char *) malloc(sizeof(char)*MAXFIELDSIZE);
 	assert(field);
 	
+	//Add all trip records from csv to trip_record structs
 	struct trip* new_trip;
 	struct bst* bst = NULL;
-
-	//Add all trip records from csv to trip_record structs
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ 
 		new_trip = create_trip_record(buffer, field);
-		// print_trip(new_trip);
 		bst = insert_node(bst, new_trip);
 	}
 
+	fclose(datafile); //to clear out the file pointer
+
+	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
+	bufsize = MAXFIELDSIZE;
 	int keylen;
 	char *key;
-	while((ls = getline(&input, &buffsize , stdin))!=-1){
+	while((linesize = getline(&input, &bufsize , stdin))!=-1){
 		keylen=strlen(input);
+		if(keylen<=1){
+			puts("");
+			exit(EXIT_FAILURE);
+		}
 		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
 		assert(key);
 		strcpy(key, input);
-		if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
-		find_in_bst(key,bst);
+		// printf("Typed in: '%s' size: %d", key, (int)strlen(key));
+		if (keylen > 0 && key[keylen-1] == NEWLINE_CHAR) key[keylen-1] = '\0';
+		find_in_bst(key,bst, out_file);
 		free(key);
 	}
 
+	fclose(out_file);
 	free(input);
 	free_tree(bst);//frees all nodes, structs, and struct members, and pointers
-	fclose(datafile); //to clear out the file pointer
 	free(buffer); //to clear out the temp buffer memory allocated
 	free(field); //to clear the temp storage for each field
 	

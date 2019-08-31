@@ -13,6 +13,10 @@ Function declerations abstracted to header file "trips_log.h"
 #define DELIM_REGEX "\r,"
 #define SECOND_FIELD 2
 #define NULLBYTE_SPACE 1
+#define FIRST_COLUMN 1
+#define MAX_COLS 18
+#define NEWLINE_CHAR '\n'
+#define OUTPUT_BUFFER 300
 
 /* 
 1. Accepts the buffer (contains one full trip row from the input data)
@@ -34,12 +38,14 @@ struct trip* create_trip_record(char *buffer, char* field){
 	assert(new_trip->vendor_id);
 	strcpy(new_trip->vendor_id, field);
 
+	//store all the other columns in the relevant fields within the struct
 	char **temp;
 	while ((field = strtok(NULL, DELIM_REGEX))!=NULL){
 		cell_length = (int)strlen(field);
 		temp = get_struct_member(new_trip, counter);
-		*temp = (char *)malloc(sizeof(char)*cell_length+1);
+		*temp = (char *)malloc(sizeof(char)*cell_length+NULLBYTE_SPACE);
 		assert(*temp);
+		if (cell_length > 0 && field[cell_length-1] == NEWLINE_CHAR) field[cell_length-1] = '\0';
 		strcpy(*temp, field);
 		counter++;
 	}
@@ -50,22 +56,24 @@ struct trip* create_trip_record(char *buffer, char* field){
 /*
 Prints all fields of a single trip
 */
-void print_trip(struct trip* new_trip){
-	int counter = 1;
-	while(counter<=18){
+void print_trip(struct trip* new_trip, FILE *out_file){
+	int counter = FIRST_COLUMN;
+	fprintf(out_file, "%s --> ", new_trip->pu_datetime);
+	while(counter<=MAX_COLS){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
-		printf("%s\n", *temp);
+		fprintf(out_file, "%s: %s || ", get_field_name(counter), *temp);
 		counter++;
 	}
+	fprintf(out_file, "\n");
 }
 
 /*
 frees all members of a given trip record
 */
 void free_members_of_struct(struct trip* trip){
-	int counter = 1;
-	while(counter<=18){
+	int counter = FIRST_COLUMN;
+	while(counter<=MAX_COLS){
 		char **temp;
 		temp = get_struct_member(trip, counter);
 		counter++;
@@ -76,8 +84,8 @@ void free_members_of_struct(struct trip* trip){
 /*
 retrieves the memory address of the relevant field by row number
 */
-char** get_struct_member(struct trip* new_trip, int i){
-	switch(i){
+char** get_struct_member(struct trip* new_trip, int column_number){
+	switch(column_number){
 		case 1: return &(new_trip-> vendor_id);
 		case 2: return &(new_trip-> passenger_count);
 		case 3: return &(new_trip-> trip_distance);
@@ -96,6 +104,31 @@ char** get_struct_member(struct trip* new_trip, int i){
 		case 16: return &(new_trip-> pu_datetime);
 		case 17: return &(new_trip-> do_datetime);
 		case 18: return &(new_trip-> trip_duration);
+	}
+
+	return NULL;
+}
+
+char* get_field_name(int column_number){
+	switch(column_number){
+		case 1: return "vendor_id";
+		case 2: return "passenger_count";
+		case 3: return "trip_distance";
+		case 4: return "rate_code_ID";
+		case 5: return "store_and_fwd_flag";
+		case 6: return "pu_location_id";
+		case 7: return "do_location_id";
+		case 8: return "payment_type";
+		case 9: return "fare_amount";
+		case 10: return "extra";
+		case 11: return "mta_tax";
+		case 12: return "tip_amount";
+		case 13: return "tolls_amount";
+		case 14: return "improvement_surcharge";
+		case 15: return "total_amount";
+		case 16: return "pu_datetime";
+		case 17: return "do_datetime";
+		case 18: return "trip_duration";
 	}
 
 	return NULL;

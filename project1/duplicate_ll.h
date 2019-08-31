@@ -24,7 +24,7 @@ struct duplicate_ll* insert_duplicate(struct duplicate_ll* head, struct trip* tr
 /*
 prints out all duplicates starting at the first duplicate
 */
-void print_duplicates(struct duplicate_ll* head);
+void print_duplicates(struct duplicate_ll* head, FILE* out_file);
 
 
 /*

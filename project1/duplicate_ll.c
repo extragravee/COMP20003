@@ -42,12 +42,12 @@ struct duplicate_ll* insert_duplicate(struct duplicate_ll* head, struct trip* tr
 /*
 Prints entire linked list of duplicates in a given node. 
 */
-void print_duplicates(struct duplicate_ll* head){
+void print_duplicates(struct duplicate_ll* head, FILE* out_file){
 	struct duplicate_ll* temp;
 	temp = head;
 
 	while(temp){
-		print_trip(temp->duplicate_trip);
+		print_trip(temp->duplicate_trip, out_file);
 		temp = temp->next;
 	}
 }

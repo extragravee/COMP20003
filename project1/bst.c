@@ -32,7 +32,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 		} 
 		else if(result==0){	
 			// puts("Inserting duplicate: ");
-			printf("Duplicate inserted! Key: %s, node key: %s\n", trip->pu_datetime, ((*insert_here)->key));
+			// printf("Duplicate inserted! Key: %s, node key: %s\n", trip->pu_datetime, ((*insert_here)->key));
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
 			// print_duplicates((*insert_here)->duplicates);
 			return parent;
@@ -65,10 +65,9 @@ void free_tree(struct bst* parent){
 	free(parent); //then free the struct
 }
 
-void find_in_bst(char* find_key, struct bst* bst){
+void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 	int result;
 	struct bst** temp = &bst;
-
 	int counter =0;
 	while(*temp){
 		counter++;
@@ -78,16 +77,16 @@ void find_in_bst(char* find_key, struct bst* bst){
 		} else if(result>0){
 			temp = &((*temp)->right);
 		} else if(result==0){
-			print_trip((*temp)->trip);
-			printf("Counter: %d\n", counter);
+			print_trip((*temp)->trip, out_file);
+			printf("%s --> %d\n", find_key, counter);
 			if((*temp)->duplicates){
-				print_duplicates((*temp)->duplicates);
+				print_duplicates((*temp)->duplicates, out_file);
 			}
 			return;
 		}
 	}
-	printf("Counter: %d\n", counter);
-	puts("NOTFOUND");
+	printf("%s --> %d\n", find_key, counter);
+	fprintf(out_file, "%s --> NOTFOUND\n", find_key);
 }
 
 
