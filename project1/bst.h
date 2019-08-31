@@ -32,4 +32,7 @@ frees children recursively
 */
 void free_tree(struct bst* parent);
 
+
+void find_in_bst(char* find_key, struct bst* bst);
+
 #endif

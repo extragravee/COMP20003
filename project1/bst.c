@@ -31,10 +31,10 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 			insert_here = &((*insert_here)->right);
 		} 
 		else if(result==0){	
-			puts("Inserting duplicate: ");
-			printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
+			// puts("Inserting duplicate: ");
+			// printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
-			print_duplicates((*insert_here)->duplicates);
+			// print_duplicates((*insert_here)->duplicates);
 			return parent;
 		}
 	}
@@ -48,7 +48,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	(*insert_here)->trip = trip;
 	(*insert_here)->duplicates = NULL;
 
-	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
+	// printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
 	return parent;
 }
 
@@ -65,9 +65,23 @@ void free_tree(struct bst* parent){
 	free(parent); //then free the struct
 }
 
-// struct bst* search_dictionary(char* key, struct bst* root){
+void find_in_bst(char* find_key, struct bst* bst){
+	int result;
+	struct bst** temp = &bst;
+	while(*temp){
+		result = strcmp(find_key, (*temp)->key);
+		printf("Find this: %c, %d, 20th elem: '%c'\n", find_key[0], (int)strlen(find_key), find_key[19]);
+		printf("Current node: %c, %d, \n", ((*temp)->key)[0], (int)strlen((*temp)->key));
+		if(result==0){
+			puts("Match found!");
+		} else if(result<0){
+			temp = &((*temp)->left);
+		} else if(result>0){
+			temp = &((*temp)->right);
+		}
+	}
+}
 
-// }
 
 
 

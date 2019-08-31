@@ -1,17 +1,86 @@
 valgrind --leak-check=full -v ./dict1 infile.csv output.txt
 ==================================OUTPUT==================================
-
-0x522f530
+argv[0] = "./dict1"
+argv[1] = "infile.csv"
+argv[2] = "output.txt"
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 5
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 New node inserted! Key: 2018-11-08 13:34:27, Trip: 41
 
-
-0x522fc30
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 5
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 New node inserted! Key: 2018-11-08 13:34:26, Trip: 42
 
-
-0x5230330
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 5
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 New node inserted! Key: 2018-11-08 13:34:28, Trip: 43
 
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 5
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 Inserting duplicate: 
 New node inserted! Key: 2018-11-08 13:34:28, Trip: 44
 
@@ -35,6 +104,24 @@ False
 2018-11-08 14:18:26
 44
 
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 4
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 Inserting duplicate: 
 New node inserted! Key: 2018-11-08 13:34:28, Trip: 45
 
@@ -78,6 +165,24 @@ True
 2018-11-08 14:18:26
 45
 
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 4
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 Inserting duplicate: 
 New node inserted! Key: 2018-11-08 13:34:28, Trip: 46
 
@@ -141,6 +246,24 @@ True
 2018-11-08 14:18:26
 46
 
+celllen = 1
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 5
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 3
 Inserting duplicate: 
 New node inserted! Key: 2018-11-08 13:34:27, Trip: 41
 
@@ -164,6 +287,24 @@ False
 2018-11-08 14:18:26
 41
 
+celllen = 2
+celllen = 1
+celllen = 5
+celllen = 3
+celllen = 5
+celllen = 3
+celllen = 2
+celllen = 1
+celllen = 4
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 3
+celllen = 5
+celllen = 4
+celllen = 19
+celllen = 19
+celllen = 4
 Inserting duplicate: 
 New node inserted! Key: 2018-11-08 13:34:27, Trip: 410
 
