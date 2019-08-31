@@ -1,143 +1,4003 @@
-./dict1 infile.csv output.txt
+valgrind --leak-check=full -v ./dict1 2018sample2_no_headers.csv output.txt
 ==================================OUTPUT==================================
-Printing=================
-2 1
-1 2
-12.88 3
-5.0 4
-False 5
-229 6
-77 7
-1 8
-34.9 9
-0.0 10
-0.5 11
-0.0 12
-0.0 13
-0.487 14
-35.7 15
-2018-11-08 13:34:27 16
-2018-11-08 14:18:26 17
-44
- 18
-New node inserted! Key: 2018-11-08 13:34:27, Trip: 12.88
-Printing=================
-2 1
-1 2
-12.88 3
-5.0 4
-False 5
-229 6
-77 7
-1 8
-34.9 9
-0.0 10
-0.5 11
-0.0 12
-0.0 13
-0.487 14
-35.7 15
-2018-11-08 13:34:26 16
-2018-11-08 14:18:26 17
-44
- 18
-New node inserted! Key: 2018-11-08 13:34:26, Trip: 12.88
-Printing=================
-2 1
-1 2
-12.88 3
-5.0 4
-False 5
-229 6
-77 7
-1 8
-34.9 9
-0.0 10
-0.5 11
-0.0 12
-0.0 13
-0.487 14
-35.7 15
-2018-11-08 13:34:28 16
-2018-11-08 14:18:26 17
-44
- 18
-New node inserted! Key: 2018-11-08 13:34:28, Trip: 12.88
-Printing=================
-2 1
-1 2
-12.88 3
-5.0 4
-False 5
-229 6
-77 7
-1 8
-34.9 9
-0.0 10
-0.5 11
-0.0 12
-0.0 13
-0.487 14
-35.7 15
-2018-11-08 13:34:28 16
-2018-11-08 14:18:26 17
-44
- 18
-LL created for the duplicate 
 
-2*********
+0x522f530
+New node inserted! Key: 2018-01-01 01:51:28, Trip: 20
 
 
-Key: 2018-11-08 13:34:28 2<<<<<<<<<<<<<<<
-Printing=================
-3 1
-1 2
-12.88 3
-5.0 4
-True 5
-229 6
-77 7
-1 8
-34.9 9
-0.0 10
-0.5 11
-0.0 12
-0.0 13
-0.487 14
-35.7 15
-2018-11-08 13:34:28 16
-2018-11-08 14:18:26 17
-44
- 18
-LL created for the duplicate 
-
-3*********
+0x522fc30
+New node inserted! Key: 2018-01-01 18:27:22, Trip: 39
 
 
-Key: 2018-11-08 13:34:28 2<<<<<<<<<<<<<<<
-Printing=================
-4 1
-1 2
-12.88 3
-5.0 4
-True 5
-229 6
-77 7
-1 8
-34.9 9
-0.0 10
-0.5 11
-0.0 12
-0.0 13
-0.487 14
-35.7 15
-2018-11-08 13:34:28 16
-2018-11-08 14:18:26 17
-44 18
-LL created for the duplicate 
-
-4*********
+0x5230330
+New node inserted! Key: 2018-01-02 09:53:43, Trip: 5
 
 
-Key: 2018-11-08 13:34:28 2<<<<<<<<<<<<<<<
+0x5230a30
+New node inserted! Key: 2018-01-02 21:12:57, Trip: 9
+
+
+0x5231130
+New node inserted! Key: 2018-01-02 21:22:30, Trip: 2
+
+
+0x5231830
+New node inserted! Key: 2018-01-03 06:20:11, Trip: 11
+
+
+0x5231f30
+New node inserted! Key: 2018-01-03 21:51:24, Trip: 3
+
+
+0x5232630
+New node inserted! Key: 2018-01-04 17:19:41, Trip: 2
+
+
+0x5232d30
+New node inserted! Key: 2018-01-05 11:48:27, Trip: 13
+
+
+0x5233430
+New node inserted! Key: 2018-01-05 16:43:14, Trip: 10
+
+
+0x5233b30
+New node inserted! Key: 2018-01-05 19:12:04, Trip: 12
+
+
+0x5234230
+New node inserted! Key: 2018-01-06 01:23:32, Trip: 15
+
+
+0x5234930
+New node inserted! Key: 2018-01-06 23:14:07, Trip: 5
+
+
+0x5235030
+New node inserted! Key: 2018-01-07 11:21:25, Trip: 13
+
+
+0x5235730
+New node inserted! Key: 2018-01-08 05:57:10, Trip: 5
+
+
+0x5235e30
+New node inserted! Key: 2018-01-08 09:03:50, Trip: 3
+
+
+0x5236530
+New node inserted! Key: 2018-01-08 14:35:09, Trip: 1
+
+
+0x5236c30
+New node inserted! Key: 2018-01-08 18:12:14, Trip: 8
+
+
+0x5237330
+New node inserted! Key: 2018-01-09 12:35:45, Trip: 25
+
+
+0x5237a30
+New node inserted! Key: 2018-01-09 15:18:35, Trip: 12
+
+
+0x5238130
+New node inserted! Key: 2018-01-09 18:52:38, Trip: 13
+
+
+0x5238830
+New node inserted! Key: 2018-01-10 17:13:26, Trip: 13
+
+
+0x5238f30
+New node inserted! Key: 2018-01-11 09:59:46, Trip: 26
+
+
+0x5239630
+New node inserted! Key: 2018-01-11 12:05:10, Trip: 44
+
+
+0x5239d30
+New node inserted! Key: 2018-01-11 17:37:57, Trip: 11
+
+
+0x523a430
+New node inserted! Key: 2018-01-11 18:58:50, Trip: 10
+
+
+0x523ab30
+New node inserted! Key: 2018-01-12 13:15:56, Trip: 17
+
+
+0x523b230
+New node inserted! Key: 2018-01-12 18:25:08, Trip: 25
+
+
+0x523b930
+New node inserted! Key: 2018-01-12 21:10:04, Trip: 9
+
+
+0x523c030
+New node inserted! Key: 2018-01-12 21:32:01, Trip: 14
+
+
+0x523c730
+New node inserted! Key: 2018-01-13 01:04:24, Trip: 18
+
+
+0x523ce30
+New node inserted! Key: 2018-01-13 03:13:54, Trip: 9
+
+
+0x523d530
+New node inserted! Key: 2018-01-13 19:55:13, Trip: 23
+
+
+0x523dc30
+New node inserted! Key: 2018-01-13 22:20:50, Trip: 2
+
+
+0x523e330
+New node inserted! Key: 2018-01-14 02:26:45, Trip: 30
+
+
+0x523ea30
+New node inserted! Key: 2018-01-15 13:37:23, Trip: 17
+
+
+0x523f130
+New node inserted! Key: 2018-01-15 16:36:43, Trip: 5
+
+
+0x523f830
+New node inserted! Key: 2018-01-15 17:07:29, Trip: 17
+
+
+0x523ff30
+New node inserted! Key: 2018-01-16 09:02:15, Trip: 32
+
+
+0x5240630
+New node inserted! Key: 2018-01-16 17:07:11, Trip: 16
+
+
+0x5240d30
+New node inserted! Key: 2018-01-16 20:52:08, Trip: 5
+
+
+0x5241430
+New node inserted! Key: 2018-01-16 21:31:06, Trip: 10
+
+
+0x5241b30
+New node inserted! Key: 2018-01-17 11:49:54, Trip: 6
+
+
+0x5242230
+New node inserted! Key: 2018-01-17 13:55:37, Trip: 12
+
+
+0x5242930
+New node inserted! Key: 2018-01-17 14:44:52, Trip: 13
+
+
+0x5243030
+New node inserted! Key: 2018-01-17 19:11:46, Trip: 2
+
+
+0x5243730
+New node inserted! Key: 2018-01-18 07:57:23, Trip: 7
+
+
+0x5243e30
+New node inserted! Key: 2018-01-18 11:36:17, Trip: 13
+
+
+0x5244530
+New node inserted! Key: 2018-01-18 15:01:13, Trip: 1
+
+
+0x5244c30
+New node inserted! Key: 2018-01-18 15:46:15, Trip: 3
+
+
+0x5245330
+New node inserted! Key: 2018-01-18 15:48:17, Trip: 9
+
+
+0x5245a30
+New node inserted! Key: 2018-01-18 20:37:48, Trip: 17
+
+
+0x5246130
+New node inserted! Key: 2018-01-18 23:42:00, Trip: 25
+
+
+0x5246830
+New node inserted! Key: 2018-01-19 11:57:43, Trip: 19
+
+
+0x5246f30
+New node inserted! Key: 2018-01-20 09:56:06, Trip: 9
+
+
+0x5247630
+New node inserted! Key: 2018-01-20 12:56:54, Trip: 22
+
+
+0x5247d30
+New node inserted! Key: 2018-01-21 16:26:41, Trip: 24
+
+
+0x5248430
+New node inserted! Key: 2018-01-21 17:07:14, Trip: 11
+
+
+0x5248b30
+New node inserted! Key: 2018-01-21 18:29:49, Trip: 13
+
+
+0x5249230
+New node inserted! Key: 2018-01-23 13:37:58, Trip: 25
+
+
+0x5249930
+New node inserted! Key: 2018-01-23 14:06:45, Trip: 18
+
+
+0x524a030
+New node inserted! Key: 2018-01-23 16:45:39, Trip: 9
+
+
+0x524a730
+New node inserted! Key: 2018-01-23 16:58:42, Trip: 1425
+
+
+0x524ae30
+New node inserted! Key: 2018-01-24 09:49:20, Trip: 16
+
+
+0x524b530
+New node inserted! Key: 2018-01-24 21:06:07, Trip: 12
+
+
+0x524bc30
+New node inserted! Key: 2018-01-24 23:56:44, Trip: 22
+
+
+0x524c330
+New node inserted! Key: 2018-01-25 05:54:43, Trip: 18
+
+
+0x524ca30
+New node inserted! Key: 2018-01-25 12:56:24, Trip: 14
+
+
+0x524d130
+New node inserted! Key: 2018-01-25 14:02:29, Trip: 21
+
+
+0x524d830
+New node inserted! Key: 2018-01-25 18:08:51, Trip: 18
+
+
+0x524df30
+New node inserted! Key: 2018-01-25 21:13:17, Trip: 2
+
+
+0x524e630
+New node inserted! Key: 2018-01-26 06:03:15, Trip: 6
+
+
+0x524ed30
+New node inserted! Key: 2018-01-26 12:43:34, Trip: 7
+
+
+0x524f430
+New node inserted! Key: 2018-01-26 17:43:51, Trip: 13
+
+
+0x524fb30
+New node inserted! Key: 2018-01-26 22:27:56, Trip: 4
+
+
+0x5250230
+New node inserted! Key: 2018-01-27 01:38:44, Trip: 19
+
+
+0x5250930
+New node inserted! Key: 2018-01-27 10:02:50, Trip: 15
+
+
+0x5251030
+New node inserted! Key: 2018-01-27 18:00:05, Trip: 7
+
+
+0x5251730
+New node inserted! Key: 2018-01-27 19:54:57, Trip: 7
+
+
+0x5251e30
+New node inserted! Key: 2018-01-28 10:53:46, Trip: 2
+
+
+0x5252530
+New node inserted! Key: 2018-01-28 17:40:13, Trip: 4
+
+
+0x5252c30
+New node inserted! Key: 2018-01-28 19:13:08, Trip: 9
+
+
+0x5253330
+New node inserted! Key: 2018-01-28 19:26:45, Trip: 5
+
+
+0x5253a30
+New node inserted! Key: 2018-01-28 21:28:21, Trip: 28
+
+
+0x5254130
+New node inserted! Key: 2018-01-29 04:26:07, Trip: 4
+
+
+0x5254830
+New node inserted! Key: 2018-01-29 20:41:54, Trip: 4
+
+
+0x5254f30
+New node inserted! Key: 2018-01-30 12:35:10, Trip: 19
+
+
+0x5255630
+New node inserted! Key: 2018-01-30 13:40:46, Trip: 20
+
+
+0x5255d30
+New node inserted! Key: 2018-01-30 18:56:49, Trip: 27
+
+
+0x5256430
+New node inserted! Key: 2018-01-30 22:51:14, Trip: 4
+
+
+0x5256b30
+New node inserted! Key: 2018-01-31 05:34:07, Trip: 6
+
+
+0x5257230
+New node inserted! Key: 2018-01-31 16:51:32, Trip: 4
+
+
+0x5257930
+New node inserted! Key: 2018-02-01 10:05:53, Trip: 9
+
+
+0x5258030
+New node inserted! Key: 2018-02-01 20:00:34, Trip: 13
+
+
+0x5258730
+New node inserted! Key: 2018-02-01 20:23:14, Trip: 33
+
+
+0x5258e30
+New node inserted! Key: 2018-02-01 21:56:17, Trip: 14
+
+
+0x5259530
+New node inserted! Key: 2018-02-02 08:50:19, Trip: 1
+
+
+0x5259c30
+New node inserted! Key: 2018-02-02 09:53:52, Trip: 41
+
+
+0x525a330
+New node inserted! Key: 2018-02-02 11:45:35, Trip: 18
+
+
+0x525aa30
+New node inserted! Key: 2018-02-03 14:52:23, Trip: 13
+
+
+0x525b130
+New node inserted! Key: 2018-02-03 16:56:55, Trip: 3
+
+
+0x525b830
+New node inserted! Key: 2018-02-04 13:11:24, Trip: 11
+
+
+0x525bf30
+New node inserted! Key: 2018-02-04 21:34:19, Trip: 15
+
+
+0x525c630
+New node inserted! Key: 2018-02-06 10:20:25, Trip: 29
+
+
+0x525cd30
+New node inserted! Key: 2018-02-06 16:06:52, Trip: 13
+
+
+0x525d430
+New node inserted! Key: 2018-02-06 16:58:45, Trip: 6
+
+
+0x525db30
+New node inserted! Key: 2018-02-06 17:43:37, Trip: 18
+
+
+0x525e230
+New node inserted! Key: 2018-02-07 13:14:40, Trip: 9
+
+
+0x525e930
+New node inserted! Key: 2018-02-07 16:17:33, Trip: 34
+
+
+0x525f030
+New node inserted! Key: 2018-02-07 23:33:43, Trip: 9
+
+
+0x525f730
+New node inserted! Key: 2018-02-08 12:04:29, Trip: 12
+
+
+0x525fe30
+New node inserted! Key: 2018-02-08 20:18:13, Trip: 6
+
+
+0x5260530
+New node inserted! Key: 2018-02-09 01:51:49, Trip: 2
+
+
+0x5260c30
+New node inserted! Key: 2018-02-09 09:22:26, Trip: 17
+
+
+0x5261330
+New node inserted! Key: 2018-02-09 19:57:04, Trip: 23
+
+
+0x5261a30
+New node inserted! Key: 2018-02-09 20:29:09, Trip: 5
+
+
+0x5262130
+New node inserted! Key: 2018-02-10 03:32:46, Trip: 4
+
+
+0x5262830
+New node inserted! Key: 2018-02-10 10:09:22, Trip: 2
+
+
+0x5262f30
+New node inserted! Key: 2018-02-10 18:24:46, Trip: 4
+
+
+0x5263630
+New node inserted! Key: 2018-02-11 13:42:12, Trip: 7
+
+
+0x5263d30
+New node inserted! Key: 2018-02-11 15:44:23, Trip: 5
+
+
+0x5264430
+New node inserted! Key: 2018-02-12 06:45:04, Trip: 13
+
+
+0x5264b30
+New node inserted! Key: 2018-02-12 15:02:11, Trip: 8
+
+
+0x5265230
+New node inserted! Key: 2018-02-13 10:48:22, Trip: 6
+
+
+0x5265930
+New node inserted! Key: 2018-02-13 16:16:08, Trip: 14
+
+
+0x5266030
+New node inserted! Key: 2018-02-13 18:07:23, Trip: 7
+
+
+0x5266730
+New node inserted! Key: 2018-02-14 07:46:14, Trip: 4
+
+
+0x5266e30
+New node inserted! Key: 2018-02-14 08:54:34, Trip: 23
+
+
+0x5267530
+New node inserted! Key: 2018-02-14 22:49:20, Trip: 4
+
+
+0x5267c30
+New node inserted! Key: 2018-02-15 04:45:16, Trip: 12
+
+
+0x5268330
+New node inserted! Key: 2018-02-15 17:15:01, Trip: 4
+
+
+0x5268a30
+New node inserted! Key: 2018-02-15 19:28:16, Trip: 7
+
+
+0x5269130
+New node inserted! Key: 2018-02-15 22:11:44, Trip: 5
+
+
+0x5269830
+New node inserted! Key: 2018-02-16 09:00:57, Trip: 14
+
+
+0x5269f30
+New node inserted! Key: 2018-02-16 09:04:31, Trip: 10
+
+
+0x526a630
+New node inserted! Key: 2018-02-16 09:14:03, Trip: 7
+
+
+0x526ad30
+New node inserted! Key: 2018-02-16 20:26:13, Trip: 6
+
+
+0x526b430
+New node inserted! Key: 2018-02-16 23:06:00, Trip: 18
+
+
+0x526bb30
+New node inserted! Key: 2018-02-17 17:39:14, Trip: 20
+
+
+0x526c230
+New node inserted! Key: 2018-02-17 21:49:49, Trip: 8
+
+
+0x526c930
+New node inserted! Key: 2018-02-18 12:23:20, Trip: 19
+
+
+0x526d030
+New node inserted! Key: 2018-02-18 15:39:20, Trip: 10
+
+
+0x526d730
+New node inserted! Key: 2018-02-19 10:17:15, Trip: 4
+
+
+0x526de30
+New node inserted! Key: 2018-02-19 12:54:25, Trip: 20
+
+
+0x526e530
+New node inserted! Key: 2018-02-19 19:57:43, Trip: 2
+
+
+0x526ec30
+New node inserted! Key: 2018-02-20 19:33:03, Trip: 12
+
+
+0x526f330
+New node inserted! Key: 2018-02-21 13:40:33, Trip: 9
+
+
+0x526fa30
+New node inserted! Key: 2018-02-21 15:22:36, Trip: 12
+
+
+0x5270130
+New node inserted! Key: 2018-02-21 17:09:36, Trip: 4
+
+
+0x5270830
+New node inserted! Key: 2018-02-22 09:56:35, Trip: 9
+
+
+0x5270f30
+New node inserted! Key: 2018-02-22 18:10:41, Trip: 20
+
+
+0x5271630
+New node inserted! Key: 2018-02-22 19:39:29, Trip: 13
+
+
+0x5271d30
+New node inserted! Key: 2018-02-22 20:33:56, Trip: 25
+
+
+0x5272430
+New node inserted! Key: 2018-02-22 22:22:26, Trip: 21
+
+
+0x5272b30
+New node inserted! Key: 2018-02-23 01:38:32, Trip: 12
+
+
+0x5273230
+New node inserted! Key: 2018-02-23 12:36:42, Trip: 10
+
+
+0x5273930
+New node inserted! Key: 2018-02-23 23:58:26, Trip: 6
+
+
+0x5274030
+New node inserted! Key: 2018-02-24 12:49:22, Trip: 20
+
+
+0x5274730
+New node inserted! Key: 2018-02-24 16:15:50, Trip: 9
+
+
+0x5274e30
+New node inserted! Key: 2018-02-24 19:48:18, Trip: 16
+
+
+0x5275530
+New node inserted! Key: 2018-02-25 12:25:58, Trip: 12
+
+
+0x5275c30
+New node inserted! Key: 2018-02-25 12:34:35, Trip: 4
+
+
+0x5276330
+New node inserted! Key: 2018-02-26 13:17:25, Trip: 17
+
+
+0x5276a30
+New node inserted! Key: 2018-02-26 14:56:50, Trip: 7
+
+
+0x5277130
+New node inserted! Key: 2018-02-26 18:18:50, Trip: 29
+
+
+0x5277830
+New node inserted! Key: 2018-02-27 09:06:52, Trip: 14
+
+
+0x5277f30
+New node inserted! Key: 2018-02-27 12:05:30, Trip: 8
+
+
+0x5278630
+New node inserted! Key: 2018-02-27 14:46:29, Trip: 6
+
+
+0x5278d30
+New node inserted! Key: 2018-02-27 15:39:28, Trip: 14
+
+
+0x5279430
+New node inserted! Key: 2018-02-27 19:30:01, Trip: 7
+
+
+0x5279b30
+New node inserted! Key: 2018-02-27 19:55:44, Trip: 7
+
+
+0x527a230
+New node inserted! Key: 2018-02-28 14:18:28, Trip: 20
+
+
+0x527a930
+New node inserted! Key: 2018-02-28 16:04:10, Trip: 2
+
+
+0x527b030
+New node inserted! Key: 2018-02-28 18:06:17, Trip: 7
+
+
+0x527b730
+New node inserted! Key: 2018-02-28 21:48:25, Trip: 15
+
+
+0x527be30
+New node inserted! Key: 2018-02-28 23:15:12, Trip: 22
+
+
+0x527c530
+New node inserted! Key: 2018-03-01 09:27:51, Trip: 8
+
+
+0x527cc30
+New node inserted! Key: 2018-03-01 19:56:38, Trip: 13
+
+
+0x527d330
+New node inserted! Key: 2018-03-02 00:54:55, Trip: 7
+
+
+0x527da30
+New node inserted! Key: 2018-03-02 08:37:23, Trip: 10
+
+
+0x527e130
+New node inserted! Key: 2018-03-02 09:33:25, Trip: 34
+
+
+0x527e830
+New node inserted! Key: 2018-03-02 19:59:21, Trip: 6
+
+
+0x527ef30
+New node inserted! Key: 2018-03-03 01:03:00, Trip: 6
+
+
+0x527f630
+New node inserted! Key: 2018-03-03 10:12:10, Trip: 3
+
+
+0x527fd30
+New node inserted! Key: 2018-03-03 10:50:27, Trip: 3
+
+
+0x5280430
+New node inserted! Key: 2018-03-04 01:07:40, Trip: 34
+
+
+0x5280b30
+New node inserted! Key: 2018-03-04 14:30:00, Trip: 21
+
+
+0x5281230
+New node inserted! Key: 2018-03-05 21:31:31, Trip: 7
+
+
+0x5281930
+New node inserted! Key: 2018-03-05 21:46:49, Trip: 7
+
+
+0x5282030
+New node inserted! Key: 2018-03-06 14:13:41, Trip: 9
+
+
+0x5282730
+New node inserted! Key: 2018-03-07 09:09:58, Trip: 2
+
+
+0x5282e30
+New node inserted! Key: 2018-03-07 18:32:21, Trip: 9
+
+
+0x5283530
+New node inserted! Key: 2018-03-07 22:05:27, Trip: 6
+
+
+0x5283c30
+New node inserted! Key: 2018-03-07 23:39:20, Trip: 12
+
+
+0x5284330
+New node inserted! Key: 2018-03-07 23:57:56, Trip: 8
+
+
+0x5284a30
+New node inserted! Key: 2018-03-08 13:12:23, Trip: 6
+
+
+0x5285130
+New node inserted! Key: 2018-03-09 02:30:42, Trip: 8
+
+
+0x5285830
+New node inserted! Key: 2018-03-09 08:08:35, Trip: 46
+
+
+0x5285f30
+New node inserted! Key: 2018-03-09 18:17:17, Trip: 11
+
+
+0x5286630
+New node inserted! Key: 2018-03-09 23:12:09, Trip: 4
+
+
+0x5286d30
+New node inserted! Key: 2018-03-10 00:54:50, Trip: 5
+
+
+0x5287430
+New node inserted! Key: 2018-03-10 16:07:59, Trip: 3
+
+
+0x5287b30
+New node inserted! Key: 2018-03-10 16:50:45, Trip: 12
+
+
+0x5288230
+New node inserted! Key: 2018-03-10 19:46:56, Trip: 7
+
+
+0x5288930
+New node inserted! Key: 2018-03-10 21:14:46, Trip: 38
+
+
+0x5289030
+New node inserted! Key: 2018-03-11 00:00:06, Trip: 5
+
+
+0x5289730
+New node inserted! Key: 2018-03-12 11:31:15, Trip: 3
+
+
+0x5289e30
+New node inserted! Key: 2018-03-12 14:51:02, Trip: 9
+
+
+0x528a530
+New node inserted! Key: 2018-03-12 18:21:40, Trip: 4
+
+
+0x528ac30
+New node inserted! Key: 2018-03-13 08:20:59, Trip: 28
+
+
+0x528b330
+New node inserted! Key: 2018-03-13 13:58:56, Trip: 17
+
+
+0x528ba30
+New node inserted! Key: 2018-03-13 16:04:24, Trip: 10
+
+
+0x528c130
+New node inserted! Key: 2018-03-14 04:59:35, Trip: 2
+
+
+0x528c830
+New node inserted! Key: 2018-03-14 10:38:16, Trip: 12
+
+
+0x528cf30
+New node inserted! Key: 2018-03-14 17:10:05, Trip: 11
+
+
+0x528d630
+New node inserted! Key: 2018-03-14 17:16:00, Trip: 14
+
+
+0x528dd30
+New node inserted! Key: 2018-03-14 20:02:55, Trip: 2
+
+
+0x528e430
+New node inserted! Key: 2018-03-14 23:04:35, Trip: 24
+
+
+0x528eb30
+New node inserted! Key: 2018-03-15 00:32:03, Trip: 3
+
+
+0x528f230
+New node inserted! Key: 2018-03-15 05:03:22, Trip: 22
+
+
+0x528f930
+New node inserted! Key: 2018-03-15 12:20:29, Trip: 8
+
+
+0x5290030
+New node inserted! Key: 2018-03-17 13:52:55, Trip: 9
+
+
+0x5290730
+New node inserted! Key: 2018-03-17 15:06:12, Trip: 15
+
+
+0x5290e30
+New node inserted! Key: 2018-03-17 17:00:17, Trip: 19
+
+
+0x5291530
+New node inserted! Key: 2018-03-17 20:49:42, Trip: 10
+
+
+0x5291c30
+New node inserted! Key: 2018-03-17 21:02:07, Trip: 14
+
+
+0x5292330
+New node inserted! Key: 2018-03-17 21:10:07, Trip: 3
+
+
+0x5292a30
+New node inserted! Key: 2018-03-18 11:20:46, Trip: 7
+
+
+0x5293130
+New node inserted! Key: 2018-03-18 20:09:25, Trip: 4
+
+
+0x5293830
+New node inserted! Key: 2018-03-18 22:26:48, Trip: 5
+
+
+0x5293f30
+New node inserted! Key: 2018-03-19 12:14:23, Trip: 13
+
+
+0x5294630
+New node inserted! Key: 2018-03-19 16:26:45, Trip: 24
+
+
+0x5294d30
+New node inserted! Key: 2018-03-20 19:35:38, Trip: 14
+
+
+0x5295430
+New node inserted! Key: 2018-03-20 21:46:40, Trip: 3
+
+
+0x5295b30
+New node inserted! Key: 2018-03-21 18:36:07, Trip: 7
+
+
+0x5296230
+New node inserted! Key: 2018-03-22 12:23:52, Trip: 19
+
+
+0x5296930
+New node inserted! Key: 2018-03-22 12:48:51, Trip: 9
+
+
+0x5297030
+New node inserted! Key: 2018-03-23 05:13:15, Trip: 14
+
+
+0x5297730
+New node inserted! Key: 2018-03-23 12:09:16, Trip: 35
+
+
+0x5297e30
+New node inserted! Key: 2018-03-24 02:01:45, Trip: 5
+
+
+0x5298530
+New node inserted! Key: 2018-03-24 04:23:39, Trip: 36
+
+
+0x5298c30
+New node inserted! Key: 2018-03-24 12:26:34, Trip: 10
+
+
+0x5299330
+New node inserted! Key: 2018-03-24 13:45:58, Trip: 29
+
+
+0x5299a30
+New node inserted! Key: 2018-03-24 18:55:29, Trip: 2
+
+
+0x529a130
+New node inserted! Key: 2018-03-24 19:13:02, Trip: 14
+
+
+0x529a830
+New node inserted! Key: 2018-03-24 20:35:36, Trip: 4
+
+
+0x529af30
+New node inserted! Key: 2018-03-25 00:32:48, Trip: 24
+
+
+0x529b630
+New node inserted! Key: 2018-03-25 11:16:52, Trip: 12
+
+
+0x529bd30
+New node inserted! Key: 2018-03-25 14:27:56, Trip: 14
+
+
+0x529c430
+New node inserted! Key: 2018-03-26 14:12:36, Trip: 5
+
+
+0x529cb30
+New node inserted! Key: 2018-03-26 17:55:32, Trip: 11
+
+
+0x529d230
+New node inserted! Key: 2018-03-26 18:10:52, Trip: 14
+
+
+0x529d930
+New node inserted! Key: 2018-03-27 10:54:57, Trip: 49
+
+
+0x529e030
+New node inserted! Key: 2018-03-27 12:58:23, Trip: 4
+
+
+0x529e730
+New node inserted! Key: 2018-03-27 13:50:10, Trip: 40
+
+
+0x529ee30
+New node inserted! Key: 2018-03-27 13:53:41, Trip: 40
+
+
+0x529f530
+New node inserted! Key: 2018-03-27 20:26:21, Trip: 13
+
+
+0x529fc30
+New node inserted! Key: 2018-03-27 22:13:30, Trip: 9
+
+
+0x52a0330
+New node inserted! Key: 2018-03-27 23:00:00, Trip: 5
+
+
+0x52a0a30
+New node inserted! Key: 2018-03-28 02:56:45, Trip: 30
+
+
+0x52a1130
+New node inserted! Key: 2018-03-28 09:17:59, Trip: 15
+
+
+0x52a1830
+New node inserted! Key: 2018-03-28 11:44:51, Trip: 5
+
+
+0x52a1f30
+New node inserted! Key: 2018-03-28 15:06:19, Trip: 5
+
+
+0x52a2630
+New node inserted! Key: 2018-03-28 22:09:20, Trip: 5
+
+
+0x52a2d30
+New node inserted! Key: 2018-03-29 21:02:38, Trip: 41
+
+
+0x52a3430
+New node inserted! Key: 2018-03-30 03:49:29, Trip: 5
+
+
+0x52a3b30
+New node inserted! Key: 2018-03-30 15:10:25, Trip: 21
+
+
+0x52a4230
+New node inserted! Key: 2018-03-30 18:21:01, Trip: 54
+
+
+0x52a4930
+New node inserted! Key: 2018-03-30 20:24:15, Trip: 22
+
+
+0x52a5030
+New node inserted! Key: 2018-03-31 08:21:50, Trip: 2
+
+
+0x52a5730
+New node inserted! Key: 2018-03-31 15:32:40, Trip: 3
+
+
+0x52a5e30
+New node inserted! Key: 2018-04-01 00:48:28, Trip: 28
+
+
+0x52a6530
+New node inserted! Key: 2018-04-01 09:15:04, Trip: 4
+
+
+0x52a6c30
+New node inserted! Key: 2018-04-01 10:30:41, Trip: 35
+
+
+0x52a7330
+New node inserted! Key: 2018-04-01 13:56:12, Trip: 16
+
+
+0x52a7a30
+New node inserted! Key: 2018-04-01 21:29:18, Trip: 4
+
+
+0x52a8130
+New node inserted! Key: 2018-04-02 13:21:25, Trip: 16
+
+
+0x52a8830
+New node inserted! Key: 2018-04-02 19:57:43, Trip: 6
+
+
+0x52a8f30
+New node inserted! Key: 2018-04-03 18:26:26, Trip: 20
+
+
+0x52a9630
+New node inserted! Key: 2018-04-03 20:10:26, Trip: 5
+
+
+0x52a9d30
+New node inserted! Key: 2018-04-04 07:12:06, Trip: 7
+
+
+0x52aa430
+New node inserted! Key: 2018-04-04 17:51:27, Trip: 3
+
+
+0x52aab30
+New node inserted! Key: 2018-04-04 18:33:21, Trip: 13
+
+
+0x52ab230
+New node inserted! Key: 2018-04-04 21:23:42, Trip: 5
+
+
+0x52ab930
+New node inserted! Key: 2018-04-05 12:30:20, Trip: 16
+
+
+0x52ac030
+New node inserted! Key: 2018-04-05 13:54:18, Trip: 13
+
+
+0x52ac730
+New node inserted! Key: 2018-04-05 16:35:40, Trip: 5
+
+
+0x52ace30
+New node inserted! Key: 2018-04-05 20:48:29, Trip: 3
+
+
+0x52ad530
+New node inserted! Key: 2018-04-06 01:53:56, Trip: 21
+
+
+0x52adc30
+New node inserted! Key: 2018-04-06 15:17:10, Trip: 6
+
+
+0x52ae330
+New node inserted! Key: 2018-04-07 13:34:27, Trip: 11
+
+
+0x52aea30
+New node inserted! Key: 2018-04-07 15:23:18, Trip: 17
+
+
+0x52af130
+New node inserted! Key: 2018-04-07 19:00:32, Trip: 13
+
+
+0x52af830
+New node inserted! Key: 2018-04-07 21:14:11, Trip: 4
+
+
+0x52aff30
+New node inserted! Key: 2018-04-08 07:53:24, Trip: 19
+
+
+0x52b0630
+New node inserted! Key: 2018-04-09 19:54:10, Trip: 4
+
+
+0x52b0d30
+New node inserted! Key: 2018-04-10 13:47:10, Trip: 28
+
+
+0x52b1430
+New node inserted! Key: 2018-04-10 22:07:51, Trip: 4
+
+
+0x52b1b30
+New node inserted! Key: 2018-04-11 08:04:34, Trip: 2
+
+
+0x52b2230
+New node inserted! Key: 2018-04-11 09:19:26, Trip: 11
+
+
+0x52b2930
+New node inserted! Key: 2018-04-11 12:44:42, Trip: 12
+
+
+0x52b3030
+New node inserted! Key: 2018-04-11 18:04:40, Trip: 5
+
+
+0x52b3730
+New node inserted! Key: 2018-04-11 20:36:12, Trip: 15
+
+
+0x52b3e30
+New node inserted! Key: 2018-04-11 21:04:17, Trip: 19
+
+
+0x52b4530
+New node inserted! Key: 2018-04-12 11:31:15, Trip: 13
+
+
+0x52b4c30
+New node inserted! Key: 2018-04-12 12:31:14, Trip: 14
+
+
+0x52b5330
+New node inserted! Key: 2018-04-12 13:02:15, Trip: 35
+
+
+0x52b5a30
+New node inserted! Key: 2018-04-12 17:29:42, Trip: 31
+
+
+0x52b6130
+New node inserted! Key: 2018-04-12 21:47:41, Trip: 11
+
+
+0x52b6830
+New node inserted! Key: 2018-04-13 08:49:33, Trip: 9
+
+
+0x52b6f30
+New node inserted! Key: 2018-04-14 17:03:27, Trip: 10
+
+
+0x52b7630
+New node inserted! Key: 2018-04-14 18:19:10, Trip: 16
+
+
+0x52b7d30
+New node inserted! Key: 2018-04-14 19:06:05, Trip: 8
+
+
+0x52b8430
+New node inserted! Key: 2018-04-14 19:11:02, Trip: 11
+
+
+0x52b8b30
+New node inserted! Key: 2018-04-15 04:05:43, Trip: 8
+
+
+0x52b9230
+New node inserted! Key: 2018-04-15 07:15:32, Trip: 6
+
+
+0x52b9930
+New node inserted! Key: 2018-04-15 12:37:03, Trip: 3
+
+
+0x52ba030
+New node inserted! Key: 2018-04-15 15:27:04, Trip: 16
+
+
+0x52ba730
+New node inserted! Key: 2018-04-16 07:56:10, Trip: 16
+
+
+0x52bae30
+New node inserted! Key: 2018-04-16 08:13:56, Trip: 6
+
+
+0x52bb530
+New node inserted! Key: 2018-04-16 16:36:53, Trip: 4
+
+
+0x52bbc30
+New node inserted! Key: 2018-04-18 06:37:17, Trip: 5
+
+
+0x52bc330
+New node inserted! Key: 2018-04-18 08:13:31, Trip: 3
+
+
+0x52bca30
+New node inserted! Key: 2018-04-18 10:39:56, Trip: 15
+
+
+0x52bd130
+New node inserted! Key: 2018-04-18 13:40:35, Trip: 10
+
+
+0x52bd830
+New node inserted! Key: 2018-04-18 15:12:57, Trip: 10
+
+
+0x52bdf30
+New node inserted! Key: 2018-04-18 19:42:42, Trip: 14
+
+
+0x52be630
+New node inserted! Key: 2018-04-19 22:28:37, Trip: 13
+
+
+0x52bed30
+New node inserted! Key: 2018-04-20 16:14:17, Trip: 26
+
+
+0x52bf430
+New node inserted! Key: 2018-04-20 19:36:12, Trip: 11
+
+
+0x52bfb30
+New node inserted! Key: 2018-04-20 23:28:25, Trip: 10
+
+
+0x52c0230
+New node inserted! Key: 2018-04-21 01:06:47, Trip: 32
+
+
+0x52c0930
+New node inserted! Key: 2018-04-21 01:07:22, Trip: 5
+
+
+0x52c1030
+New node inserted! Key: 2018-04-21 16:43:41, Trip: 6
+
+
+0x52c1730
+New node inserted! Key: 2018-04-21 18:54:35, Trip: 12
+
+
+0x52c1e30
+New node inserted! Key: 2018-04-22 16:05:00, Trip: 15
+
+
+0x52c2530
+New node inserted! Key: 2018-04-23 20:54:30, Trip: 25
+
+
+0x52c2c30
+New node inserted! Key: 2018-04-24 00:44:45, Trip: 3
+
+
+0x52c3330
+New node inserted! Key: 2018-04-24 05:51:50, Trip: 16
+
+
+0x52c3a30
+New node inserted! Key: 2018-04-24 14:05:15, Trip: 25
+
+
+0x52c4130
+New node inserted! Key: 2018-04-24 21:15:10, Trip: 13
+
+
+0x52c4830
+New node inserted! Key: 2018-04-24 21:41:45, Trip: 7
+
+
+0x52c4f30
+New node inserted! Key: 2018-04-25 08:46:41, Trip: 12
+
+
+0x52c5630
+New node inserted! Key: 2018-04-25 15:02:36, Trip: 10
+
+
+0x52c5d30
+New node inserted! Key: 2018-04-26 14:20:31, Trip: 24
+
+
+0x52c6430
+New node inserted! Key: 2018-04-26 17:09:43, Trip: 9
+
+
+0x52c6b30
+New node inserted! Key: 2018-04-27 00:16:13, Trip: 15
+
+
+0x52c7230
+New node inserted! Key: 2018-04-27 00:46:27, Trip: 42
+
+
+0x52c7930
+New node inserted! Key: 2018-04-27 17:49:19, Trip: 16
+
+
+0x52c8030
+New node inserted! Key: 2018-04-28 17:35:03, Trip: 69
+
+
+0x52c8730
+New node inserted! Key: 2018-04-28 18:54:34, Trip: 5
+
+
+0x52c8e30
+New node inserted! Key: 2018-04-28 20:26:58, Trip: 1
+
+
+0x52c9530
+New node inserted! Key: 2018-04-28 22:10:30, Trip: 5
+
+
+0x52c9c30
+New node inserted! Key: 2018-04-29 05:21:56, Trip: 5
+
+
+0x52ca330
+New node inserted! Key: 2018-04-29 16:46:55, Trip: 9
+
+
+0x52caa30
+New node inserted! Key: 2018-04-30 08:04:04, Trip: 11
+
+
+0x52cb130
+New node inserted! Key: 2018-04-30 08:15:26, Trip: 7
+
+
+0x52cb830
+New node inserted! Key: 2018-04-30 09:21:36, Trip: 11
+
+
+0x52cbf30
+New node inserted! Key: 2018-04-30 11:45:14, Trip: 1417
+
+
+0x52cc630
+New node inserted! Key: 2018-04-30 23:25:54, Trip: 8
+
+
+0x52ccd30
+New node inserted! Key: 2018-05-01 08:59:34, Trip: 12
+
+
+0x52cd430
+New node inserted! Key: 2018-05-01 18:42:19, Trip: 13
+
+
+0x52cdb30
+New node inserted! Key: 2018-05-01 18:55:50, Trip: 9
+
+
+0x52ce230
+New node inserted! Key: 2018-05-02 11:10:36, Trip: 20
+
+
+0x52ce930
+New node inserted! Key: 2018-05-02 12:48:20, Trip: 27
+
+
+0x52cf030
+New node inserted! Key: 2018-05-02 21:19:19, Trip: 12
+
+
+0x52cf730
+New node inserted! Key: 2018-05-02 22:15:18, Trip: 1
+
+
+0x52cfe30
+New node inserted! Key: 2018-05-03 08:00:41, Trip: 8
+
+
+0x52d0530
+New node inserted! Key: 2018-05-03 11:22:39, Trip: 22
+
+
+0x52d0c30
+New node inserted! Key: 2018-05-03 18:09:31, Trip: 4
+
+
+0x52d1330
+New node inserted! Key: 2018-05-04 13:21:30, Trip: 31
+
+
+0x52d1a30
+New node inserted! Key: 2018-05-04 16:29:12, Trip: 37
+
+
+0x52d2130
+New node inserted! Key: 2018-05-04 18:07:09, Trip: 21
+
+
+0x52d2830
+New node inserted! Key: 2018-05-04 18:24:01, Trip: 20
+
+
+0x52d2f30
+New node inserted! Key: 2018-05-04 19:19:53, Trip: 6
+
+
+0x52d3630
+New node inserted! Key: 2018-05-04 21:51:06, Trip: 5
+
+
+0x52d3d30
+New node inserted! Key: 2018-05-05 05:02:14, Trip: 12
+
+
+0x52d4430
+New node inserted! Key: 2018-05-05 12:23:40, Trip: 3
+
+
+0x52d4b30
+New node inserted! Key: 2018-05-06 15:37:48, Trip: 7
+
+
+0x52d5230
+New node inserted! Key: 2018-05-07 23:02:34, Trip: 21
+
+
+0x52d5930
+New node inserted! Key: 2018-05-08 14:30:12, Trip: 31
+
+
+0x52d6030
+New node inserted! Key: 2018-05-08 19:20:17, Trip: 29
+
+
+0x52d6730
+New node inserted! Key: 2018-05-08 21:22:35, Trip: 32
+
+
+0x52d6e30
+New node inserted! Key: 2018-05-08 23:42:25, Trip: 5
+
+
+0x52d7530
+New node inserted! Key: 2018-05-09 12:13:27, Trip: 29
+
+
+0x52d7c30
+New node inserted! Key: 2018-05-10 19:19:43, Trip: 4
+
+
+0x52d8330
+New node inserted! Key: 2018-05-11 12:56:57, Trip: 23
+
+
+0x52d8a30
+New node inserted! Key: 2018-05-11 15:45:46, Trip: 7
+
+
+0x52d9130
+New node inserted! Key: 2018-05-11 18:45:37, Trip: 38
+
+
+0x52d9830
+New node inserted! Key: 2018-05-12 11:16:10, Trip: 5
+
+
+0x52d9f30
+New node inserted! Key: 2018-05-12 14:09:22, Trip: 16
+
+
+0x52da630
+New node inserted! Key: 2018-05-12 16:38:00, Trip: 8
+
+
+0x52dad30
+New node inserted! Key: 2018-05-13 15:37:30, Trip: 18
+
+
+0x52db430
+New node inserted! Key: 2018-05-13 15:52:14, Trip: 11
+
+
+0x52dbb30
+New node inserted! Key: 2018-05-13 21:34:08, Trip: 4
+
+
+0x52dc230
+New node inserted! Key: 2018-05-14 03:49:09, Trip: 25
+
+
+0x52dc930
+New node inserted! Key: 2018-05-14 05:49:07, Trip: 5
+
+
+0x52dd030
+New node inserted! Key: 2018-05-14 07:16:46, Trip: 16
+
+
+0x52dd730
+New node inserted! Key: 2018-05-14 08:51:44, Trip: 7
+
+
+0x52dde30
+New node inserted! Key: 2018-05-14 23:06:36, Trip: 4
+
+
+0x52de530
+New node inserted! Key: 2018-05-15 08:23:57, Trip: 15
+
+
+0x52dec30
+New node inserted! Key: 2018-05-15 09:11:33, Trip: 83
+
+
+0x52df330
+New node inserted! Key: 2018-05-15 13:24:34, Trip: 7
+
+
+0x52dfa30
+New node inserted! Key: 2018-05-15 21:06:00, Trip: 8
+
+
+0x52e0130
+New node inserted! Key: 2018-05-15 21:13:55, Trip: 21
+
+
+0x52e0830
+New node inserted! Key: 2018-05-16 12:37:05, Trip: 4
+
+
+0x52e0f30
+New node inserted! Key: 2018-05-17 07:32:05, Trip: 7
+
+
+0x52e1630
+New node inserted! Key: 2018-05-17 17:20:21, Trip: 13
+
+
+0x52e1d30
+New node inserted! Key: 2018-05-18 10:58:58, Trip: 15
+
+
+0x52e2430
+New node inserted! Key: 2018-05-18 20:44:51, Trip: 25
+
+
+0x52e2b30
+New node inserted! Key: 2018-05-19 07:52:13, Trip: 1
+
+
+0x52e3230
+New node inserted! Key: 2018-05-20 01:26:09, Trip: 13
+
+
+0x52e3930
+New node inserted! Key: 2018-05-20 08:29:20, Trip: 11
+
+
+0x52e4030
+New node inserted! Key: 2018-05-20 15:56:14, Trip: 8
+
+
+0x52e4730
+New node inserted! Key: 2018-05-20 23:09:14, Trip: 8
+
+
+0x52e4e30
+New node inserted! Key: 2018-05-21 06:43:41, Trip: 15
+
+
+0x52e5530
+New node inserted! Key: 2018-05-21 08:05:51, Trip: 3
+
+
+0x52e5c30
+New node inserted! Key: 2018-05-21 11:32:13, Trip: 12
+
+
+0x52e6330
+New node inserted! Key: 2018-05-21 21:53:50, Trip: 10
+
+
+0x52e6a30
+New node inserted! Key: 2018-05-22 10:46:55, Trip: 3
+
+
+0x52e7130
+New node inserted! Key: 2018-05-22 17:15:24, Trip: 17
+
+
+0x52e7830
+New node inserted! Key: 2018-05-22 18:22:19, Trip: 47
+
+
+0x52e7f30
+New node inserted! Key: 2018-05-23 19:31:41, Trip: 8
+
+
+0x52e8630
+New node inserted! Key: 2018-05-24 20:02:15, Trip: 14
+
+
+0x52e8d30
+New node inserted! Key: 2018-05-24 21:35:33, Trip: 16
+
+
+0x52e9430
+New node inserted! Key: 2018-05-26 07:37:58, Trip: 13
+
+
+0x52e9b30
+New node inserted! Key: 2018-05-26 18:35:59, Trip: 31
+
+
+0x52ea230
+New node inserted! Key: 2018-05-28 15:24:08, Trip: 21
+
+
+0x52ea930
+New node inserted! Key: 2018-05-28 20:49:48, Trip: 39
+
+
+0x52eb030
+New node inserted! Key: 2018-05-28 21:04:25, Trip: 7
+
+
+0x52eb730
+New node inserted! Key: 2018-05-29 08:00:57, Trip: 55
+
+
+0x52ebe30
+New node inserted! Key: 2018-05-30 19:37:11, Trip: 3
+
+
+0x52ec530
+New node inserted! Key: 2018-05-30 21:47:25, Trip: 11
+
+
+0x52ecc30
+New node inserted! Key: 2018-05-31 13:36:11, Trip: 78
+
+
+0x52ed330
+New node inserted! Key: 2018-05-31 14:39:50, Trip: 11
+
+
+0x52eda30
+New node inserted! Key: 2018-05-31 16:12:59, Trip: 5
+
+
+0x52ee130
+New node inserted! Key: 2018-05-31 16:44:16, Trip: 4
+
+
+0x52ee830
+New node inserted! Key: 2018-06-01 01:10:10, Trip: 23
+
+
+0x52eef30
+New node inserted! Key: 2018-06-01 01:39:03, Trip: 9
+
+
+0x52ef630
+New node inserted! Key: 2018-06-01 04:25:57, Trip: 11
+
+
+0x52efd30
+New node inserted! Key: 2018-06-01 06:59:52, Trip: 5
+
+
+0x52f0430
+New node inserted! Key: 2018-06-01 13:05:47, Trip: 7
+
+
+0x52f0b30
+New node inserted! Key: 2018-06-01 15:54:46, Trip: 3
+
+
+0x52f1230
+New node inserted! Key: 2018-06-01 18:33:30, Trip: 40
+
+
+0x52f1930
+New node inserted! Key: 2018-06-02 02:19:28, Trip: 18
+
+
+0x52f2030
+New node inserted! Key: 2018-06-02 14:20:29, Trip: 3
+
+
+0x52f2730
+New node inserted! Key: 2018-06-03 02:57:48, Trip: 7
+
+
+0x52f2e30
+New node inserted! Key: 2018-06-03 09:32:56, Trip: 14
+
+
+0x52f3530
+New node inserted! Key: 2018-06-03 12:48:21, Trip: 23
+
+
+0x52f3c30
+New node inserted! Key: 2018-06-03 15:20:05, Trip: 32
+
+
+0x52f4330
+New node inserted! Key: 2018-06-04 11:32:59, Trip: 22
+
+
+0x52f4a30
+New node inserted! Key: 2018-06-04 17:48:21, Trip: 8
+
+
+0x52f5130
+New node inserted! Key: 2018-06-05 12:41:04, Trip: 24
+
+
+0x52f5830
+New node inserted! Key: 2018-06-05 22:00:00, Trip: 13
+
+
+0x52f5f30
+New node inserted! Key: 2018-06-06 07:28:39, Trip: 12
+
+
+0x52f6630
+New node inserted! Key: 2018-06-06 10:57:41, Trip: 1
+
+
+0x52f6d30
+New node inserted! Key: 2018-06-07 09:15:16, Trip: 11
+
+
+0x52f7430
+New node inserted! Key: 2018-06-07 21:33:50, Trip: 5
+
+
+0x52f7b30
+New node inserted! Key: 2018-06-08 11:45:34, Trip: 49
+
+
+0x52f8230
+New node inserted! Key: 2018-06-08 16:28:53, Trip: 21
+
+
+0x52f8930
+New node inserted! Key: 2018-06-08 18:48:20, Trip: 32
+
+
+0x52f9030
+New node inserted! Key: 2018-06-09 00:21:36, Trip: 33
+
+
+0x52f9730
+New node inserted! Key: 2018-06-09 07:56:17, Trip: 9
+
+
+0x52f9e30
+New node inserted! Key: 2018-06-09 15:36:00, Trip: 8
+
+
+0x52fa530
+New node inserted! Key: 2018-06-10 13:38:44, Trip: 6
+
+
+0x52fac30
+New node inserted! Key: 2018-06-10 14:35:09, Trip: 24
+
+
+0x52fb330
+New node inserted! Key: 2018-06-10 15:48:42, Trip: 61
+
+
+0x52fba30
+New node inserted! Key: 2018-06-10 21:20:27, Trip: 7
+
+
+0x52fc130
+New node inserted! Key: 2018-06-10 22:54:26, Trip: 2
+
+
+0x52fc830
+New node inserted! Key: 2018-06-10 23:29:37, Trip: 7
+
+
+0x52fcf30
+New node inserted! Key: 2018-06-11 11:44:30, Trip: 4
+
+
+0x52fd630
+New node inserted! Key: 2018-06-12 05:57:33, Trip: 22
+
+
+0x52fdd30
+New node inserted! Key: 2018-06-12 08:34:02, Trip: 7
+
+
+0x52fe430
+New node inserted! Key: 2018-06-12 21:36:00, Trip: 2
+
+
+0x52feb30
+New node inserted! Key: 2018-06-12 21:46:41, Trip: 12
+
+
+0x52ff230
+New node inserted! Key: 2018-06-13 04:22:38, Trip: 2
+
+
+0x52ff930
+New node inserted! Key: 2018-06-14 07:17:02, Trip: 42
+
+
+0x5300030
+New node inserted! Key: 2018-06-14 12:41:42, Trip: 30
+
+
+0x5300730
+New node inserted! Key: 2018-06-14 19:15:50, Trip: 4
+
+
+0x5300e30
+New node inserted! Key: 2018-06-15 12:09:12, Trip: 2
+
+
+0x5301530
+New node inserted! Key: 2018-06-16 14:21:03, Trip: 1
+
+
+0x5301c30
+New node inserted! Key: 2018-06-16 22:20:09, Trip: 31
+
+
+0x5302330
+New node inserted! Key: 2018-06-17 12:54:58, Trip: 5
+
+
+0x5302a30
+New node inserted! Key: 2018-06-17 15:50:35, Trip: 18
+
+
+0x5303130
+New node inserted! Key: 2018-06-17 18:24:18, Trip: 16
+
+
+0x5303830
+New node inserted! Key: 2018-06-17 19:43:46, Trip: 20
+
+
+0x5303f30
+New node inserted! Key: 2018-06-18 20:34:28, Trip: 6
+
+
+0x5304630
+New node inserted! Key: 2018-06-18 21:29:43, Trip: 15
+
+
+0x5304d30
+New node inserted! Key: 2018-06-19 10:19:27, Trip: 8
+
+
+0x5305430
+New node inserted! Key: 2018-06-19 13:53:09, Trip: 10
+
+
+0x5305b30
+New node inserted! Key: 2018-06-19 18:26:50, Trip: 27
+
+
+0x5306230
+New node inserted! Key: 2018-06-19 20:24:16, Trip: 3
+
+
+0x5306930
+New node inserted! Key: 2018-06-20 17:23:36, Trip: 36
+
+
+0x5307030
+New node inserted! Key: 2018-06-20 20:29:55, Trip: 30
+
+
+0x5307730
+New node inserted! Key: 2018-06-20 21:28:30, Trip: 17
+
+
+0x5307e30
+New node inserted! Key: 2018-06-20 22:19:27, Trip: 12
+
+
+0x5308530
+New node inserted! Key: 2018-06-22 17:39:01, Trip: 13
+
+
+0x5308c30
+New node inserted! Key: 2018-06-23 09:43:43, Trip: 7
+
+
+0x5309330
+New node inserted! Key: 2018-06-23 09:57:32, Trip: 6
+
+
+0x5309a30
+New node inserted! Key: 2018-06-23 19:15:51, Trip: 11
+
+
+0x530a130
+New node inserted! Key: 2018-06-23 23:23:34, Trip: 11
+
+
+0x530a830
+New node inserted! Key: 2018-06-24 11:44:51, Trip: 20
+
+
+0x530af30
+New node inserted! Key: 2018-06-24 17:08:22, Trip: 19
+
+
+0x530b630
+New node inserted! Key: 2018-06-24 20:13:34, Trip: 9
+
+
+0x530bd30
+New node inserted! Key: 2018-06-25 10:12:54, Trip: 5
+
+
+0x530c430
+New node inserted! Key: 2018-06-26 06:19:54, Trip: 5
+
+
+0x530cb30
+New node inserted! Key: 2018-06-26 11:31:19, Trip: 4
+
+
+0x530d230
+New node inserted! Key: 2018-06-26 16:43:55, Trip: 3
+
+
+0x530d930
+New node inserted! Key: 2018-06-27 14:28:10, Trip: 11
+
+
+0x530e030
+New node inserted! Key: 2018-06-27 19:19:50, Trip: 15
+
+
+0x530e730
+New node inserted! Key: 2018-06-27 19:20:02, Trip: 7
+
+
+0x530ee30
+New node inserted! Key: 2018-06-28 14:16:19, Trip: 19
+
+
+0x530f530
+New node inserted! Key: 2018-06-28 21:17:47, Trip: 36
+
+
+0x530fc30
+New node inserted! Key: 2018-06-29 09:57:05, Trip: 20
+
+
+0x5310330
+New node inserted! Key: 2018-06-29 19:07:45, Trip: 55
+
+
+0x5310a30
+New node inserted! Key: 2018-06-30 03:33:07, Trip: 8
+
+
+0x5311130
+New node inserted! Key: 2018-06-30 12:04:24, Trip: 6
+
+
+0x5311830
+New node inserted! Key: 2018-07-01 15:14:49, Trip: 11
+
+
+0x5311f30
+New node inserted! Key: 2018-07-01 22:29:14, Trip: 6
+
+
+0x5312630
+New node inserted! Key: 2018-07-02 15:03:00, Trip: 7
+
+
+0x5312d30
+New node inserted! Key: 2018-07-02 20:47:19, Trip: 5
+
+
+0x5313430
+New node inserted! Key: 2018-07-03 07:27:00, Trip: 22
+
+
+0x5313b30
+New node inserted! Key: 2018-07-03 15:06:47, Trip: 15
+
+
+0x5314230
+New node inserted! Key: 2018-07-03 18:29:30, Trip: 16
+
+
+0x5314930
+New node inserted! Key: 2018-07-03 20:41:47, Trip: 10
+
+
+0x5315030
+New node inserted! Key: 2018-07-04 11:27:47, Trip: 21
+
+
+0x5315730
+New node inserted! Key: 2018-07-04 16:20:37, Trip: 7
+
+
+0x5315e30
+New node inserted! Key: 2018-07-05 12:49:27, Trip: 5
+
+
+0x5316530
+New node inserted! Key: 2018-07-05 16:28:08, Trip: 5
+
+
+0x5316c30
+New node inserted! Key: 2018-07-05 20:19:47, Trip: 7
+
+
+0x5317330
+New node inserted! Key: 2018-07-05 21:20:47, Trip: 17
+
+
+0x5317a30
+New node inserted! Key: 2018-07-06 08:45:54, Trip: 23
+
+
+0x5318130
+New node inserted! Key: 2018-07-06 17:07:44, Trip: 15
+
+
+0x5318830
+New node inserted! Key: 2018-07-07 09:50:24, Trip: 12
+
+
+0x5318f30
+New node inserted! Key: 2018-07-07 22:34:20, Trip: 4
+
+
+0x5319630
+New node inserted! Key: 2018-07-08 02:06:48, Trip: 7
+
+
+0x5319d30
+New node inserted! Key: 2018-07-08 07:52:42, Trip: 3
+
+
+0x531a430
+New node inserted! Key: 2018-07-09 03:11:39, Trip: 6
+
+
+0x531ab30
+New node inserted! Key: 2018-07-09 15:58:25, Trip: 3
+
+
+0x531b230
+New node inserted! Key: 2018-07-09 16:56:19, Trip: 71
+
+
+0x531b930
+New node inserted! Key: 2018-07-09 18:51:16, Trip: 7
+
+
+0x531c030
+New node inserted! Key: 2018-07-10 07:15:26, Trip: 3
+
+
+0x531c730
+New node inserted! Key: 2018-07-11 13:59:00, Trip: 7
+
+
+0x531ce30
+New node inserted! Key: 2018-07-11 15:35:38, Trip: 2
+
+
+0x531d530
+New node inserted! Key: 2018-07-11 21:43:01, Trip: 29
+
+
+0x531dc30
+New node inserted! Key: 2018-07-12 06:04:50, Trip: 10
+
+
+0x531e330
+New node inserted! Key: 2018-07-12 13:03:34, Trip: 38
+
+
+0x531ea30
+New node inserted! Key: 2018-07-13 11:54:53, Trip: 19
+
+
+0x531f130
+New node inserted! Key: 2018-07-13 18:25:03, Trip: 8
+
+
+0x531f830
+New node inserted! Key: 2018-07-13 21:58:24, Trip: 15
+
+
+0x531ff30
+New node inserted! Key: 2018-07-13 22:29:58, Trip: 28
+
+
+0x5320630
+New node inserted! Key: 2018-07-14 04:03:06, Trip: 12
+
+
+0x5320d30
+New node inserted! Key: 2018-07-14 09:15:21, Trip: 18
+
+
+0x5321430
+New node inserted! Key: 2018-07-14 10:34:32, Trip: 28
+
+
+0x5321b30
+New node inserted! Key: 2018-07-14 18:23:16, Trip: 13
+
+
+0x5322230
+New node inserted! Key: 2018-07-15 20:17:50, Trip: 10
+
+
+0x5322930
+New node inserted! Key: 2018-07-16 12:32:48, Trip: 8
+
+
+0x5323030
+New node inserted! Key: 2018-07-16 15:25:15, Trip: 12
+
+
+0x5323730
+New node inserted! Key: 2018-07-16 20:07:23, Trip: 6
+
+
+0x5323e30
+New node inserted! Key: 2018-07-16 20:08:28, Trip: 9
+
+
+0x5324530
+New node inserted! Key: 2018-07-16 21:09:00, Trip: 4
+
+
+0x5324c30
+New node inserted! Key: 2018-07-17 05:42:41, Trip: 1
+
+
+0x5325330
+New node inserted! Key: 2018-07-17 14:19:49, Trip: 2
+
+
+0x5325a30
+New node inserted! Key: 2018-07-17 23:47:50, Trip: 6
+
+
+0x5326130
+New node inserted! Key: 2018-07-18 08:44:00, Trip: 5
+
+
+0x5326830
+New node inserted! Key: 2018-07-18 11:09:01, Trip: 50
+
+
+0x5326f30
+New node inserted! Key: 2018-07-18 16:49:23, Trip: 11
+
+
+0x5327630
+New node inserted! Key: 2018-07-18 20:29:01, Trip: 8
+
+
+0x5327d30
+New node inserted! Key: 2018-07-19 02:55:34, Trip: 7
+
+
+0x5328430
+New node inserted! Key: 2018-07-20 02:35:51, Trip: 11
+
+
+0x5328b30
+New node inserted! Key: 2018-07-20 23:47:27, Trip: 9
+
+
+0x5329230
+New node inserted! Key: 2018-07-21 00:56:23, Trip: 21
+
+
+0x5329930
+New node inserted! Key: 2018-07-21 01:25:52, Trip: 12
+
+
+0x532a030
+New node inserted! Key: 2018-07-21 07:30:49, Trip: 6
+
+
+0x532a730
+New node inserted! Key: 2018-07-21 17:16:15, Trip: 5
+
+
+0x532ae30
+New node inserted! Key: 2018-07-21 18:42:37, Trip: 16
+
+
+0x532b530
+New node inserted! Key: 2018-07-21 21:26:08, Trip: 12
+
+
+0x532bc30
+New node inserted! Key: 2018-07-22 07:21:08, Trip: 15
+
+
+0x532c330
+New node inserted! Key: 2018-07-22 15:40:01, Trip: 20
+
+
+0x532ca30
+New node inserted! Key: 2018-07-22 19:45:54, Trip: 10
+
+
+0x532d130
+New node inserted! Key: 2018-07-23 18:51:42, Trip: 20
+
+
+0x532d830
+New node inserted! Key: 2018-07-23 22:19:42, Trip: 4
+
+
+0x532df30
+New node inserted! Key: 2018-07-24 18:46:16, Trip: 9
+
+
+0x532e630
+New node inserted! Key: 2018-07-24 19:12:20, Trip: 7
+
+
+0x532ed30
+New node inserted! Key: 2018-07-25 06:42:40, Trip: 11
+
+
+0x532f430
+New node inserted! Key: 2018-07-25 13:01:01, Trip: 12
+
+
+0x532fb30
+New node inserted! Key: 2018-07-25 16:03:51, Trip: 30
+
+
+0x5330230
+New node inserted! Key: 2018-07-25 17:55:59, Trip: 23
+
+
+0x5330930
+New node inserted! Key: 2018-07-25 19:58:27, Trip: 21
+
+
+0x5331030
+New node inserted! Key: 2018-07-25 20:26:15, Trip: 22
+
+
+0x5331730
+New node inserted! Key: 2018-07-26 00:33:07, Trip: 8
+
+
+0x5331e30
+New node inserted! Key: 2018-07-26 03:48:18, Trip: 12
+
+
+0x5332530
+New node inserted! Key: 2018-07-26 11:41:00, Trip: 37
+
+
+0x5332c30
+New node inserted! Key: 2018-07-26 15:50:24, Trip: 27
+
+
+0x5333330
+New node inserted! Key: 2018-07-26 18:42:37, Trip: 12
+
+
+0x5333a30
+New node inserted! Key: 2018-07-26 22:44:12, Trip: 14
+
+
+0x5334130
+New node inserted! Key: 2018-07-26 23:55:38, Trip: 9
+
+
+0x5334830
+New node inserted! Key: 2018-07-27 03:25:19, Trip: 2
+
+
+0x5334f30
+New node inserted! Key: 2018-07-27 10:47:22, Trip: 34
+
+
+0x5335630
+New node inserted! Key: 2018-07-29 03:09:15, Trip: 6
+
+
+0x5335d30
+New node inserted! Key: 2018-07-30 00:37:14, Trip: 3
+
+
+0x5336430
+New node inserted! Key: 2018-07-30 16:11:13, Trip: 5
+
+
+0x5336b30
+New node inserted! Key: 2018-07-31 00:05:38, Trip: 16
+
+
+0x5337230
+New node inserted! Key: 2018-07-31 08:36:35, Trip: 12
+
+
+0x5337930
+New node inserted! Key: 2018-07-31 14:01:06, Trip: 14
+
+
+0x5338030
+New node inserted! Key: 2018-07-31 15:21:02, Trip: 11
+
+
+0x5338730
+New node inserted! Key: 2018-08-01 09:28:23, Trip: 14
+
+
+0x5338e30
+New node inserted! Key: 2018-08-01 12:13:50, Trip: 35
+
+
+0x5339530
+New node inserted! Key: 2018-08-01 16:25:03, Trip: 31
+
+
+0x5339c30
+New node inserted! Key: 2018-08-01 23:01:55, Trip: 7
+
+
+0x533a330
+New node inserted! Key: 2018-08-02 19:02:49, Trip: 12
+
+
+0x533aa30
+New node inserted! Key: 2018-08-03 01:30:55, Trip: 10
+
+
+0x533b130
+New node inserted! Key: 2018-08-03 11:19:20, Trip: 15
+
+
+0x533b830
+New node inserted! Key: 2018-08-03 12:29:06, Trip: 10
+
+
+0x533bf30
+New node inserted! Key: 2018-08-03 21:47:35, Trip: 6
+
+
+0x533c630
+New node inserted! Key: 2018-08-03 22:12:00, Trip: 22
+
+
+0x533cd30
+New node inserted! Key: 2018-08-04 18:39:21, Trip: 6
+
+
+0x533d430
+New node inserted! Key: 2018-08-04 22:27:28, Trip: 11
+
+
+0x533db30
+New node inserted! Key: 2018-08-06 19:58:02, Trip: 17
+
+
+0x533e230
+New node inserted! Key: 2018-08-07 07:08:15, Trip: 11
+
+
+0x533e930
+New node inserted! Key: 2018-08-07 07:15:52, Trip: 3
+
+
+0x533f030
+New node inserted! Key: 2018-08-07 11:07:33, Trip: 16
+
+
+0x533f730
+New node inserted! Key: 2018-08-09 09:58:26, Trip: 5
+
+
+0x533fe30
+New node inserted! Key: 2018-08-09 13:58:16, Trip: 18
+
+
+0x5340530
+New node inserted! Key: 2018-08-09 15:27:58, Trip: 28
+
+
+0x5340c30
+New node inserted! Key: 2018-08-09 18:25:28, Trip: 38
+
+
+0x5341330
+New node inserted! Key: 2018-08-09 19:50:35, Trip: 15
+
+
+0x5341a30
+New node inserted! Key: 2018-08-10 01:27:36, Trip: 13
+
+
+0x5342130
+New node inserted! Key: 2018-08-10 02:25:44, Trip: 5
+
+
+0x5342830
+New node inserted! Key: 2018-08-10 12:49:59, Trip: 16
+
+
+0x5342f30
+New node inserted! Key: 2018-08-10 18:09:41, Trip: 6
+
+
+0x5343630
+New node inserted! Key: 2018-08-11 07:36:31, Trip: 10
+
+
+0x5343d30
+New node inserted! Key: 2018-08-11 17:41:28, Trip: 7
+
+
+0x5344430
+New node inserted! Key: 2018-08-12 16:05:49, Trip: 13
+
+
+0x5344b30
+New node inserted! Key: 2018-08-12 19:33:55, Trip: 5
+
+
+0x5345230
+New node inserted! Key: 2018-08-13 17:24:32, Trip: 9
+
+
+0x5345930
+New node inserted! Key: 2018-08-14 18:31:39, Trip: 2
+
+
+0x5346030
+New node inserted! Key: 2018-08-14 20:05:50, Trip: 11
+
+
+0x5346730
+New node inserted! Key: 2018-08-14 23:45:43, Trip: 5
+
+
+0x5346e30
+New node inserted! Key: 2018-08-15 08:52:19, Trip: 10
+
+
+0x5347530
+New node inserted! Key: 2018-08-18 02:41:42, Trip: 26
+
+
+0x5347c30
+New node inserted! Key: 2018-08-18 08:15:40, Trip: 8
+
+
+0x5348330
+New node inserted! Key: 2018-08-18 15:46:32, Trip: 14
+
+
+0x5348a30
+New node inserted! Key: 2018-08-18 18:17:17, Trip: 8
+
+
+0x5349130
+New node inserted! Key: 2018-08-19 14:31:52, Trip: 6
+
+
+0x5349830
+New node inserted! Key: 2018-08-21 10:26:12, Trip: 26
+
+
+0x5349f30
+New node inserted! Key: 2018-08-21 13:48:13, Trip: 16
+
+
+0x534a630
+New node inserted! Key: 2018-08-21 20:03:57, Trip: 43
+
+
+0x534ad30
+New node inserted! Key: 2018-08-22 22:37:15, Trip: 24
+
+
+0x534b430
+New node inserted! Key: 2018-08-23 07:43:54, Trip: 5
+
+
+0x534bb30
+New node inserted! Key: 2018-08-23 16:49:29, Trip: 20
+
+
+0x534c230
+New node inserted! Key: 2018-08-23 19:17:30, Trip: 15
+
+
+0x534c930
+New node inserted! Key: 2018-08-24 06:45:40, Trip: 12
+
+
+0x534d030
+New node inserted! Key: 2018-08-24 12:41:52, Trip: 7
+
+
+0x534d730
+New node inserted! Key: 2018-08-24 19:07:38, Trip: 27
+
+
+0x534de30
+New node inserted! Key: 2018-08-24 19:15:54, Trip: 1
+
+
+0x534e530
+New node inserted! Key: 2018-08-25 04:04:06, Trip: 4
+
+
+0x534ec30
+New node inserted! Key: 2018-08-26 19:41:13, Trip: 5
+
+
+0x534f330
+New node inserted! Key: 2018-08-27 07:27:46, Trip: 1
+
+
+0x534fa30
+New node inserted! Key: 2018-08-27 12:53:06, Trip: 6
+
+
+0x5350130
+New node inserted! Key: 2018-08-28 09:42:37, Trip: 25
+
+
+0x5350830
+New node inserted! Key: 2018-08-28 14:50:04, Trip: 5
+
+
+0x5350f30
+New node inserted! Key: 2018-08-28 18:01:14, Trip: 5
+
+
+0x5351630
+New node inserted! Key: 2018-08-28 21:24:13, Trip: 7
+
+
+0x5351d30
+New node inserted! Key: 2018-08-29 13:36:21, Trip: 10
+
+
+0x5352430
+New node inserted! Key: 2018-08-29 14:59:14, Trip: 4
+
+
+0x5352b30
+New node inserted! Key: 2018-08-30 09:02:00, Trip: 29
+
+
+0x5353230
+New node inserted! Key: 2018-08-30 13:54:12, Trip: 5
+
+
+0x5353930
+New node inserted! Key: 2018-08-30 19:38:13, Trip: 5
+
+
+0x5354030
+New node inserted! Key: 2018-08-30 22:31:54, Trip: 19
+
+
+0x5354730
+New node inserted! Key: 2018-09-01 17:21:20, Trip: 10
+
+
+0x5354e30
+New node inserted! Key: 2018-09-03 20:41:25, Trip: 12
+
+
+0x5355530
+New node inserted! Key: 2018-09-04 13:48:44, Trip: 9
+
+
+0x5355c30
+New node inserted! Key: 2018-09-04 15:16:56, Trip: 4
+
+
+0x5356330
+New node inserted! Key: 2018-09-04 17:31:34, Trip: 12
+
+
+0x5356a30
+New node inserted! Key: 2018-09-04 19:40:06, Trip: 13
+
+
+0x5357130
+New node inserted! Key: 2018-09-05 07:54:11, Trip: 48
+
+
+0x5357830
+New node inserted! Key: 2018-09-05 13:44:08, Trip: 9
+
+
+0x5357f30
+New node inserted! Key: 2018-09-05 17:36:09, Trip: 9
+
+
+0x5358630
+New node inserted! Key: 2018-09-05 22:09:58, Trip: 12
+
+
+0x5358d30
+New node inserted! Key: 2018-09-05 22:33:40, Trip: 4
+
+
+0x5359430
+New node inserted! Key: 2018-09-06 09:20:19, Trip: 1
+
+
+0x5359b30
+New node inserted! Key: 2018-09-06 19:21:02, Trip: 10
+
+
+0x535a230
+New node inserted! Key: 2018-09-06 20:39:55, Trip: 17
+
+
+0x535a930
+New node inserted! Key: 2018-09-06 21:58:00, Trip: 5
+
+
+0x535b030
+New node inserted! Key: 2018-09-07 10:00:01, Trip: 13
+
+
+0x535b730
+New node inserted! Key: 2018-09-07 21:12:01, Trip: 41
+
+
+0x535be30
+New node inserted! Key: 2018-09-08 11:58:30, Trip: 7
+
+
+0x535c530
+New node inserted! Key: 2018-09-08 21:39:26, Trip: 9
+
+
+0x535cc30
+New node inserted! Key: 2018-09-08 22:29:08, Trip: 19
+
+
+0x535d330
+New node inserted! Key: 2018-09-08 23:16:33, Trip: 11
+
+
+0x535da30
+New node inserted! Key: 2018-09-09 18:54:12, Trip: 9
+
+
+0x535e130
+New node inserted! Key: 2018-09-10 09:52:27, Trip: 25
+
+
+0x535e830
+New node inserted! Key: 2018-09-10 09:54:21, Trip: 5
+
+
+0x535ef30
+New node inserted! Key: 2018-09-10 11:30:35, Trip: 20
+
+
+0x535f630
+New node inserted! Key: 2018-09-11 13:50:35, Trip: 15
+
+
+0x535fd30
+New node inserted! Key: 2018-09-11 15:06:48, Trip: 5
+
+
+0x5360430
+New node inserted! Key: 2018-09-12 18:25:25, Trip: 6
+
+
+0x5360b30
+New node inserted! Key: 2018-09-13 02:20:42, Trip: 6
+
+
+0x5361230
+New node inserted! Key: 2018-09-13 03:24:19, Trip: 27
+
+
+0x5361930
+New node inserted! Key: 2018-09-13 09:37:18, Trip: 14
+
+
+0x5362030
+New node inserted! Key: 2018-09-14 10:15:25, Trip: 7
+
+
+0x5362730
+New node inserted! Key: 2018-09-15 00:25:30, Trip: 11
+
+
+0x5362e30
+New node inserted! Key: 2018-09-15 00:43:12, Trip: 21
+
+
+0x5363530
+New node inserted! Key: 2018-09-15 09:15:55, Trip: 6
+
+
+0x5363c30
+New node inserted! Key: 2018-09-15 11:55:45, Trip: 2
+
+
+0x5364330
+New node inserted! Key: 2018-09-15 12:17:56, Trip: 16
+
+
+0x5364a30
+New node inserted! Key: 2018-09-15 15:33:30, Trip: 13
+
+
+0x5365130
+New node inserted! Key: 2018-09-16 03:13:28, Trip: 6
+
+
+0x5365830
+New node inserted! Key: 2018-09-16 10:53:27, Trip: 5
+
+
+0x5365f30
+New node inserted! Key: 2018-09-16 22:01:46, Trip: 16
+
+
+0x5366630
+New node inserted! Key: 2018-09-16 22:09:19, Trip: 8
+
+
+0x5366d30
+New node inserted! Key: 2018-09-16 22:45:52, Trip: 5
+
+
+0x5367430
+New node inserted! Key: 2018-09-17 05:49:25, Trip: 10
+
+
+0x5367b30
+New node inserted! Key: 2018-09-17 07:01:07, Trip: 6
+
+
+0x5368230
+New node inserted! Key: 2018-09-17 07:25:17, Trip: 46
+
+
+0x5368930
+New node inserted! Key: 2018-09-18 00:20:55, Trip: 4
+
+
+0x5369030
+New node inserted! Key: 2018-09-18 12:13:02, Trip: 16
+
+
+0x5369730
+New node inserted! Key: 2018-09-18 17:12:54, Trip: 24
+
+
+0x5369e30
+New node inserted! Key: 2018-09-18 17:32:30, Trip: 9
+
+
+0x536a530
+New node inserted! Key: 2018-09-18 18:40:26, Trip: 7
+
+
+0x536ac30
+New node inserted! Key: 2018-09-19 10:42:12, Trip: 5
+
+
+0x536b330
+New node inserted! Key: 2018-09-19 10:58:45, Trip: 7
+
+
+0x536ba30
+New node inserted! Key: 2018-09-20 15:39:33, Trip: 23
+
+
+0x536c130
+New node inserted! Key: 2018-09-20 19:47:43, Trip: 12
+
+
+0x536c830
+New node inserted! Key: 2018-09-20 21:43:36, Trip: 9
+
+
+0x536cf30
+New node inserted! Key: 2018-09-21 07:17:26, Trip: 18
+
+
+0x536d630
+New node inserted! Key: 2018-09-22 10:50:34, Trip: 20
+
+
+0x536dd30
+New node inserted! Key: 2018-09-22 18:27:12, Trip: 5
+
+
+0x536e430
+New node inserted! Key: 2018-09-23 08:16:33, Trip: 4
+
+
+0x536eb30
+New node inserted! Key: 2018-09-23 12:47:31, Trip: 35
+
+
+0x536f230
+New node inserted! Key: 2018-09-23 21:01:19, Trip: 40
+
+
+0x536f930
+New node inserted! Key: 2018-09-24 11:16:02, Trip: 9
+
+
+0x5370030
+New node inserted! Key: 2018-09-24 14:06:25, Trip: 6
+
+
+0x5370730
+New node inserted! Key: 2018-09-25 17:18:37, Trip: 14
+
+
+0x5370e30
+New node inserted! Key: 2018-09-26 07:50:58, Trip: 11
+
+
+0x5371530
+New node inserted! Key: 2018-09-26 16:13:53, Trip: 35
+
+
+0x5371c30
+New node inserted! Key: 2018-09-26 19:15:13, Trip: 22
+
+
+0x5372330
+New node inserted! Key: 2018-09-27 09:53:49, Trip: 13
+
+
+0x5372a30
+New node inserted! Key: 2018-09-27 13:41:58, Trip: 1396
+
+
+0x5373130
+New node inserted! Key: 2018-09-27 19:04:39, Trip: 20
+
+
+0x5373830
+New node inserted! Key: 2018-09-27 19:28:52, Trip: 8
+
+
+0x5373f30
+New node inserted! Key: 2018-09-27 21:00:20, Trip: 6
+
+
+0x5374630
+New node inserted! Key: 2018-09-28 00:18:55, Trip: 3
+
+
+0x5374d30
+New node inserted! Key: 2018-09-28 05:00:22, Trip: 13
+
+
+0x5375430
+New node inserted! Key: 2018-09-28 11:59:45, Trip: 22
+
+
+0x5375b30
+New node inserted! Key: 2018-09-28 21:34:35, Trip: 7
+
+
+0x5376230
+New node inserted! Key: 2018-09-29 07:56:29, Trip: 9
+
+
+0x5376930
+New node inserted! Key: 2018-09-29 16:36:52, Trip: 14
+
+
+0x5377030
+New node inserted! Key: 2018-09-29 22:36:28, Trip: 12
+
+
+0x5377730
+New node inserted! Key: 2018-10-02 21:50:44, Trip: 18
+
+
+0x5377e30
+New node inserted! Key: 2018-10-02 23:19:52, Trip: 19
+
+
+0x5378530
+New node inserted! Key: 2018-10-03 14:46:12, Trip: 14
+
+
+0x5378c30
+New node inserted! Key: 2018-10-03 18:45:26, Trip: 17
+
+
+0x5379330
+New node inserted! Key: 2018-10-03 20:33:45, Trip: 4
+
+
+0x5379a30
+New node inserted! Key: 2018-10-03 22:10:59, Trip: 7
+
+
+0x537a130
+New node inserted! Key: 2018-10-04 08:26:31, Trip: 8
+
+
+0x537a830
+New node inserted! Key: 2018-10-04 10:19:45, Trip: 55
+
+
+0x537af30
+New node inserted! Key: 2018-10-04 11:00:24, Trip: 20
+
+
+0x537b630
+New node inserted! Key: 2018-10-04 14:37:08, Trip: 5
+
+
+0x537bd30
+New node inserted! Key: 2018-10-04 14:56:51, Trip: 33
+
+
+0x537c430
+New node inserted! Key: 2018-10-04 15:52:47, Trip: 6
+
+
+0x537cb30
+New node inserted! Key: 2018-10-04 16:37:10, Trip: 8
+
+
+0x537d230
+New node inserted! Key: 2018-10-05 09:35:38, Trip: 26
+
+
+0x537d930
+New node inserted! Key: 2018-10-06 09:00:56, Trip: 2
+
+
+0x537e030
+New node inserted! Key: 2018-10-06 09:49:35, Trip: 1420
+
+
+0x537e730
+New node inserted! Key: 2018-10-06 18:09:34, Trip: 12
+
+
+0x537ee30
+New node inserted! Key: 2018-10-06 23:52:52, Trip: 9
+
+
+0x537f530
+New node inserted! Key: 2018-10-07 09:26:38, Trip: 10
+
+
+0x537fc30
+New node inserted! Key: 2018-10-07 11:14:50, Trip: 3
+
+
+0x5380330
+New node inserted! Key: 2018-10-07 19:07:20, Trip: 3
+
+
+0x5380a30
+New node inserted! Key: 2018-10-08 00:50:27, Trip: 6
+
+
+0x5381130
+New node inserted! Key: 2018-10-08 10:42:21, Trip: 6
+
+
+0x5381830
+New node inserted! Key: 2018-10-08 16:01:11, Trip: 26
+
+
+0x5381f30
+New node inserted! Key: 2018-10-08 19:13:38, Trip: 15
+
+
+0x5382630
+New node inserted! Key: 2018-10-09 21:10:42, Trip: 2
+
+
+0x5382d30
+New node inserted! Key: 2018-10-10 13:48:23, Trip: 11
+
+
+0x5383430
+New node inserted! Key: 2018-10-10 22:04:24, Trip: 9
+
+
+0x5383b30
+New node inserted! Key: 2018-10-11 12:56:33, Trip: 8
+
+
+0x5384230
+New node inserted! Key: 2018-10-12 08:18:08, Trip: 15
+
+
+0x5384930
+New node inserted! Key: 2018-10-12 21:32:03, Trip: 9
+
+
+0x5385030
+New node inserted! Key: 2018-10-12 23:31:13, Trip: 10
+
+
+0x5385730
+New node inserted! Key: 2018-10-13 13:04:37, Trip: 3
+
+
+0x5385e30
+New node inserted! Key: 2018-10-14 01:15:44, Trip: 2
+
+
+0x5386530
+New node inserted! Key: 2018-10-14 06:47:46, Trip: 12
+
+
+0x5386c30
+New node inserted! Key: 2018-10-14 08:38:18, Trip: 17
+
+
+0x5387330
+New node inserted! Key: 2018-10-15 20:47:27, Trip: 8
+
+
+0x5387a30
+New node inserted! Key: 2018-10-16 17:48:11, Trip: 4
+
+
+0x5388130
+New node inserted! Key: 2018-10-17 07:45:25, Trip: 4
+
+
+0x5388830
+New node inserted! Key: 2018-10-17 18:16:35, Trip: 18
+
+
+0x5388f30
+New node inserted! Key: 2018-10-17 19:29:41, Trip: 1
+
+
+0x5389630
+New node inserted! Key: 2018-10-17 20:21:52, Trip: 6
+
+
+0x5389d30
+New node inserted! Key: 2018-10-17 20:53:46, Trip: 9
+
+
+0x538a430
+New node inserted! Key: 2018-10-18 03:58:46, Trip: 1
+
+
+0x538ab30
+New node inserted! Key: 2018-10-18 15:09:01, Trip: 4
+
+
+0x538b230
+New node inserted! Key: 2018-10-18 17:16:42, Trip: 6
+
+
+0x538b930
+New node inserted! Key: 2018-10-18 20:47:16, Trip: 16
+
+
+0x538c030
+New node inserted! Key: 2018-10-19 23:41:51, Trip: 15
+
+
+0x538c730
+New node inserted! Key: 2018-10-20 09:56:34, Trip: 12
+
+
+0x538ce30
+New node inserted! Key: 2018-10-20 15:22:38, Trip: 6
+
+
+0x538d530
+New node inserted! Key: 2018-10-20 22:31:46, Trip: 26
+
+
+0x538dc30
+New node inserted! Key: 2018-10-20 23:55:05, Trip: 11
+
+
+0x538e330
+New node inserted! Key: 2018-10-21 00:25:33, Trip: 10
+
+
+0x538ea30
+New node inserted! Key: 2018-10-22 08:31:37, Trip: 28
+
+
+0x538f130
+New node inserted! Key: 2018-10-22 12:07:41, Trip: 13
+
+
+0x538f830
+New node inserted! Key: 2018-10-22 14:00:27, Trip: 9
+
+
+0x538ff30
+New node inserted! Key: 2018-10-23 10:15:53, Trip: 10
+
+
+0x5390630
+New node inserted! Key: 2018-10-23 12:32:09, Trip: 12
+
+
+0x5390d30
+New node inserted! Key: 2018-10-23 17:19:26, Trip: 19
+
+
+0x5391430
+New node inserted! Key: 2018-10-23 23:32:13, Trip: 2
+
+
+0x5391b30
+New node inserted! Key: 2018-10-24 07:54:38, Trip: 13
+
+
+0x5392230
+New node inserted! Key: 2018-10-24 12:25:43, Trip: 10
+
+
+0x5392930
+New node inserted! Key: 2018-10-24 19:56:57, Trip: 9
+
+
+0x5393030
+New node inserted! Key: 2018-10-25 07:33:22, Trip: 16
+
+
+0x5393730
+New node inserted! Key: 2018-10-25 08:59:16, Trip: 6
+
+
+0x5393e30
+New node inserted! Key: 2018-10-25 12:55:57, Trip: 15
+
+
+0x5394530
+New node inserted! Key: 2018-10-25 17:41:09, Trip: 17
+
+
+0x5394c30
+New node inserted! Key: 2018-10-26 12:35:26, Trip: 17
+
+
+0x5395330
+New node inserted! Key: 2018-10-26 23:04:55, Trip: 6
+
+
+0x5395a30
+New node inserted! Key: 2018-10-27 14:10:11, Trip: 9
+
+
+0x5396130
+New node inserted! Key: 2018-10-27 17:23:54, Trip: 8
+
+
+0x5396830
+New node inserted! Key: 2018-10-27 22:21:42, Trip: 6
+
+
+0x5396f30
+New node inserted! Key: 2018-10-27 23:01:42, Trip: 31
+
+
+0x5397630
+New node inserted! Key: 2018-10-28 11:44:05, Trip: 14
+
+
+0x5397d30
+New node inserted! Key: 2018-10-28 13:53:37, Trip: 18
+
+
+0x5398430
+New node inserted! Key: 2018-10-28 17:04:44, Trip: 11
+
+
+0x5398b30
+New node inserted! Key: 2018-10-29 06:00:19, Trip: 18
+
+
+0x5399230
+New node inserted! Key: 2018-10-29 17:29:43, Trip: 8
+
+
+0x5399930
+New node inserted! Key: 2018-10-29 18:37:29, Trip: 9
+
+
+0x539a030
+New node inserted! Key: 2018-10-29 19:45:38, Trip: 10
+
+
+0x539a730
+New node inserted! Key: 2018-10-30 10:14:50, Trip: 5
+
+
+0x539ae30
+New node inserted! Key: 2018-10-31 14:48:15, Trip: 3
+
+
+0x539b530
+New node inserted! Key: 2018-10-31 19:05:42, Trip: 34
+
+
+0x539bc30
+New node inserted! Key: 2018-10-31 19:47:16, Trip: 8
+
+
+0x539c330
+New node inserted! Key: 2018-10-31 21:23:59, Trip: 10
+
+
+0x539ca30
+New node inserted! Key: 2018-11-01 05:47:22, Trip: 3
+
+
+0x539d130
+New node inserted! Key: 2018-11-01 14:10:32, Trip: 20
+
+
+0x539d830
+New node inserted! Key: 2018-11-01 18:00:15, Trip: 22
+
+
+0x539df30
+New node inserted! Key: 2018-11-01 19:20:14, Trip: 13
+
+
+0x539e630
+New node inserted! Key: 2018-11-01 22:04:58, Trip: 21
+
+
+0x539ed30
+New node inserted! Key: 2018-11-02 08:33:15, Trip: 15
+
+
+0x539f430
+New node inserted! Key: 2018-11-02 18:21:56, Trip: 22
+
+
+0x539fb30
+New node inserted! Key: 2018-11-02 23:34:52, Trip: 13
+
+
+0x53a0230
+New node inserted! Key: 2018-11-03 18:31:58, Trip: 5
+
+
+0x53a0930
+New node inserted! Key: 2018-11-04 10:25:56, Trip: 10
+
+
+0x53a1030
+New node inserted! Key: 2018-11-04 14:06:03, Trip: 42
+
+
+0x53a1730
+New node inserted! Key: 2018-11-05 10:39:13, Trip: 8
+
+
+0x53a1e30
+New node inserted! Key: 2018-11-05 12:17:46, Trip: 16
+
+
+0x53a2530
+New node inserted! Key: 2018-11-07 10:18:39, Trip: 16
+
+
+0x53a2c30
+New node inserted! Key: 2018-11-07 12:12:25, Trip: 9
+
+
+0x53a3330
+New node inserted! Key: 2018-11-07 12:33:30, Trip: 13
+
+
+0x53a3a30
+New node inserted! Key: 2018-11-07 17:50:24, Trip: 18
+
+
+0x53a4130
+New node inserted! Key: 2018-11-07 20:10:59, Trip: 8
+
+
+0x53a4830
+New node inserted! Key: 2018-11-07 21:45:59, Trip: 6
+
+
+0x53a4f30
+New node inserted! Key: 2018-11-08 06:11:30, Trip: 6
+
+
+0x53a5630
+New node inserted! Key: 2018-11-08 13:34:26, Trip: 44
+
+
+0x53a5d30
+New node inserted! Key: 2018-11-08 14:16:18, Trip: 4
+
+
+0x53a6430
+New node inserted! Key: 2018-11-08 21:00:27, Trip: 15
+
+
+0x53a6b30
+New node inserted! Key: 2018-11-09 14:17:54, Trip: 6
+
+
+0x53a7230
+New node inserted! Key: 2018-11-09 16:24:10, Trip: 17
+
+
+0x53a7930
+New node inserted! Key: 2018-11-10 16:47:02, Trip: 4
+
+
+0x53a8030
+New node inserted! Key: 2018-11-10 22:19:03, Trip: 7
+
+
+0x53a8730
+New node inserted! Key: 2018-11-10 23:19:01, Trip: 11
+
+
+0x53a8e30
+New node inserted! Key: 2018-11-12 00:38:44, Trip: 11
+
+
+0x53a9530
+New node inserted! Key: 2018-11-12 08:14:38, Trip: 14
+
+
+0x53a9c30
+New node inserted! Key: 2018-11-12 13:39:19, Trip: 11
+
+
+0x53aa330
+New node inserted! Key: 2018-11-12 18:06:33, Trip: 48
+
+
+0x53aaa30
+New node inserted! Key: 2018-11-12 19:01:19, Trip: 7
+
+
+0x53ab130
+New node inserted! Key: 2018-11-13 00:46:03, Trip: 2
+
+
+0x53ab830
+New node inserted! Key: 2018-11-13 08:26:13, Trip: 3
+
+
+0x53abf30
+New node inserted! Key: 2018-11-13 14:54:32, Trip: 3
+
+
+0x53ac630
+New node inserted! Key: 2018-11-13 19:24:32, Trip: 13
+
+
+0x53acd30
+New node inserted! Key: 2018-11-13 19:30:14, Trip: 4
+
+
+0x53ad430
+New node inserted! Key: 2018-11-13 20:03:56, Trip: 6
+
+
+0x53adb30
+New node inserted! Key: 2018-11-13 22:11:14, Trip: 2
+
+
+0x53ae230
+New node inserted! Key: 2018-11-14 12:38:15, Trip: 29
+
+
+0x53ae930
+New node inserted! Key: 2018-11-14 14:25:42, Trip: 19
+
+
+0x53af030
+New node inserted! Key: 2018-11-14 18:04:15, Trip: 4
+
+
+0x53af730
+New node inserted! Key: 2018-11-14 18:08:52, Trip: 15
+
+
+0x53afe30
+New node inserted! Key: 2018-11-14 21:53:30, Trip: 7
+
+
+0x53b0530
+New node inserted! Key: 2018-11-16 12:54:45, Trip: 13
+
+
+0x53b0c30
+New node inserted! Key: 2018-11-16 19:19:31, Trip: 16
+
+
+0x53b1330
+New node inserted! Key: 2018-11-16 22:59:16, Trip: 13
+
+
+0x53b1a30
+New node inserted! Key: 2018-11-17 01:44:11, Trip: 10
+
+
+0x53b2130
+New node inserted! Key: 2018-11-17 03:23:09, Trip: 4
+
+
+0x53b2830
+New node inserted! Key: 2018-11-17 13:02:24, Trip: 10
+
+
+0x53b2f30
+New node inserted! Key: 2018-11-17 19:01:04, Trip: 6
+
+
+0x53b3630
+New node inserted! Key: 2018-11-18 00:13:24, Trip: 9
+
+
+0x53b3d30
+New node inserted! Key: 2018-11-18 02:02:15, Trip: 11
+
+
+0x53b4430
+New node inserted! Key: 2018-11-18 17:36:00, Trip: 19
+
+
+0x53b4b30
+New node inserted! Key: 2018-11-18 18:04:04, Trip: 28
+
+
+0x53b5230
+New node inserted! Key: 2018-11-19 12:14:41, Trip: 14
+
+
+0x53b5930
+New node inserted! Key: 2018-11-19 13:52:54, Trip: 11
+
+
+0x53b6030
+New node inserted! Key: 2018-11-19 21:44:08, Trip: 15
+
+
+0x53b6730
+New node inserted! Key: 2018-11-20 11:38:54, Trip: 15
+
+
+0x53b6e30
+New node inserted! Key: 2018-11-20 18:46:33, Trip: 13
+
+
+0x53b7530
+New node inserted! Key: 2018-11-20 19:36:30, Trip: 10
+
+
+0x53b7c30
+New node inserted! Key: 2018-11-20 22:55:57, Trip: 12
+
+
+0x53b8330
+New node inserted! Key: 2018-11-21 18:33:41, Trip: 10
+
+
+0x53b8a30
+New node inserted! Key: 2018-11-21 21:52:18, Trip: 5
+
+
+0x53b9130
+New node inserted! Key: 2018-11-22 09:59:28, Trip: 9
+
+
+0x53b9830
+New node inserted! Key: 2018-11-22 13:23:26, Trip: 8
+
+
+0x53b9f30
+New node inserted! Key: 2018-11-22 19:52:01, Trip: 23
+
+
+0x53ba630
+New node inserted! Key: 2018-11-23 19:32:29, Trip: 11
+
+
+0x53bad30
+New node inserted! Key: 2018-11-23 22:10:32, Trip: 6
+
+
+0x53bb430
+New node inserted! Key: 2018-11-24 06:17:08, Trip: 21
+
+
+0x53bbb30
+New node inserted! Key: 2018-11-24 07:49:12, Trip: 10
+
+
+0x53bc230
+New node inserted! Key: 2018-11-25 08:41:33, Trip: 34
+
+
+0x53bc930
+New node inserted! Key: 2018-11-26 04:53:19, Trip: 16
+
+
+0x53bd030
+New node inserted! Key: 2018-11-26 19:59:14, Trip: 12
+
+
+0x53bd730
+New node inserted! Key: 2018-11-27 20:24:44, Trip: 4
+
+
+0x53bde30
+New node inserted! Key: 2018-11-27 21:14:07, Trip: 3
+
+
+0x53be530
+New node inserted! Key: 2018-11-28 14:48:25, Trip: 31
+
+
+0x53bec30
+New node inserted! Key: 2018-11-28 20:53:36, Trip: 21
+
+
+0x53bf330
+New node inserted! Key: 2018-11-29 06:52:46, Trip: 5
+
+
+0x53bfa30
+New node inserted! Key: 2018-11-29 11:35:16, Trip: 8
+
+
+0x53c0130
+New node inserted! Key: 2018-11-29 15:05:01, Trip: 24
+
+
+0x53c0830
+New node inserted! Key: 2018-11-29 15:44:02, Trip: 12
+
+
+0x53c0f30
+New node inserted! Key: 2018-11-29 18:41:19, Trip: 29
+
+
+0x53c1630
+New node inserted! Key: 2018-11-29 19:17:00, Trip: 4
+
+
+0x53c1d30
+New node inserted! Key: 2018-11-30 17:30:16, Trip: 8
+
+
+0x53c2430
+New node inserted! Key: 2018-12-01 07:31:53, Trip: 13
+
+
+0x53c2b30
+New node inserted! Key: 2018-12-01 17:32:43, Trip: 21
+
+
+0x53c3230
+New node inserted! Key: 2018-12-01 17:57:38, Trip: 34
+
+
+0x53c3930
+New node inserted! Key: 2018-12-01 20:57:39, Trip: 14
+
+
+0x53c4030
+New node inserted! Key: 2018-12-01 22:31:36, Trip: 22
+
+
+0x53c4730
+New node inserted! Key: 2018-12-02 11:14:39, Trip: 4
+
+
+0x53c4e30
+New node inserted! Key: 2018-12-02 14:00:24, Trip: 7
+
+
+0x53c5530
+New node inserted! Key: 2018-12-02 14:09:36, Trip: 4
+
+
+0x53c5c30
+New node inserted! Key: 2018-12-02 16:02:00, Trip: 60
+
+
+0x53c6330
+New node inserted! Key: 2018-12-04 07:04:41, Trip: 7
+
+
+0x53c6a30
+New node inserted! Key: 2018-12-04 08:29:09, Trip: 11
+
+
+0x53c7130
+New node inserted! Key: 2018-12-04 23:02:45, Trip: 16
+
+
+0x53c7830
+New node inserted! Key: 2018-12-05 06:26:40, Trip: 12
+
+
+0x53c7f30
+New node inserted! Key: 2018-12-05 14:00:54, Trip: 7
+
+
+0x53c8630
+New node inserted! Key: 2018-12-05 15:21:32, Trip: 3
+
+
+0x53c8d30
+New node inserted! Key: 2018-12-05 17:25:15, Trip: 10
+
+
+0x53c9430
+New node inserted! Key: 2018-12-06 01:05:34, Trip: 24
+
+
+0x53c9b30
+New node inserted! Key: 2018-12-06 10:19:44, Trip: 10
+
+
+0x53ca230
+New node inserted! Key: 2018-12-06 14:43:05, Trip: 18
+
+
+0x53ca930
+New node inserted! Key: 2018-12-06 20:55:48, Trip: 3
+
+
+0x53cb030
+New node inserted! Key: 2018-12-07 20:51:38, Trip: 16
+
+
+0x53cb730
+New node inserted! Key: 2018-12-07 22:14:38, Trip: 28
+
+
+0x53cbe30
+New node inserted! Key: 2018-12-08 07:10:04, Trip: 6
+
+
+0x53cc530
+New node inserted! Key: 2018-12-08 07:14:00, Trip: 4
+
+
+0x53ccc30
+New node inserted! Key: 2018-12-08 21:59:59, Trip: 17
+
+
+0x53cd330
+New node inserted! Key: 2018-12-09 00:51:27, Trip: 6
+
+
+0x53cda30
+New node inserted! Key: 2018-12-09 16:31:55, Trip: 15
+
+
+0x53ce130
+New node inserted! Key: 2018-12-10 06:57:06, Trip: 9
+
+
+0x53ce830
+New node inserted! Key: 2018-12-10 08:30:10, Trip: 11
+
+
+0x53cef30
+New node inserted! Key: 2018-12-11 08:08:45, Trip: 17
+
+
+0x53cf630
+New node inserted! Key: 2018-12-11 19:53:16, Trip: 20
+
+
+0x53cfd30
+New node inserted! Key: 2018-12-12 11:24:06, Trip: 16
+
+
+0x53d0430
+New node inserted! Key: 2018-12-12 20:25:42, Trip: 8
+
+
+0x53d0b30
+New node inserted! Key: 2018-12-12 22:47:33, Trip: 5
+
+
+0x53d1230
+New node inserted! Key: 2018-12-13 07:27:15, Trip: 8
+
+
+0x53d1930
+New node inserted! Key: 2018-12-13 08:23:36, Trip: 37
+
+
+0x53d2030
+New node inserted! Key: 2018-12-13 14:42:16, Trip: 13
+
+
+0x53d2730
+New node inserted! Key: 2018-12-13 20:37:25, Trip: 22
+
+
+0x53d2e30
+New node inserted! Key: 2018-12-14 08:12:29, Trip: 9
+
+
+0x53d3530
+New node inserted! Key: 2018-12-14 09:50:13, Trip: 36
+
+
+0x53d3c30
+New node inserted! Key: 2018-12-14 16:11:47, Trip: 17
+
+
+0x53d4330
+New node inserted! Key: 2018-12-14 17:21:05, Trip: 11
+
+
+0x53d4a30
+New node inserted! Key: 2018-12-15 19:59:48, Trip: 4
+
+
+0x53d5130
+New node inserted! Key: 2018-12-15 21:40:35, Trip: 14
+
+
+0x53d5830
+New node inserted! Key: 2018-12-16 10:31:57, Trip: 9
+
+
+0x53d5f30
+New node inserted! Key: 2018-12-17 14:43:12, Trip: 22
+
+
+0x53d6630
+New node inserted! Key: 2018-12-17 18:15:06, Trip: 9
+
+
+0x53d6d30
+New node inserted! Key: 2018-12-17 18:34:56, Trip: 22
+
+
+0x53d7430
+New node inserted! Key: 2018-12-18 07:49:21, Trip: 14
+
+
+0x53d7b30
+New node inserted! Key: 2018-12-18 08:43:28, Trip: 6
+
+
+0x53d8230
+New node inserted! Key: 2018-12-18 18:54:46, Trip: 9
+
+
+0x53d8930
+New node inserted! Key: 2018-12-19 09:54:29, Trip: 31
+
+
+0x53d9030
+New node inserted! Key: 2018-12-19 10:45:19, Trip: 8
+
+
+0x53d9730
+New node inserted! Key: 2018-12-19 20:59:00, Trip: 32
+
+
+0x53d9e30
+New node inserted! Key: 2018-12-20 16:34:38, Trip: 13
+
+
+0x53da530
+New node inserted! Key: 2018-12-20 20:37:01, Trip: 6
+
+
+0x53dac30
+New node inserted! Key: 2018-12-21 06:28:42, Trip: 9
+
+
+0x53db330
+New node inserted! Key: 2018-12-21 17:30:11, Trip: 8
+
+
+0x53dba30
+New node inserted! Key: 2018-12-21 21:19:57, Trip: 12
+
+
+0x53dc130
+New node inserted! Key: 2018-12-22 01:00:56, Trip: 2
+
+
+0x53dc830
+New node inserted! Key: 2018-12-22 11:08:55, Trip: 5
+
+
+0x53dcf30
+New node inserted! Key: 2018-12-23 08:44:36, Trip: 6
+
+
+0x53dd630
+New node inserted! Key: 2018-12-23 20:06:18, Trip: 1434
+
+
+0x53ddd30
+New node inserted! Key: 2018-12-23 23:58:37, Trip: 12
+
+
+0x53de430
+New node inserted! Key: 2018-12-24 12:27:40, Trip: 8
+
+
+0x53deb30
+New node inserted! Key: 2018-12-24 17:16:21, Trip: 20
+
+
+0x53df230
+New node inserted! Key: 2018-12-25 11:43:54, Trip: 29
+
+
+0x53df930
+New node inserted! Key: 2018-12-26 13:04:38, Trip: 22
+
+
+0x53e0030
+New node inserted! Key: 2018-12-27 08:29:21, Trip: 25
+
+
+0x53e0730
+New node inserted! Key: 2018-12-27 16:36:00, Trip: 18
+
+
+0x53e0e30
+New node inserted! Key: 2018-12-27 19:26:26, Trip: 11
+
+
+0x53e1530
+New node inserted! Key: 2018-12-28 10:45:38, Trip: 2
+
+
+0x53e1c30
+New node inserted! Key: 2018-12-28 14:22:26, Trip: 7
+
+
+0x53e2330
+New node inserted! Key: 2018-12-28 15:00:03, Trip: 8
+
+
+0x53e2a30
+New node inserted! Key: 2018-12-28 16:26:34, Trip: 8
+
+
+0x53e3130
+New node inserted! Key: 2018-12-29 15:35:35, Trip: 17
+
+
+0x53e3830
+New node inserted! Key: 2018-12-30 18:44:33, Trip: 11
+
+
+0x53e3f30
+New node inserted! Key: 2018-12-30 22:51:08, Trip: 31
+
+
+0x53e4630
+New node inserted! Key: 2018-12-30 22:58:29, Trip: 26
+
 ==================================OUTPUT==================================

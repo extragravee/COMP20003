@@ -48,7 +48,7 @@ int main(int argc, char** argv){
 	//at the moment frees all members of each struct, and the struct itself too.
 	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
 		new_trip = create_trip_record(buffer, field);
-		print_trip(new_trip);
+		// print_trip(new_trip);
 		bst = insert_node(bst, new_trip);
 		
 	}

@@ -18,7 +18,7 @@ test:
 # 	./dict1 2018sample3_no_headers.csv output.txt
 
 memtest:
-	valgrind --leak-check=full -v ./dict1 infile.csv output.txt
+	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt
 
 memtest2:
 	valgrind --leak-check=full -v ./dict1 2018sample2_no_headers.csv output.txt
@@ -29,8 +29,8 @@ memtest3:
 dup_test:
 	make dict1
 	./dict1 2018sample1_no_headers.csv > output.txt
-	grep dupl output.txt
-	rm outputc.txt
+	grep duplicate: output.txt
+	
 # backup:
 # 	gcc -Wall -g -o backup backup.c
 # 	valgrind --leak-check=full -v ./backup 2018sample3_no_headers.csv output.txt

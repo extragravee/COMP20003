@@ -32,7 +32,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 		} 
 		else if(result==0){	
 
-			puts("LL created for the duplicate ");
+			puts("Inserting duplicate: ");
 			// printf("%p<<<<<<<<<<\n", (*insert_here)->duplicates);
 			printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
@@ -49,7 +49,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	(*insert_here)->right = NULL;
 	(*insert_here)->key = trip->pu_datetime;
 	(*insert_here)->trip = trip;
-	printf("\n%p\n==============================", trip);
+	printf("\n%p\n", trip);
 	(*insert_here)->duplicates = NULL;
 
 	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
@@ -65,7 +65,8 @@ void free_tree(struct bst* parent){
 	free_tree(parent->left);
 	free_tree(parent->right);
 	free_members_of_struct(parent->trip); //first free all members of the struct
-	free(parent->trip);
+	free(parent->trip); //free pointer
+	free_duplicates(parent->duplicates);
 	free(parent); //then free the struct
 }
 
