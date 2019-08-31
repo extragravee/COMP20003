@@ -69,7 +69,10 @@ void find_in_bst(char* find_key, struct bst* bst){
 	int result;
 	struct bst** temp = &bst;
 	printf("Find this: %s\n", find_key);
+
+	int counter =0;
 	while(*temp){
+		counter++;
 		result = strcmp(find_key, (*temp)->key);
 		if(result<0){
 			temp = &((*temp)->left);
@@ -78,9 +81,12 @@ void find_in_bst(char* find_key, struct bst* bst){
 		} else if(result==0){
 			puts("Match found!");
 			print_trip((*temp)->trip);
+			printf("Counter: %d\n", counter);
 			return;
 		}
 	}
+	printf("Counter: %d\n", counter);
+	puts("NOMATCH");
 }
 
 

@@ -62,17 +62,17 @@ int main(int argc, char** argv){
 		bst = insert_node(bst, new_trip);
 	}
 
-	// int keylen;
-	// char *key;
-	// while((ls = getline(&input, &buffsize , stdin))!=-1){
-	// 	keylen=strlen(input);
-	// 	key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
-	// 	strcpy(key, input);
-	// 	if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
-	// 	puts("finding now");
-	// 	find_in_bst(key,bst);
-	// 	free(key);
-	// }
+	int keylen;
+	char *key;
+	while((ls = getline(&input, &buffsize , stdin))!=-1){
+		keylen=strlen(input);
+		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
+		strcpy(key, input);
+		if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
+		puts("finding now");
+		find_in_bst(key,bst);
+		free(key);
+	}
 
 	free(input);
 	free_tree(bst);//frees all nodes, structs, and struct members, and pointers
