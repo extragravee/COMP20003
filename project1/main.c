@@ -19,19 +19,20 @@ Provides the skeleton tasks for the project
 #define MAXFIELDSIZE 128
 #define MAXBUFFERSIZE 256
 #define INFILE_ARG 1
+#define OUTFILE_ARG 2
 #define NULLBYTE_SPACE 1
 
 int main(int argc, char** argv){
 	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
 	assert(buffer); //confirm if enough memory was available for buffer
 
-	puts("==================================OUTPUT==================================");
 	for (int i = 0; i < argc; i++) {
 		printf("argv[%d] = \"%s\"\n", i, argv[i]);
 	}
 
 	char *input;
 	input = (char*)malloc(sizeof(char)*MAXFIELDSIZE);
+	assert(input);
 	size_t buffsize = MAXFIELDSIZE;
 	size_t ls;
 	// int num = ftell(stdin);
@@ -67,9 +68,9 @@ int main(int argc, char** argv){
 	while((ls = getline(&input, &buffsize , stdin))!=-1){
 		keylen=strlen(input);
 		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
+		assert(key);
 		strcpy(key, input);
 		if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
-		puts("finding now");
 		find_in_bst(key,bst);
 		free(key);
 	}
@@ -80,7 +81,6 @@ int main(int argc, char** argv){
 	free(buffer); //to clear out the temp buffer memory allocated
 	free(field); //to clear the temp storage for each field
 	
-	puts("==================================OUTPUT==================================");
 	return 0;
 }
 

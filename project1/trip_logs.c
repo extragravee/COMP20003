@@ -52,7 +52,6 @@ Prints all fields of a single trip
 */
 void print_trip(struct trip* new_trip){
 	int counter = 1;
-	puts("Printing=================");
 	while(counter<=18){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);

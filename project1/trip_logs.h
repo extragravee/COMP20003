@@ -53,9 +53,5 @@ frees all the memory allocated for each member in the struct
 */
 void free_members_of_struct(struct trip* trip);
 
-/*
-prints all members of the struct for inspection and testing
-*/
-void print_trip(struct trip* new_trip);
 
 #endif
