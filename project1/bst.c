@@ -32,9 +32,9 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 		} 
 		else if(result==0){	
 			// puts("Inserting duplicate: ");
-			printf("New node inserted! Key: %s, node key: %s\n", trip->pu_datetime, ((*insert_here)->key));
+			printf("Duplicate inserted! Key: %s, node key: %s\n", trip->pu_datetime, ((*insert_here)->key));
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
-			print_duplicates((*insert_here)->duplicates);
+			// print_duplicates((*insert_here)->duplicates);
 			return parent;
 		}
 	}
@@ -82,6 +82,9 @@ void find_in_bst(char* find_key, struct bst* bst){
 			puts("Match found!");
 			print_trip((*temp)->trip);
 			printf("Counter: %d\n", counter);
+			if((*temp)->duplicates){
+				print_duplicates((*temp)->duplicates);
+			}
 			return;
 		}
 	}
