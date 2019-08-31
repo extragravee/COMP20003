@@ -1,5 +1,5 @@
 /*
-Defines the structure and functions for the trip log records provided in
+Defines functions for the trip log records provided in
 the input file.
 Function declerations abstracted to header file "trips_log.h"
 */
@@ -8,7 +8,6 @@ Function declerations abstracted to header file "trips_log.h"
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
 #include "trip_logs.h"
 
 #define DELIM_REGEX "\r,"
@@ -26,11 +25,13 @@ struct trip* create_trip_record(char *buffer, char* field){
 
 	//allocate memory for new trip struct
 	struct trip* new_trip = (struct trip*) malloc(sizeof(struct trip));
+	assert(new_trip);
 
 	//Store first column, must be outside loop due to strtok functionality
 	field = strtok(buffer, DELIM_REGEX);
 	cell_length = (int)strlen(field); 
 	(new_trip->vendor_id) = (char *)malloc((sizeof(char)*cell_length)+NULLBYTE_SPACE);
+	assert(new_trip->vendor_id);
 	strcpy(new_trip->vendor_id, field);
 
 	char **temp;
@@ -38,6 +39,7 @@ struct trip* create_trip_record(char *buffer, char* field){
 		cell_length = (int)strlen(field);
 		temp = get_struct_member(new_trip, counter);
 		*temp = (char *)malloc(sizeof(char)*cell_length+1);
+		assert(*temp);
 		strcpy(*temp, field);
 		counter++;
 	}
@@ -45,6 +47,9 @@ struct trip* create_trip_record(char *buffer, char* field){
 	return new_trip;
 }
 
+/*
+Prints all fields of a single trip
+*/
 void print_trip(struct trip* new_trip){
 	int counter = 1;
 	puts("Printing=================");
@@ -56,9 +61,11 @@ void print_trip(struct trip* new_trip){
 	}
 }
 
+/*
+frees all members of a given trip record
+*/
 void free_members_of_struct(struct trip* trip){
 	int counter = 1;
-
 	while(counter<=18){
 		char **temp;
 		temp = get_struct_member(trip, counter);
@@ -67,6 +74,9 @@ void free_members_of_struct(struct trip* trip){
 	}
 }
 
+/*
+retrieves the memory address of the relevant field by row number
+*/
 char** get_struct_member(struct trip* new_trip, int i){
 	switch(i){
 		case 1: return &(new_trip-> vendor_id);

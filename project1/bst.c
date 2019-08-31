@@ -31,29 +31,24 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 			insert_here = &((*insert_here)->right);
 		} 
 		else if(result==0){	
-
 			puts("Inserting duplicate: ");
-			// printf("%p<<<<<<<<<<\n", (*insert_here)->duplicates);
 			printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
-			
-			// printf("%p<<<<<<<<<<\n", (*insert_here)->duplicates);
 			print_duplicates((*insert_here)->duplicates);
-			// free((*insert_here)->duplicates);
 			return parent;
 		}
 	}
 
+	//once location of new node to be inserted obtained, create that node
 	(*insert_here) = (struct bst*)malloc(sizeof(struct bst));
+	assert(*insert_here);
 	(*insert_here)->left = NULL;
 	(*insert_here)->right = NULL;
 	(*insert_here)->key = trip->pu_datetime;
 	(*insert_here)->trip = trip;
-	printf("\n%p\n", trip);
 	(*insert_here)->duplicates = NULL;
 
 	printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
-
 	return parent;
 }
 

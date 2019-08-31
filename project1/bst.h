@@ -1,13 +1,14 @@
-#ifndef BST_H
-#define BST_H
 /*
 Header file for bst.c includes bst dictionary structure and functions
 Structure
 Functions declarations
 */
 
+#ifndef BST_H
+#define BST_H
+
 /*
-defines structure of binary tree nodes
+structure of binary tree nodes
 */
 struct bst{
 	struct bst* left;

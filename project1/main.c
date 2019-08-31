@@ -2,7 +2,9 @@
 Provides the skeleton tasks for the project
 1. Opens a file
 2. Facilitates creation of trip objects
-3. Adds trip objects to the BST dictionary
+3. Adds trip objects to the BST dictionary (handles duplicates with linked list)
+4. Performs search and writes to output file
+5. Closes file and frees all memory being used by the tree
 */
 
 #include <stdio.h>
@@ -18,7 +20,6 @@ Provides the skeleton tasks for the project
 #define INFILE_ARG 1
 
 int main(int argc, char** argv){
-
 	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
 	assert(buffer); //confirm if enough memory was available for buffer
 
@@ -44,18 +45,18 @@ int main(int argc, char** argv){
 	struct trip* new_trip;
 	struct bst* bst = NULL;
 
-	//Add all trip records to structs
-	//at the moment frees all members of each struct, and the struct itself too.
-	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ //obtains one row from csv
+	//Add all trip records from csv to trip_record structs
+	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ 
 		new_trip = create_trip_record(buffer, field);
 		// print_trip(new_trip);
 		bst = insert_node(bst, new_trip);
 		
 	}
+
 	free_tree(bst);//frees all nodes, structs, and struct members, and pointers
 	fclose(datafile); //to clear out the file pointer
 	free(buffer); //to clear out the temp buffer memory allocated
-	free(field); //to clear the temp storage to store fields one by one within a single row
+	free(field); //to clear the temp storage for each field
 	
 	puts("==================================OUTPUT==================================");
 	return 0;
