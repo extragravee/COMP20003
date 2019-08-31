@@ -47,7 +47,7 @@ void print_duplicates(struct duplicate_ll* head){
 	temp = head;
 
 	while(temp){
-		print_trip(temp->duplicate_trip);
+		// print_trip(temp->duplicate_trip);
 		temp = temp->next;
 	}
 }

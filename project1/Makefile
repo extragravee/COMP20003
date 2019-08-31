@@ -17,13 +17,13 @@ test:
 	./dict1 infile.csv outfile.txt < input.txt
 
 memtest:
-	valgrind --leak-check=full -v ./dict1 infile.csv output.txt <input.txt
+	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt <input.txt
 
 memtest2:
-	valgrind --leak-check=full -v ./dict1 2018sample2_no_headers.csv output.txt
+	valgrind --leak-check=full -v ./dict1 2018sample2_no_headers.csv output.txt <input.txt
 
 memtest3:
-	valgrind --leak-check=full -v ./dict1 2018sample3_no_headers.csv output.txt
+	valgrind --leak-check=full -v ./dict1 2018sample3_no_headers.csv output.txt <input.txt
 
 # dup_test:
 # 	make dict1
