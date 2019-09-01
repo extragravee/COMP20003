@@ -25,11 +25,7 @@ Provides the skeleton tasks for the project
 
 int main(int argc, char** argv){
 	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
-	assert(buffer); //confirm if enough memory was available for buffer
-
-	// for (int i = 0; i < argc; i++) {
-	// 	printf("argv[%d] = \"%s\"\n", i, argv[i]);
-	// }
+	assert(buffer);
 
 	char *input;
 	input = (char*)malloc(sizeof(char)*MAXFIELDSIZE);
@@ -58,7 +54,7 @@ int main(int argc, char** argv){
 		bst = insert_node(bst, new_trip);
 	}
 
-	fclose(datafile); //to clear out the file pointer
+	fclose(datafile); //to clear out the file pointer for input file
 
 	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
 	bufsize = MAXFIELDSIZE;
@@ -77,11 +73,12 @@ int main(int argc, char** argv){
 		free(key);
 	}
 
+	//free out all temporary pointers and buffers
 	fclose(out_file);
-	free(input);
-	free_tree(bst);//frees all nodes, structs, and struct members, and pointers
-	free(buffer); //to clear out the temp buffer memory allocated
-	free(field); //to clear the temp storage for each field
+	free(input);	
+	free_tree(bst);
+	free(buffer); 
+	free(field); 
 	
 	return 0;
 }

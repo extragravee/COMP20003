@@ -14,7 +14,9 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #include "bst.h"
 #include "duplicate_ll.h"
 
-/* inserts a new node into the bst dictionary */
+#define MATCH 0
+
+/* iteratively inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){
 	int result;
 
@@ -24,17 +26,14 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	while(*insert_here != NULL){
 		result = strcmp((trip->pu_datetime), ((*insert_here)->key));
 	
-		if(result < 0){
+		if(result < MATCH){
 			insert_here = &((*insert_here)->left);
 		} 
-		else if(result > 0){
+		else if(result > MATCH){
 			insert_here = &((*insert_here)->right);
 		} 
-		else if(result==0){	
-			// puts("Inserting duplicate: ");
-			// printf("Duplicate inserted! Key: %s, node key: %s\n", trip->pu_datetime, ((*insert_here)->key));
+		else if(result==MATCH){	
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
-			// print_duplicates((*insert_here)->duplicates);
 			return parent;
 		}
 	}
@@ -48,11 +47,12 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	(*insert_here)->trip = trip;
 	(*insert_here)->duplicates = NULL;
 
-	// printf("New node inserted! Key: %s, Trip: %s\n", trip->pu_datetime, trip->trip_duration);
 	return parent;
 }
 
-/* recursively free the nodes of the tree */
+/* 
+recursively free the nodes of the tree 
+*/
 void free_tree(struct bst* parent){
 	if(!parent){
 		return;
@@ -65,11 +65,10 @@ void free_tree(struct bst* parent){
 	free(parent); //then free the struct
 }
 
+/*
+Find trip in dictionary, write results to output file and comparisons to stdout
+*/
 void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
-	//to strip out any physical \n characters from the test scripts
-	if(find_key[(int)strlen(find_key)-1] == 'n'){
-		find_key[(int)strlen(find_key) - 2] = '\0'; 
-	}
 
 	int result;
 	struct bst** temp = &bst;
@@ -77,11 +76,11 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 	while(*temp){
 		counter++;
 		result = strcmp(find_key, (*temp)->key);
-		if(result<0){
+		if(result<MATCH){
 			temp = &((*temp)->left);
-		} else if(result>0){
+		} else if(result>MATCH){
 			temp = &((*temp)->right);
-		} else if(result==0){
+		} else if(result==MATCH){
 			print_trip((*temp)->trip, out_file);
 			printf("%s --> %d\n", find_key, counter);
 			if((*temp)->duplicates){

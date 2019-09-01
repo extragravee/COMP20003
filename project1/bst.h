@@ -32,7 +32,9 @@ frees children recursively
 */
 void free_tree(struct bst* parent);
 
-
+/*
+Find trip in dictionary, write results to output file and comparisons to stdout
+*/
 void find_in_bst(char* find_key, struct bst* bst, FILE *out_file);
 
 #endif
