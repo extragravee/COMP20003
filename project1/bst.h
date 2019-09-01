@@ -6,6 +6,8 @@ Functions declarations
 
 #ifndef BST_H
 #define BST_H
+#define MAXFIELDSIZE 128
+#define MAXBUFFERSIZE 256
 
 /*
 structure of binary tree nodes
@@ -18,6 +20,10 @@ struct bst{
 	struct duplicate_ll* duplicates;
 };
 
+/*
+Constructs the entire BST dictionary
+*/
+struct bst* construct_bst(int argc, char **argv);
 /*
 Takes parent pointer (null for the root), and returns tree with the 
 inserted node at the right position. Returns item in tree with it's

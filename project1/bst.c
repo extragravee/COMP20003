@@ -15,6 +15,42 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #include "duplicate_ll.h"
 
 #define MATCH 0
+#define INFILE_ARG 1
+
+struct bst* construct_bst(int argc, char **argv){
+
+	struct bst* bst = NULL;
+	//buffer for each line
+	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
+	assert(buffer);	
+
+	//reading in the infile
+	FILE *datafile;
+	if((datafile = fopen(argv[INFILE_ARG], "r"))==NULL){
+		printf("File does not exist in the current directory!\n");
+		exit(EXIT_FAILURE);
+	}
+	//now the file is open, and we have a pointer to the start of the file
+	size_t bufsize = MAXBUFFERSIZE;
+	size_t linesize;
+
+	//buffer for each field
+	char *field = (char *) malloc(sizeof(char)*MAXFIELDSIZE);
+	assert(field);
+	
+	//Add all trip records from csv to trip_record structs, create bst with those structs
+	struct trip* new_trip;
+	
+	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ 
+		new_trip = create_trip_record(buffer, field);
+		bst = insert_node(bst, new_trip);
+	}
+
+	fclose(datafile); //all input sorted
+	free(buffer);
+	free(field);
+	return bst;
+}
 
 /* iteratively inserts a new node into the bst dictionary */
 struct bst* insert_node(struct bst* parent, struct trip* trip){

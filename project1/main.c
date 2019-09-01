@@ -11,59 +11,42 @@ Provides the skeleton tasks for the project
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
-
-#include "trip_logs.h"
 #include "bst.h"
-
-#define MAXFIELDSIZE 128
-#define MAXBUFFERSIZE 256
-#define INFILE_ARG 1
 #define OUTFILE_ARG 2
 #define NULLBYTE_SPACE 1
-
+#define NEWLINE '\n'
+#define EMPTY_STRING_LEN 0
+#define LAST_CHAR 1
+#define END_OF_FILE -1
 
 int main(int argc, char** argv){
-	//buffer for each line
-	char* buffer = (char *)malloc(sizeof(char)*MAXBUFFERSIZE);
-	assert(buffer);	
 
-	//reading in the infile
-	FILE *datafile;
-	if((datafile = fopen(argv[INFILE_ARG], "r"))==NULL){
-		printf("File does not exist in the current directory!\n");
-		exit(EXIT_FAILURE);
-	}
-	//now the file is open, and we have a pointer to the start of the file
-	size_t bufsize = MAXBUFFERSIZE;
-	size_t linesize;
+	//reads input file and returns bst dictionary
+	struct bst* bst = NULL;
+	bst = construct_bst(argc, argv);
+	
+	//Open file to write output
+	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
+	int keylen; 
+	char *key; 
 
 	//buffer for each field
 	char *field = (char *) malloc(sizeof(char)*MAXFIELDSIZE);
 	assert(field);
-	
-	//Add all trip records from csv to trip_record structs, create bst with those structs
-	struct trip* new_trip;
-	struct bst* bst = NULL;
-	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ 
-		new_trip = create_trip_record(buffer, field);
-		bst = insert_node(bst, new_trip);
-	}
+	size_t bufsize = MAXFIELDSIZE;
+	size_t linesize;
 
-	fclose(datafile); //all input sorted
-
-	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
-	bufsize = MAXFIELDSIZE;
-	int keylen;
-	char *key;
-	while((linesize = getline(&field, &bufsize , stdin))!=-1){
-		// printf("%s\n", input);
+	//obtain keys, perform search on bst, write to stdin and output
+	while((linesize = getline(&field, &bufsize , stdin))!=END_OF_FILE){
 		keylen=strlen(field);
 		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
 		assert(key);
 		strcpy(key, field);
-		// printf("Typed in: '%s' size: %d", key, (int)strlen(key));
-		if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
-		// printf("%s", key);
+
+		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
+			key[keylen-LAST_CHAR] = '\0';
+		}
+
 		find_in_bst(key,bst, out_file);
 		free(key);
 	}
@@ -71,7 +54,6 @@ int main(int argc, char** argv){
 	//free out all temporary pointers and buffers
 	fclose(out_file);	
 	free_tree(bst);
-	free(buffer); 
 	free(field); 
 	
 	return 0;
