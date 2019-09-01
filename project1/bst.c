@@ -72,7 +72,7 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 
 	int result;
 	struct bst** temp = &bst;
-	int counter =0;
+	int counter =0; //only records the number of string comparisons
 	while(*temp){
 		counter++;
 		result = strcmp(find_key, (*temp)->key);
@@ -90,7 +90,9 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 		}
 
 	}
-
+	/*since the duplicates being printed require no more string searches
+	only the count of string searches is stdout, i.e., where the first match
+	was found*/
 	printf("%s --> %d\n",find_key, counter);
 	fprintf(out_file, "%s --> NOTFOUND\n", find_key);
 }

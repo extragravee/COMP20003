@@ -48,33 +48,14 @@ int main(int argc, char** argv){
 		new_trip = create_trip_record(buffer, field);
 		bst = insert_node(bst, new_trip);
 	}
+ 	fclose(datafile); //all input sorted
+ 	//===================================================================
 
-	fclose(datafile); //all input sorted
+	traverse_tree(bst);
 
-	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
-	bufsize = MAXFIELDSIZE;
-	int keylen;
-	char *key;
-	while((linesize = getline(&field, &bufsize , stdin))!=-1){
-		// printf("%s\n", input);
-		keylen=strlen(field);
-		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
-		assert(key);
-		strcpy(key, field);
-		// printf("Typed in: '%s' size: %d", key, (int)strlen(key));
-		if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
-		// printf("%s", key);
-		find_in_bst(key,bst, out_file);
-		free(key);
-	}
-
-	//free out all temporary pointers and buffers
-	fclose(out_file);	
+	//free out all temporary pointers and buffers	
 	free_tree(bst);
 	free(buffer); 
 	free(field); 
-	
 	return 0;
 }
-
-
