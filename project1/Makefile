@@ -19,8 +19,8 @@ duplicate_ll.o: duplicate_ll.c trip_logs.h duplicate_ll.h
 main2.o: main2.c trip_logs.h bst.h 
 	gcc -Wall -g main2.c -o main2.o -c
 
-# test:
-# 	./dict1 2018sample1_no_headers.csv output.txt < input.txt
+test:
+	./dict1 infile.csv output.txt < input.txt
 
 memtest:
 	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt <input.txt
