@@ -84,8 +84,13 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 			}
 			return;
 		}
+
 	}
-	printf("%s --> %d\n", find_key, counter);
+
+	printf("%s --> %d\n",find_key, counter);
+	// if(find_key[(int)strlen(find_key)-1] == 'n'){
+	// 	find_key[(int)strlen(find_key) - 2] = '\0'; 
+	// }
 	fprintf(out_file, "%s --> NOTFOUND\n", find_key);
 }
 

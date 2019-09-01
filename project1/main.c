@@ -65,16 +65,14 @@ int main(int argc, char** argv){
 	int keylen;
 	char *key;
 	while((linesize = getline(&input, &bufsize , stdin))!=-1){
+		// printf("%s\n", input);
 		keylen=strlen(input);
-		if(keylen<=1){
-			puts("");
-			exit(EXIT_FAILURE);
-		}
 		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
 		assert(key);
 		strcpy(key, input);
 		// printf("Typed in: '%s' size: %d", key, (int)strlen(key));
-		if (keylen > 0 && key[keylen-1] == NEWLINE_CHAR) key[keylen-1] = '\0';
+		if (keylen > 0 && key[keylen-1] == '\n') key[keylen-1] = '\0';
+		// printf("%s", key);
 		find_in_bst(key,bst, out_file);
 		free(key);
 	}

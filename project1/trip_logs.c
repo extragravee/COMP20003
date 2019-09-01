@@ -58,11 +58,13 @@ Prints all fields of a single trip
 */
 void print_trip(struct trip* new_trip, FILE *out_file){
 	int counter = FIRST_COLUMN;
-	fprintf(out_file, "%s --> ", new_trip->pu_datetime);
+	fprintf(out_file, "%s -->", new_trip->pu_datetime);
 	while(counter<=MAX_COLS){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
-		fprintf(out_file, "%s: %s || ", get_field_name(counter), *temp);
+		if(counter!=16){
+			fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);
+		}
 		counter++;
 	}
 	fprintf(out_file, "\n");
@@ -109,15 +111,19 @@ char** get_struct_member(struct trip* new_trip, int column_number){
 	return NULL;
 }
 
+/*
+these are inconsistent in terms of camelCase and underscores to accomodate
+the assignment spec and the testfile online
+*/
 char* get_field_name(int column_number){
 	switch(column_number){
-		case 1: return "vendor_id";
+		case 1: return "VendorID";
 		case 2: return "passenger_count";
 		case 3: return "trip_distance";
-		case 4: return "rate_code_ID";
+		case 4: return "RatecodeID";
 		case 5: return "store_and_fwd_flag";
-		case 6: return "pu_location_id";
-		case 7: return "do_location_id";
+		case 6: return "PULocationID";
+		case 7: return "DOLocationID";
 		case 8: return "payment_type";
 		case 9: return "fare_amount";
 		case 10: return "extra";
@@ -127,7 +133,7 @@ char* get_field_name(int column_number){
 		case 14: return "improvement_surcharge";
 		case 15: return "total_amount";
 		case 16: return "pu_datetime";
-		case 17: return "do_datetime";
+		case 17: return "DOdatetime";
 		case 18: return "trip_duration";
 	}
 
