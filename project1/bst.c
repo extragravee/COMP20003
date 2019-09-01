@@ -66,6 +66,11 @@ void free_tree(struct bst* parent){
 }
 
 void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
+	//to strip out any physical \n characters from the test scripts
+	if(find_key[(int)strlen(find_key)-1] == 'n'){
+		find_key[(int)strlen(find_key) - 2] = '\0'; 
+	}
+
 	int result;
 	struct bst** temp = &bst;
 	int counter =0;
@@ -88,9 +93,6 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 	}
 
 	printf("%s --> %d\n",find_key, counter);
-	// if(find_key[(int)strlen(find_key)-1] == 'n'){
-	// 	find_key[(int)strlen(find_key) - 2] = '\0'; 
-	// }
 	fprintf(out_file, "%s --> NOTFOUND\n", find_key);
 }
 
