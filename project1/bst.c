@@ -137,16 +137,23 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 Traverses the BST dictionary using PULocationID as a search key, writes 
 the matching PUDatetimes to the output file and comprisons to stdout
 */
-void traverse_bst(char* key, struct bst* bst, char** argv){
+void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 	if(!bst){
 		return;
 	}
-		FILE *temp = NULL;
-		traverse_bst(key, bst->left, argv);
-		print_trip(bst->trip, temp);
+		traverse_bst(key, bst->left, out_file);
+		//print the PUdatetime from the trip inside the node
+		print_trip(bst->trip, out_file);
+		//print PUdatetime for all it's duplicates as well
+		struct duplicate_ll* duplicates = bst->duplicates;
+		while(duplicates){
+			print_trip(duplicates->duplicate_trip, out_file);
+			duplicates = duplicates->next;
+			puts("-----------");
+		}
 		puts("=================================");
 		// visit(key, bst, argv);
-		traverse_bst(key, bst->right, argv);
+		traverse_bst(key, bst->right, out_file);
 }
 
 

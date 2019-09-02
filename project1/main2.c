@@ -39,7 +39,7 @@ int main(int argc, char** argv){
 
 	// }
 
-	traverse_bst(key,bst, argv);
+	traverse_bst(key,bst,out_file);
 
 
 	//free out all temporary pointers and buffers
