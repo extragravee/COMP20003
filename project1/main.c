@@ -12,18 +12,12 @@ Provides the skeleton tasks for the project
 #include <assert.h>
 #include <string.h>
 #include "bst.h"
-#define OUTFILE_ARG 2
-#define NULLBYTE_SPACE 1
-#define NEWLINE '\n'
-#define EMPTY_STRING_LEN 0
-#define LAST_CHAR 1
-#define END_OF_FILE -1
 
 int main(int argc, char** argv){
 
 	//reads input file and returns bst dictionary
 	struct bst* bst = NULL;
-	bst = construct_bst(argc, argv);
+	bst = construct_bst(argv);
 	
 	//Open file to write output
 	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
@@ -37,12 +31,13 @@ int main(int argc, char** argv){
 	size_t linesize;
 
 	//obtain keys, perform search on bst, write to stdin and output
-	while((linesize = getline(&field, &bufsize , stdin))!=END_OF_FILE){
+	while((linesize = getline(&field, &bufsize , stdin))!=END_OF_LINE){
 		keylen=strlen(field);
 		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
 		assert(key);
 		strcpy(key, field);
 
+		//strip newline chars from end of line
 		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
 			key[keylen-LAST_CHAR] = '\0';
 		}

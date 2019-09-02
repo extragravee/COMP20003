@@ -17,7 +17,7 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #define MATCH 0
 #define INFILE_ARG 1
 
-struct bst* construct_bst(int argc, char **argv){
+struct bst* construct_bst(char **argv){
 
 	struct bst* bst = NULL;
 	//buffer for each line
@@ -131,6 +131,22 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 	was found*/
 	printf("%s --> %d\n",find_key, counter);
 	fprintf(out_file, "%s --> NOTFOUND\n", find_key);
+}
+
+/*
+Traverses the BST dictionary using PULocationID as a search key, writes 
+the matching PUDatetimes to the output file and comprisons to stdout
+*/
+void traverse_bst(char* key, struct bst* bst, char** argv){
+	if(!bst){
+		return;
+	}
+		FILE *temp = NULL;
+		traverse_bst(key, bst->left, argv);
+		print_trip(bst->trip, temp);
+		puts("=================================");
+		// visit(key, bst, argv);
+		traverse_bst(key, bst->right, argv);
 }
 
 

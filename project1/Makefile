@@ -22,6 +22,9 @@ main2.o: main2.c bst.h
 test:
 	./dict1 infile.csv output.txt < input.txt
 
+test2:
+	./dict2 infile.csv output2.txt < input2.txt
+
 memtest:
 	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt <input.txt
 

@@ -11,16 +11,41 @@ Provides the skeleton tasks for the project
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
-
 #include "bst.h"
 
 int main(int argc, char** argv){
 	//reads input file and returns bst dictionary
 	struct bst* bst = NULL;
-	bst = construct_bst(argc, argv);
-	// traverse_tree(bst);
+	bst = construct_bst(argv);
 
-	//free out all temporary pointers and buffers	
+	size_t bufsize = MAXFIELDSIZE;
+	size_t linesize;
+
+	//Open file to write output
+	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
+	int keylen; 
+	char *key = (char *)malloc(sizeof(char)*MAXFIELDSIZE+NULLBYTE_SPACE);
+
+	// //obtain keys, traverses bst to find matches
+	// while((linesize = getline(&key, &bufsize , stdin))!=END_OF_LINE){
+	// 	keylen = strlen(key);
+
+	// 	//strip newline chars from end of line
+	// 	if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
+	// 		key[keylen-LAST_CHAR] = '\0';
+	// 	}
+	// 	printf("%s, %d\n", key, keylen);
+
+
+	// }
+
+	traverse_bst(key,bst, argv);
+
+
+	//free out all temporary pointers and buffers
+	free(key);	
 	free_tree(bst); 
+	fclose(out_file);
 	return 0;
 }
+

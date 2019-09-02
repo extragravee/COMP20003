@@ -2,13 +2,20 @@
 Header file for bst.c includes bst dictionary structure and functions
 Structure
 Functions declarations
+Constants
 */
 
 #ifndef BST_H
+
 #define BST_H
 #define MAXFIELDSIZE 128
 #define MAXBUFFERSIZE 256
-
+#define END_OF_LINE -1
+#define OUTFILE_ARG 2
+#define NULLBYTE_SPACE 1
+#define NEWLINE '\n'
+#define EMPTY_STRING_LEN 0
+#define LAST_CHAR 1
 /*
 structure of binary tree nodes
 */
@@ -23,7 +30,7 @@ struct bst{
 /*
 Constructs the entire BST dictionary
 */
-struct bst* construct_bst(int argc, char **argv);
+struct bst* construct_bst(char **argv);
 /*
 Takes parent pointer (null for the root), and returns tree with the 
 inserted node at the right position. Returns item in tree with it's
@@ -42,5 +49,11 @@ void free_tree(struct bst* parent);
 Find trip in dictionary, write results to output file and comparisons to stdout
 */
 void find_in_bst(char* find_key, struct bst* bst, FILE *out_file);
+
+/*
+Traverses the BST dictionary using PULocationID as a search key, writes 
+the matching PUDatetimes to the output file and comprisons to stdout
+*/
+void traverse_bst(char* key, struct bst* bst, char** argv);
 
 #endif
