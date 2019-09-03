@@ -148,6 +148,7 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 		// print_trip(bst->trip, out_file);
 		puts("*******");
 		// printf("key: %s, bst_value: %s\n", key, (bst->trip)->pu_location_id);
+		count_searches++;
 		if(strcmp((bst->trip)->pu_location_id,key)==0){
 			printf("%s, %s\n", key, (bst->trip)->pu_datetime);
 			match_found = 1;
@@ -156,6 +157,7 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 		struct duplicate_ll* duplicates = bst->duplicates;
 		while(duplicates){
 			puts("-------------");
+			count_searches++;
 			// print_trip(duplicates->duplicate_trip, out_file);
 			if(strcmp((bst->trip)->pu_location_id,key)==0){
 			printf("%s\n", key);
@@ -169,11 +171,9 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 	}
 
 int get_match_found(){
-
 	return match_found;
 }
 
-
-
-
-
+int get_search_count(){
+	return count_searches;
+}

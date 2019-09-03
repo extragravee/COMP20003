@@ -58,4 +58,6 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file);
 
 int get_match_found();
 
+int get_search_count();
+
 #endif

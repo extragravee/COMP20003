@@ -46,6 +46,7 @@ int main(int argc, char** argv){
 			} else{
 				puts("neet");
 			}
+			printf("%d\n", get_search_count());
 		}
 
 
