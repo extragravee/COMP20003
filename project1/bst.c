@@ -146,7 +146,6 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 		traverse_bst(key, bst->left, out_file);
 		//print the PUdatetime from the trip inside the node
 		// print_trip(bst->trip, out_file);
-		puts("*******");
 		// printf("key: %s, bst_value: %s\n", key, (bst->trip)->pu_location_id);
 		count_searches++;
 		if(strcmp((bst->trip)->pu_location_id,key)==0){
@@ -156,7 +155,7 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 		//print PUdatetime for all it's duplicates as well
 		struct duplicate_ll* duplicates = bst->duplicates;
 		while(duplicates){
-			puts("-------------");
+			// puts("-------------");
 			count_searches++;
 			// print_trip(duplicates->duplicate_trip, out_file);
 			if(strcmp((bst->trip)->pu_location_id,key)==0){
@@ -165,7 +164,6 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 			}
 			duplicates = duplicates->next;
 		}
-		puts("=================================");
 		// visit(key, bst, argv);
 		traverse_bst(key, bst->right, out_file);
 	}
@@ -176,4 +174,9 @@ int get_match_found(){
 
 int get_search_count(){
 	return count_searches;
+}
+
+void reset_static_vars(){
+	count_searches = 0;
+	match_found = 0;
 }

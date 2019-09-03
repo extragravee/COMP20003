@@ -41,14 +41,13 @@ int main(int argc, char** argv){
 		if(keylen>=ONE_CHAR){
 			printf("%s, %d\n", key, keylen);
 			traverse_bst(key,bst,out_file);
-			if(get_match_found()==1){
-				printf("yeet");
-			} else{
-				puts("neet");
+			if(!get_match_found()){
+				puts("NOTFOUND\n");
 			}
 			printf("%d\n", get_search_count());
 		}
-
+		puts(">>>>>>>>>>>>>><<<<<<<<<<<<<<<<<");
+		reset_static_vars();
 
 	}
 

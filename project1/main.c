@@ -18,7 +18,6 @@ int main(int argc, char** argv){
 	//reads input file and returns bst dictionary
 	struct bst* bst = NULL;
 	bst = construct_bst(argv);
-	
 	//Open file to write output
 	FILE *out_file = fopen(argv[OUTFILE_ARG], "w");
 	int keylen; 

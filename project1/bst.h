@@ -60,4 +60,6 @@ int get_match_found();
 
 int get_search_count();
 
+void reset_static_vars();
+
 #endif
