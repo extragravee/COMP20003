@@ -158,8 +158,8 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 			// puts("-------------");
 			count_searches++;
 			// print_trip(duplicates->duplicate_trip, out_file);
-			if(strcmp((bst->trip)->pu_location_id,key)==0){
-			printf("%s\n", key);
+			if(strcmp((duplicates->duplicate_trip)->pu_location_id,key)==0){
+			printf("%s ll\n", key);
 			match_found = 1;
 			}
 			duplicates = duplicates->next;

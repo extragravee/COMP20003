@@ -42,7 +42,7 @@ int main(int argc, char** argv){
 			printf("%s, %d\n", key, keylen);
 			traverse_bst(key,bst,out_file);
 			if(!get_match_found()){
-				puts("NOTFOUND\n");
+				puts("NOTFOUND");
 			}
 			printf("%d\n", get_search_count());
 		}
