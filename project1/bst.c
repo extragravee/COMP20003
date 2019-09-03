@@ -16,6 +16,9 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 
 #define MATCH 0
 #define INFILE_ARG 1
+#define INITIAL_COUNT 0
+#define TRUE_ 1
+#define FALSE_ 0
 
 struct bst* construct_bst(char **argv){
 
@@ -61,7 +64,7 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 	//till an empty node isn't reached, keep looking
 	while(*insert_here != NULL){
 		result = strcmp((trip->pu_datetime), ((*insert_here)->key));
-	
+
 		if(result < MATCH){
 			insert_here = &((*insert_here)->left);
 		} 
@@ -137,36 +140,36 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
 Traverses the BST dictionary using PULocationID as a search key, writes 
 the matching PUDatetimes to the output file and comprisons to stdout
 */
-static int count_searches = 0;
-static int match_found = 0;
+static int count_searches = INITIAL_COUNT;
+static int match_found = FALSE_; 
 void traverse_bst(char* key, struct bst* bst, FILE* out_file){
+	//recursion base case
 	if(!bst){
 		return;
 	}
-		traverse_bst(key, bst->left, out_file);
-		//print the PUdatetime from the trip inside the node
-		// print_trip(bst->trip, out_file);
-		// printf("key: %s, bst_value: %s\n", key, (bst->trip)->pu_location_id);
-		count_searches++;
-		if(strcmp((bst->trip)->pu_location_id,key)==0){
-			printf("%s, %s\n", key, (bst->trip)->pu_datetime);
-			match_found = 1;
-		}
-		//print PUdatetime for all it's duplicates as well
-		struct duplicate_ll* duplicates = bst->duplicates;
-		while(duplicates){
-			// puts("-------------");
-			count_searches++;
-			// print_trip(duplicates->duplicate_trip, out_file);
-			if(strcmp((duplicates->duplicate_trip)->pu_location_id,key)==0){
-			printf("%s ll\n", key);
-			match_found = 1;
-			}
-			duplicates = duplicates->next;
-		}
-		// visit(key, bst, argv);
-		traverse_bst(key, bst->right, out_file);
+
+	traverse_bst(key, bst->left, out_file);
+	count_searches++;
+
+	//find match within the bst node
+	if(strcmp((bst->trip)->pu_location_id,key)==MATCH){
+		fprintf(out_file, "%s --> %s\n", key, (bst->trip)->pu_datetime);
+		match_found = 1;
 	}
+
+	//find match within duplicates linked lists
+	struct duplicate_ll* duplicates = bst->duplicates;
+	while(duplicates){
+		count_searches++;
+		if(strcmp((duplicates->duplicate_trip)->pu_location_id,key)==MATCH){
+			fprintf(out_file,"%s --> %s\n", key, (duplicates->duplicate_trip)->pu_datetime);
+			match_found = 1;
+		}
+		duplicates = duplicates->next;
+	}
+	traverse_bst(key, bst->right, out_file);
+}
+
 
 int get_match_found(){
 	return match_found;
@@ -177,6 +180,6 @@ int get_search_count(){
 }
 
 void reset_static_vars(){
-	count_searches = 0;
+	count_searches = INITIAL_COUNT;
 	match_found = 0;
 }

@@ -37,21 +37,19 @@ int main(int argc, char** argv){
 		}
 
 		keylen=strlen(key);
-		//if the key is not just the nullbyte
+		//if key length > 0
 		if(keylen>=ONE_CHAR){
-			printf("%s, %d\n", key, keylen);
+			// printf("%s, %d\n", key, keylen);
 			traverse_bst(key,bst,out_file);
 			if(!get_match_found()){
-				puts("NOTFOUND");
+				fprintf(out_file, "%s --> NOTFOUND\n", key);
 			}
-			printf("%d\n", get_search_count());
+			//required stdout
+			printf("%s --> %d\n", key, get_search_count());
 		}
-		puts(">>>>>>>>>>>>>><<<<<<<<<<<<<<<<<");
 		reset_static_vars();
 
 	}
-
-
 
 
 	//free out all temporary pointers and buffers

@@ -53,40 +53,25 @@ struct trip* create_trip_record(char *buffer, char* field){
 	return new_trip;
 }
 
-//actual function <<<<<<<<<<<<<<<<
-// /*
-// Prints all fields of a single trip
-// */
-// void print_trip(struct trip* new_trip, FILE *out_file){
-// 	int counter = FIRST_COLUMN;
-// 	fprintf(out_file, "%s -->", new_trip->pu_datetime);
-// 	while(counter<=MAX_COLS){
-// 		char **temp;
-// 		temp = get_struct_member(new_trip, counter);
-		//don't print out the key, still recorded for stage 2, completion, and modularity for future uses
-// 		if(counter!=16){
-// 			printf("%s : %s\n", get_field_name(counter), *temp);
-// 			fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);
-// 		}
-// 		counter++;
-// 	}
-// 	fprintf(out_file, "\n");
-// }
 
+/*
+Prints all fields of a single trip
+*/
 void print_trip(struct trip* new_trip, FILE *out_file){
 	int counter = FIRST_COLUMN;
-	// fprintf(out_file, "%s -->", new_trip->pu_datetime);
+	fprintf(out_file, "%s -->", new_trip->pu_datetime);
 	while(counter<=MAX_COLS){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
-		if(new_trip){
-			//testing
-			printf("%s : %s\n", get_field_name(counter), *temp);
-			// fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);
+		
+		// print all except PUdatetime
+		if(counter!=16){
+			// printf("%s : %s\n", get_field_name(counter), *temp);
+			fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);
 		}
 		counter++;
 	}
-	// fprintf(out_file, "\n");
+	fprintf(out_file, "\n");
 }
 
 /*
