@@ -12,6 +12,7 @@ Provides the skeleton tasks for the project
 #include <assert.h>
 #include <string.h>
 #include "bst.h"
+#define ONE_CHAR 1
 
 int main(int argc, char** argv){
 	//reads input file and returns bst dictionary
@@ -26,20 +27,31 @@ int main(int argc, char** argv){
 	int keylen; 
 	char *key = (char *)malloc(sizeof(char)*MAXFIELDSIZE+NULLBYTE_SPACE);
 
-	// //obtain keys, traverses bst to find matches
-	// while((linesize = getline(&key, &bufsize , stdin))!=END_OF_LINE){
-	// 	keylen = strlen(key);
+	//obtain keys, traverses bst to find matches
+	while((linesize = getline(&key, &bufsize , stdin))!=END_OF_LINE){
+		keylen = strlen(key);
 
-	// 	//strip newline chars from end of line
-	// 	if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
-	// 		key[keylen-LAST_CHAR] = '\0';
-	// 	}
-	// 	printf("%s, %d\n", key, keylen);
+		//strip newline chars from end of line
+		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
+			key[keylen-LAST_CHAR] = '\0';
+		}
+
+		keylen=strlen(key);
+		//if the key is not just the nullbyte
+		if(keylen>=ONE_CHAR){
+			printf("%s, %d\n", key, keylen);
+			traverse_bst(key,bst,out_file);
+			if(get_match_found()==1){
+				printf("yeet");
+			} else{
+				puts("neet");
+			}
+		}
 
 
-	// }
+	}
 
-	traverse_bst(key,bst,out_file);
+
 
 
 	//free out all temporary pointers and buffers

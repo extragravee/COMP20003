@@ -63,7 +63,8 @@ struct trip* create_trip_record(char *buffer, char* field){
 // 	while(counter<=MAX_COLS){
 // 		char **temp;
 // 		temp = get_struct_member(new_trip, counter);
-// 		if(counter!=160){
+		//don't print out the key, still recorded for stage 2, completion, and modularity for future uses
+// 		if(counter!=16){
 // 			printf("%s : %s\n", get_field_name(counter), *temp);
 // 			fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);
 // 		}
@@ -78,7 +79,7 @@ void print_trip(struct trip* new_trip, FILE *out_file){
 	while(counter<=MAX_COLS){
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
-		if(counter!=160){
+		if(new_trip){
 			//testing
 			printf("%s : %s\n", get_field_name(counter), *temp);
 			// fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);

@@ -56,4 +56,6 @@ the matching PUDatetimes to the output file and comprisons to stdout
 */
 void traverse_bst(char* key, struct bst* bst, FILE* out_file);
 
+int get_match_found();
+
 #endif
