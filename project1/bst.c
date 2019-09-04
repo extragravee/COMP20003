@@ -1,6 +1,7 @@
 /*
 Created by Sidakpreet Mann - 921322
 sidakpreetm@student.unimelb.edu.au
+
 Binary Search Tree implementation file
 Includes functions relating to construction, search and traversal of the bst dictionary
 Function declerations and common constants abstracted to header file "bst.h"
