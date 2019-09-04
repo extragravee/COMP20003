@@ -1,8 +1,12 @@
 /*
-Header file for bst.c includes bst dictionary structure and functions
+Created by Sidakpreet Mann - 921322
+sidakpreetm@student.unimelb.edu.au
+
+Header file for bst.c includes bst dictionary structure and functions.
+Includes:
 Structure
 Functions declarations
-Constants
+Constants used by files that reference bst.c
 */
 
 #ifndef BST_H
@@ -56,10 +60,19 @@ the matching PUDatetimes to the output file and comprisons to stdout
 */
 void traverse_bst(char* key, struct bst* bst, FILE* out_file);
 
+/*
+Check if a match was found during the traversal. Returns found_match flag variable
+*/
 int get_match_found();
 
+/*
+Return the number of searches performed during the traversal
+*/
 int get_search_count();
 
+/*
+Resets the the match_found flag and the number of searches performed during traversal
+*/
 void reset_static_vars();
 
 #endif
