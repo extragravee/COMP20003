@@ -139,6 +139,7 @@ void find_in_bst(char* find_key, struct bst* bst, FILE *out_file) {
 /*
 Traverses the BST dictionary using PULocationID as a search key, writes 
 the matching PUDatetimes to the output file and comprisons to stdout
+static variables used due to recursive calls to function
 */
 static int count_searches = INITIAL_COUNT;
 static int match_found = FALSE_; 
