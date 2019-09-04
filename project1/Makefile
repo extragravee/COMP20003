@@ -19,25 +19,3 @@ duplicate_ll.o: duplicate_ll.c trip_logs.h duplicate_ll.h
 main2.o: main2.c bst.h 
 	gcc -Wall -g main2.c -o main2.o -c
 
-test:
-	./dict1 infile.csv output.txt < input.txt
-
-test2:
-	./dict2 infile.csv output2.txt < input2.txt
-
-memtest:
-	valgrind --leak-check=full -v ./dict1 2018sample1_no_headers.csv output.txt <input.txt
-
-memtest2:
-	valgrind --leak-check=full -v ./dict1 2018sample2_no_headers.csv output.txt <input.txt
-
-memtest3:
-	valgrind --leak-check=full -v ./dict1 2018sample3_no_headers.csv output.txt <input.txt
-
-dict2test:
-	valgrind --leak-check=full -v ./dict2 infile.csv output.txt < input.txt
-# dup_test:
-# 	make dict1
-# 	./dict1 2018sample1_no_headers.csv > output.txt
-# 	grep duplicate: output.txt
-	
