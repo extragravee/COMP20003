@@ -1,7 +1,13 @@
 /*
-Header file for btrip_log.c includes trip dictionary structure and functions
+Created by Sidakpreet Mann - 921322
+sidakpreetm@student.unimelb.edu.au
+
+Header file for trip_log.c includes trip dictionary structure and functions
+
+Includes:
 Structure
-Function declarations
+Function declarations from 'trip_logs.c'
+
 */
 
 #ifndef TRIP_LOGS_H
