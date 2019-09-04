@@ -1,3 +1,10 @@
+#
+# Created by Sidakpreet Mann - 921322
+# sidakpreetm@student.unimelb.edu.au
+#
+# Makefile for Project - 1
+
+
 dict1: main.o trip_logs.o bst.o duplicate_ll.o 
 	gcc -Wall -g bst.o main.o trip_logs.o duplicate_ll.o -o dict1
 
@@ -18,3 +25,6 @@ duplicate_ll.o: duplicate_ll.c trip_logs.h duplicate_ll.h
 
 main2.o: main2.c bst.h 
 	gcc -Wall -g main2.c -o main2.o -c
+
+clear: dict1 dict2
+	rm *.o dict1 dict2
