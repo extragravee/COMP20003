@@ -2,10 +2,12 @@
 Created by Sidakpreet Mann - 921322
 sidakpreetm@student.unimelb.edu.au
 
-Header file for duplicate_ll.c includes linked list structure and functional definitions
-Purpose is to link together duplicates when inserting into the bst dictionary
-Structure
-Function declarations
+Header file for duplicate_ll.c 
+
+Includes:
+duplicate linked list structure
+functional definitions from duplicate_ll.c
+
 */
 
 #ifndef DUPLICATE_LL_H
