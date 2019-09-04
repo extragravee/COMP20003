@@ -4,8 +4,8 @@ sidakpreetm@student.unimelb.edu.au
 
 Header file for bst.c includes bst dictionary structure and functions.
 Includes:
-Structure
-Functions declarations
+Bst node structure
+Function declarations from 'bst.c'
 Constants used by files that reference bst.c
 */
 
