@@ -1,7 +1,16 @@
 /*
-Defines functions for the trip log records provided in
-the input file.
-Function declerations abstracted to header file "trips_log.h"
+Created by Sidakpreet Mann - 921322
+sidakpreetm@student.unimelb.edu.au
+
+Handles operations related to tirp records constructed from each row in the csv
+functions include:
+create_trip_record
+print_trip
+free_members_of_struct
+get_field_name
+get_struct_member
+
+function declerations and common constants abstracted to header file "trip_logs.h"
 */
 
 #include <stdio.h>
