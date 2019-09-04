@@ -2,9 +2,14 @@
 Created by Sidakpreet Mann - 921322
 sidakpreetm@student.unimelb.edu.au
 
-Defines functions for the duplicate records that will be inserted from the input file
+Linked list for the duplicate records that will be inserted from the input file implementation
+Includes the following functions: 
+insert_duplicates
+print_duplicates
+free_duplicates
+
 Function declarations abstracted to header file "duplicate_ll.h"
-Utilises print_trip function from "trip_logs.h"
+Utilises print_trip and free_members_of_struct functions from "trip_logs.h"
 */
 
 #include <stdio.h>
