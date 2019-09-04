@@ -1,4 +1,7 @@
 /*
+Created by Sidakpreet Mann - 921322
+sidakpreetm@student.unimelb.edu.au
+
 Header file for duplicate_ll.c includes linked list structure and functional definitions
 Purpose is to link together duplicates when inserting into the bst dictionary
 Structure
