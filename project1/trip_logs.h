@@ -1,11 +1,11 @@
-#ifndef TRIP_LOGS_H
-#define TRIP_LOGS_H
-
 /*
 Header file for btrip_log.c includes trip dictionary structure and functions
 Structure
 Function declarations
 */
+
+#ifndef TRIP_LOGS_H
+#define TRIP_LOGS_H
 
 /*
 delcares the structure of the trip, all columns as in the csv
