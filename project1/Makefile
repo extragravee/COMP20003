@@ -18,4 +18,3 @@ duplicate_ll.o: duplicate_ll.c trip_logs.h duplicate_ll.h
 
 main2.o: main2.c bst.h 
 	gcc -Wall -g main2.c -o main2.o -c
-
