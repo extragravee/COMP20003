@@ -1,10 +1,15 @@
 /*
-Provides the skeleton tasks for the project
-1. Opens a file
-2. Facilitates creation of trip objects
-3. Adds trip objects to the BST dictionary (handles duplicates with linked list), then closes file
-4. Opens output file, performs search and writes to output file
-5. Closes file and frees all memory being used by the tree
+Created by Sidakpreet Mann - 921322
+sidakpreetm@student.unimelb.edu.au
+
+main file for stage 2 of project 1
+
+function declerations and common constants abstracted to header file "bst.h"
+
+1. Constructs the bst dictionary
+2. Reads in key, calls traverse_bst function from bst.c, writes to output file
+3. Determines if a match was found, if not, writes to output file
+4. Resets counters and match found flag variable in bst.c
 */
 
 #include <stdio.h>
