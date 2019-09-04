@@ -3,7 +3,10 @@ Created by Sidakpreet Mann - 921322
 sidakpreetm@student.unimelb.edu.au
 
 Binary Search Tree implementation file
-Includes functions relating to construction, search and traversal of the bst dictionary
+Includes functions (performed on the bst dictionary):
+construction
+search
+traversal
 Function declerations and common constants abstracted to header file "bst.h"
 
 Code for the function 'insert_node' has been adapted from Worksheet3 and the authors of Worksheet 3 provided on JupyterHub
