@@ -14,7 +14,7 @@ Provides the skeleton tasks for the project
 #include "bst.h"
 #define ONE_CHAR 1
 
-int main(int argc, char** argv){
+int main(int argc, char** argv) {
 	//reads input file and returns bst dictionary
 	struct bst* bst = NULL;
 	bst = construct_bst(argv);
@@ -28,20 +28,20 @@ int main(int argc, char** argv){
 	char *key = (char *)malloc(sizeof(char)*MAXFIELDSIZE+NULLBYTE_SPACE);
 
 	//obtain keys, traverses bst to find matches
-	while((linesize = getline(&key, &bufsize , stdin))!=END_OF_LINE){
+	while((linesize = getline(&key, &bufsize , stdin))!=END_OF_LINE) {
 		keylen = strlen(key);
 
 		//strip newline chars from end of line
-		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
+		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE) {
 			key[keylen-LAST_CHAR] = '\0';
 		}
 
 		keylen=strlen(key);
 		//if key length > 0
-		if(keylen>=ONE_CHAR){
+		if(keylen>=ONE_CHAR) {
 			// printf("%s, %d\n", key, keylen);
 			traverse_bst(key,bst,out_file);
-			if(!get_match_found()){
+			if(!get_match_found()) {
 				fprintf(out_file, "%s --> NOTFOUND\n", key);
 			}
 			//required stdout

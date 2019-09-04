@@ -23,7 +23,7 @@ Function declerations abstracted to header file "trips_log.h"
 2. Transforms it into the a trip struct type object
 3. Passes the pointer to this new trip object back to main.c
 */
-struct trip* create_trip_record(char *buffer, char* field){ 
+struct trip* create_trip_record(char *buffer, char* field) { 
 	int cell_length;
 	int counter = SECOND_FIELD;
 
@@ -40,7 +40,7 @@ struct trip* create_trip_record(char *buffer, char* field){
 
 	//store all the other columns in the relevant fields within the struct
 	char **temp;
-	while ((field = strtok(NULL, DELIM_REGEX))!=NULL){
+	while ((field = strtok(NULL, DELIM_REGEX))!=NULL) {
 		cell_length = (int)strlen(field);
 		temp = get_struct_member(new_trip, counter);
 		*temp = (char *)malloc(sizeof(char)*cell_length+NULLBYTE_SPACE);
@@ -57,15 +57,15 @@ struct trip* create_trip_record(char *buffer, char* field){
 /*
 Prints all fields of a single trip
 */
-void print_trip(struct trip* new_trip, FILE *out_file){
+void print_trip(struct trip* new_trip, FILE *out_file) {
 	int counter = FIRST_COLUMN;
 	fprintf(out_file, "%s -->", new_trip->pu_datetime);
-	while(counter<=MAX_COLS){
+	while(counter<=MAX_COLS) {
 		char **temp;
 		temp = get_struct_member(new_trip, counter);
 		
 		// print all except PUdatetime
-		if(counter!=16){
+		if(counter!=16) {
 			// printf("%s : %s\n", get_field_name(counter), *temp);
 			fprintf(out_file, " %s: %s ||", get_field_name(counter), *temp);
 		}
@@ -77,9 +77,9 @@ void print_trip(struct trip* new_trip, FILE *out_file){
 /*
 frees all members of a given trip record
 */
-void free_members_of_struct(struct trip* trip){
+void free_members_of_struct(struct trip* trip) {
 	int counter = FIRST_COLUMN;
-	while(counter<=MAX_COLS){
+	while(counter<=MAX_COLS) {
 		char **temp;
 		temp = get_struct_member(trip, counter);
 		counter++;
@@ -90,8 +90,8 @@ void free_members_of_struct(struct trip* trip){
 /*
 retrieves the memory address of the relevant field by row number
 */
-char** get_struct_member(struct trip* new_trip, int column_number){
-	switch(column_number){
+char** get_struct_member(struct trip* new_trip, int column_number) {
+	switch(column_number) {
 		case 1: return &(new_trip-> vendor_id);
 		case 2: return &(new_trip-> passenger_count);
 		case 3: return &(new_trip-> trip_distance);
@@ -119,8 +119,8 @@ char** get_struct_member(struct trip* new_trip, int column_number){
 these are inconsistent in terms of camelCase and underscores to accomodate
 the assignment spec and the testfile online
 */
-char* get_field_name(int column_number){
-	switch(column_number){
+char* get_field_name(int column_number) {
+	switch(column_number) {
 		case 1: return "VendorID";
 		case 2: return "passenger_count";
 		case 3: return "trip_distance";

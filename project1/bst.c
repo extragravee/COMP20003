@@ -20,7 +20,7 @@ Code here has been adapted from Worksheet3 and the authors of Worksheet 3 provid
 #define TRUE_ 1
 #define FALSE_ 0
 
-struct bst* construct_bst(char **argv){
+struct bst* construct_bst(char **argv) {
 
 	struct bst* bst = NULL;
 	//buffer for each line
@@ -29,7 +29,7 @@ struct bst* construct_bst(char **argv){
 
 	//reading in the infile
 	FILE *datafile;
-	if((datafile = fopen(argv[INFILE_ARG], "r"))==NULL){
+	if((datafile = fopen(argv[INFILE_ARG], "r"))==NULL) {
 		printf("File does not exist in the current directory!\n");
 		exit(EXIT_FAILURE);
 	}
@@ -44,7 +44,7 @@ struct bst* construct_bst(char **argv){
 	//Add all trip records from csv to trip_record structs, create bst with those structs
 	struct trip* new_trip;
 	
-	while((linesize = getline(&buffer, &bufsize , datafile))!=-1){ 
+	while((linesize = getline(&buffer, &bufsize , datafile))!=-1) { 
 		new_trip = create_trip_record(buffer, field);
 		bst = insert_node(bst, new_trip);
 	}
@@ -56,22 +56,22 @@ struct bst* construct_bst(char **argv){
 }
 
 /* iteratively inserts a new node into the bst dictionary */
-struct bst* insert_node(struct bst* parent, struct trip* trip){
+struct bst* insert_node(struct bst* parent, struct trip* trip) {
 	int result;
 
 	//pointer to the insert location
 	struct bst** insert_here = &parent;
 	//till an empty node isn't reached, keep looking
-	while(*insert_here != NULL){
+	while(*insert_here != NULL) {
 		result = strcmp((trip->pu_datetime), ((*insert_here)->key));
 
-		if(result < MATCH){
+		if(result < MATCH) {
 			insert_here = &((*insert_here)->left);
 		} 
-		else if(result > MATCH){
+		else if(result > MATCH) {
 			insert_here = &((*insert_here)->right);
 		} 
-		else if(result==MATCH){	
+		else if(result==MATCH) {	
 			(*insert_here)->duplicates = insert_duplicate((*insert_here)->duplicates, trip);
 			return parent;
 		}
@@ -92,8 +92,8 @@ struct bst* insert_node(struct bst* parent, struct trip* trip){
 /* 
 recursively free the nodes of the tree 
 */
-void free_tree(struct bst* parent){
-	if(!parent){
+void free_tree(struct bst* parent) {
+	if(!parent) {
 		return;
 	}
 	free_tree(parent->left);
@@ -107,22 +107,22 @@ void free_tree(struct bst* parent){
 /*
 Find trip in dictionary, write results to output file and comparisons to stdout
 */
-void find_in_bst(char* find_key, struct bst* bst, FILE *out_file){
+void find_in_bst(char* find_key, struct bst* bst, FILE *out_file) {
 
 	int result;
 	struct bst** temp = &bst;
 	int counter =0; //only records the number of string comparisons
-	while(*temp){
+	while(*temp) {
 		counter++;
 		result = strcmp(find_key, (*temp)->key);
-		if(result<MATCH){
+		if(result<MATCH) {
 			temp = &((*temp)->left);
-		} else if(result>MATCH){
+		} else if(result>MATCH) {
 			temp = &((*temp)->right);
-		} else if(result==MATCH){
+		} else if(result==MATCH) {
 			print_trip((*temp)->trip, out_file);
 			printf("%s --> %d\n", find_key, counter);
-			if((*temp)->duplicates){
+			if((*temp)->duplicates) {
 				print_duplicates((*temp)->duplicates, out_file);
 			}
 			return;
@@ -142,9 +142,9 @@ the matching PUDatetimes to the output file and comprisons to stdout
 */
 static int count_searches = INITIAL_COUNT;
 static int match_found = FALSE_; 
-void traverse_bst(char* key, struct bst* bst, FILE* out_file){
+void traverse_bst(char* key, struct bst* bst, FILE* out_file) {
 	//recursion base case
-	if(!bst){
+	if(!bst) {
 		return;
 	}
 
@@ -152,16 +152,16 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 	count_searches++;
 
 	//find match within the bst node
-	if(strcmp((bst->trip)->pu_location_id,key)==MATCH){
+	if(strcmp((bst->trip)->pu_location_id,key)==MATCH) {
 		fprintf(out_file, "%s --> %s\n", key, (bst->trip)->pu_datetime);
 		match_found = 1;
 	}
 
 	//find match within duplicates linked lists
 	struct duplicate_ll* duplicates = bst->duplicates;
-	while(duplicates){
+	while(duplicates) {
 		count_searches++;
-		if(strcmp((duplicates->duplicate_trip)->pu_location_id,key)==MATCH){
+		if(strcmp((duplicates->duplicate_trip)->pu_location_id,key)==MATCH) {
 			fprintf(out_file,"%s --> %s\n", key, (duplicates->duplicate_trip)->pu_datetime);
 			match_found = 1;
 		}
@@ -171,15 +171,15 @@ void traverse_bst(char* key, struct bst* bst, FILE* out_file){
 }
 
 
-int get_match_found(){
+int get_match_found() {
 	return match_found;
 }
 
-int get_search_count(){
+int get_search_count() {
 	return count_searches;
 }
 
-void reset_static_vars(){
+void reset_static_vars() {
 	count_searches = INITIAL_COUNT;
 	match_found = 0;
 }

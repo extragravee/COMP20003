@@ -13,7 +13,7 @@ Provides the skeleton tasks for the project
 #include <string.h>
 #include "bst.h"
 
-int main(int argc, char** argv){
+int main(int argc, char** argv) {
 
 	//reads input file and returns bst dictionary
 	struct bst* bst = NULL;
@@ -30,14 +30,14 @@ int main(int argc, char** argv){
 	size_t linesize;
 
 	//obtain keys, perform search on bst, write to stdin and output
-	while((linesize = getline(&field, &bufsize , stdin))!=END_OF_LINE){
+	while((linesize = getline(&field, &bufsize , stdin))!=END_OF_LINE) {
 		keylen=strlen(field);
 		key = (char *)malloc(sizeof(char)*keylen+NULLBYTE_SPACE);
 		assert(key);
 		strcpy(key, field);
 
 		//strip newline chars from end of line
-		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE){
+		if (keylen > EMPTY_STRING_LEN && key[keylen-LAST_CHAR] == NEWLINE) {
 			key[keylen-LAST_CHAR] = '\0';
 		}
 
