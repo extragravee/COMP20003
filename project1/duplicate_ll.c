@@ -1,6 +1,10 @@
 /*
+Created by Sidakpreet Mann - 921322
+sidakpreetm@student.unimelb.edu.au
+
 Defines functions for the duplicate records that will be inserted from the input file
-Function declerations abstracted to header file "trips_log.h"
+Function declarations abstracted to header file "duplicate_ll.h"
+Utilises print_trip function from "trip_logs.h"
 */
 
 #include <stdio.h>
