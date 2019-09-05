@@ -28,3 +28,9 @@ main2.o: main2.c bst.h
 
 clear: dict1 dict2
 	rm *.o dict1 dict2
+
+rand_keys_1:
+	cat 2018sample1_no_headers.csv | awk -F ',' '{print $$16}' | sort -R -u | head -n10 > input.txt
+	./dict1 2018sample1_no_headers.csv output.txt < input.txt | awk -F '--> ' '{print $$2}' | awk '{total = total+$$1}END{print total/10}' 
+
+
