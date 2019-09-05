@@ -9,16 +9,3 @@ do
 	./dict1 current.txt output.txt < input.txt | awk -F ' --> ' '{sum+=$2} END {print sum/100}' >>stats.csv
 done
 
-
-
-
-
-# for i in {100..15000..100}
-# do
-# 	# echo "$i-----"
-# 	shuf -n 100 test.csv |\
-# 	awk -F ',' '{print $16}' > input.txt
-# 	echo "$i ------"
-# 	printf "$i," >> stats.csv
-# 	./dict1 test.csv output.txt < input.txt | awk -F ' --> ' '{sum+=$2} END {print sum/100}' >>stats.csv
-# done
