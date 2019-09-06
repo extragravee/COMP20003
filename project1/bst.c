@@ -54,7 +54,7 @@ struct bst* construct_bst(char **argv) {
 		bst = insert_node(bst, new_trip);
 	}
 
-	fclose(datafile); //all input sorted
+	fclose(datafile); 
 	free(buffer);
 	free(field);
 	return bst;
@@ -105,7 +105,7 @@ void free_tree(struct bst* parent) {
 	free_tree(parent->right);
 	free_members_of_struct(parent->trip); //first free all members of the struct
 	free(parent->trip); //free pointer
-	free_duplicates(parent->duplicates);
+	free_duplicates(parent->duplicates); //free duplicates linked list
 	free(parent); //then free the struct
 }
 

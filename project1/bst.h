@@ -20,6 +20,7 @@ Constants used by files that reference bst.c
 #define NEWLINE '\n'
 #define EMPTY_STRING_LEN 0
 #define LAST_CHAR 1
+
 /*
 structure of binary tree nodes
 */
