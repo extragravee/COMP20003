@@ -1,5 +1,8 @@
 #!/bin/bash
 
+make dict1
+make dict2
+echo "Average search comparisons for key in sample: " > stats.csv
 for i in {100..100000..100}
 do
 	shuf -n $i 2018full_size_no_headers\ \(1\).csv > current.txt
