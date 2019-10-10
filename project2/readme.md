@@ -1,6 +1,6 @@
 <h2>Directory for Project 2</h2>
 
-Implementing <b>pathfinding AI</b> for PacMan.
+Implementing <b>pathfinding AI</b> for PacMan.<br>
 -Graph theory <br>
 -Djiktsra's algorithm<br> 
 -effeciency based on cost cap<br>
