@@ -62,7 +62,7 @@ void copy_state(state_t* dst, state_t* src){
 node_t* create_init_node( state_t* init_state ){
 	node_t * new_n = (node_t *) malloc(sizeof(node_t));
 	new_n->parent = NULL;	
-	new_n->priority = 0;
+	new_n->priority = 77;
 	new_n->depth = 0;
 	new_n->num_childs = 0;
 	copy_state(&(new_n->state), init_state);
@@ -143,8 +143,10 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 
 		//LN 6
 		n = heap_delete(&h);
+		
 		//LN 7
-		// explored[expanded_nodes++];
+		explored[expanded_nodes++] = n;
+
 		//LN 8, 9
 		if(expanded_nodes<budget){
 			//read the locations within the node 'n', and then decide applicable actions
