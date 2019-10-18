@@ -1,0 +1,58 @@
+pacman.c
+what is the point of the initial global variables that just define a state. Is that the first state just being defined there?
+ln 71 onwards
+
+what is the srand(time) function doing
+ln 113
+
+is this line checking if the location of the ghost is the same as the location of pacman, because in the Location array 4 is pacman? and 0-3 in the location array are ghosts?
+ln 195
+YES
+therefore Location array is
+[ghost0 ghost1 ghost2 ghost3 pacman ----- ------] [xloc yloc]
+Direction array is the same as above, except multiplied by [xdir ydir]
+StartingPoints array records entities times [0, 0] for initial position
+
+what is this time thing doing? on the fly struct?
+ln 292, 293
+
+drawWindowState - main function that takes a state nad DRAWS it, we dont really need to draw it 
+ln 383
+
+are these codes for direction arbitrary? how exactly is this working? why is it adjusting the xloc when moving up or down?
+ln 481, especially line 486, why is x being adjusted when we are trying to move up? are the directions here [y and x] instead?
+
+
+
+general
+how to account for ghost movement in each situation? so we simulate the state, we move pacman, we update all other auxillary data, but with ghosts what do we need to do?
+
+so whatever action we chose we will need to apply to the global variables, but when we start we just need to copy of the initial variables into a state instance that will be our initial node right?
+
+so the level is an array, and the way we can check what pacman has done, or what he has accomplished by comparing to the values at that partivular location in the level array?
+0 - blank
+1 - wall
+2 - pellet
+3 - fruit / powerup
+4 - ghostwall
+
+5 - ghost
+6 - ghost
+7 - ghost
+8 - ghost
+9 - pacman
+
+jjust need to call the execute move function and provide the state and the game already checks and simulates everything for us. Just in case one of the cases happen, then we need to account for things. For example if there is a ghost collision or something, we don't actually need to check for ghost collision as we can just check if a life has been lost in that state. If it is, then dont do it baby.
+
+
+in the execute move function, is adding a flag for hit_wall an approach that is effecient for our uses? or is there a better approach for eliminating unexplored nodes through ai.c
+or can i apply move, and then just check if pacman is in the same exact location as the initial state, would that be better?
+
+dont understand the changed direction flag in 
+utils.c ln 24
+
+if we are moving up, and i press up again, wouldn't this still return changed direction? Or are we meant to account for checking that current direction is up? what's the use of this flag?
+
+how do i use heap_display()?
+
+

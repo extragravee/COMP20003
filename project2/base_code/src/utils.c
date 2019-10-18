@@ -62,7 +62,7 @@ bool execute_move_t(state_t* state, move_t move) {
 }
 
 /****************************************************************
-* Function:    CheckCollision(state_t* state)                                 *
+* Function:    CheckCollision(state_t* state)                   *
 * Parameters:  none                                             *
 * Returns:     none                                             *
 * Description: Check and handle if Pacman collided with a ghost *

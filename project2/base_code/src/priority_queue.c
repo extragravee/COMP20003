@@ -66,10 +66,11 @@ void heap_push(struct heap* h, node_t* value)
 
 void heap_display(struct heap* h) {
 	int i;
+	
 	for(i=0; i<h->count; ++i) {
 	    node_t* n = h->heaparr[i];
 	    
-	    printf("priority = %d", n->priority);
+	    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npriority = %d", n->priority);
 	    printf("\n");
 	    DrawWindowState( n->state );
 	}

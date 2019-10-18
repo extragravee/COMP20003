@@ -112,9 +112,9 @@ bool applyAction(node_t* n, node_t** new_node, move_t action ){
  */
 
 move_t get_next_move( state_t init_state, int budget, propagation_t propagation, char* stats ){
-	move_t best_action = rand() % 4;
+	move_t best_action = rand() % 4; // this is taking a random value for the ai's next move
 
-	float best_action_score[4];
+	float best_action_score[4]; // tracking the current best scores for the first 4 actions
 	for(unsigned i = 0; i < 4; i++)
 	    best_action_score[i] = INT_MIN;
 
@@ -122,15 +122,26 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	unsigned expanded_nodes = 0;
 	unsigned max_depth = 0;
 	
+	//LN 2
+	//array of explored nodes
+	node_t* explored[budget];
 
-
+	//LN 1
 	//Add the initial node
-	//node_t* n = create_init_node( &init_state );
+	node_t* n = create_init_node( &init_state );
 	
-	//Use the max heap API provided in priority_queue.h
-	//heap_push(&h,n);
+	//LN 3
+	//Frontier - containing initial node only
+	heap_push(&h,n);
+
+	heap_display(&h);
 	
 	//FILL IN THE GRAPH ALGORITHM
+	//LN 4, 5
+	//while fronitier =/= empty
+	while(sizeof(h.heaparr)/sizeof(h.heaparr[0])>0){
+		break;
+	}
 	
 	
 	sprintf(stats, "Max Depth: %d Expanded nodes: %d  Generated nodes: %d\n",max_depth,expanded_nodes,generated_nodes);
@@ -144,6 +155,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	if(best_action == down)
 		sprintf(stats, "%sSelected action: Down\n",stats);
 
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSize = %ld\n", sizeof(h.heaparr)/sizeof(h.heaparr[0]));
 	sprintf(stats, "%sScore Left %f Right %f Up %f Down %f",stats,best_action_score[left],best_action_score[right],best_action_score[up],best_action_score[down]);
 	return best_action;
 }
