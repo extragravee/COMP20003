@@ -123,8 +123,8 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	unsigned max_depth = 0;
 	
 	//LN 2
-	//array of explored nodes
-	node_t* explored[budget];
+	//array of explored nodes - this needs to be a dynamic array
+	node_t* explored[budget]; 
 
 	//LN 1
 	//Add the initial node
@@ -133,13 +133,29 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	//LN 3
 	//Frontier - containing initial node only
 	heap_push(&h,n);
-
+	// heap_push(&h,n);// this gives a seg fault, why? <<<<<<<<<<<<<<<<<<<<<<<<<<
 	heap_display(&h);
 	
 	//FILL IN THE GRAPH ALGORITHM
 	//LN 4, 5
 	//while fronitier =/= empty
-	while(sizeof(h.heaparr)/sizeof(h.heaparr[0])>0){
+	while(h.size>0){
+
+		//LN 6
+		n = heap_delete(&h);
+		//LN 7
+		// explored[expanded_nodes++];
+		//LN 8, 9
+		if(expanded_nodes<budget){
+			//read the locations within the node 'n', and then decide applicable actions
+
+			//APPLYACTION to the node.
+		}
+
+		// n = heap_delete(&h);
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSize of heap = %d\n", h.size);
+		free(n); //need to free the popped node at the end of each move
+		emptyPQ(&h); //nead to empty the heap
 		break;
 	}
 	
@@ -155,7 +171,6 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	if(best_action == down)
 		sprintf(stats, "%sSelected action: Down\n",stats);
 
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSize = %ld\n", sizeof(h.heaparr)/sizeof(h.heaparr[0]));
 	sprintf(stats, "%sScore Left %f Right %f Up %f Down %f",stats,best_action_score[left],best_action_score[right],best_action_score[up],best_action_score[down]);
 	return best_action;
 }

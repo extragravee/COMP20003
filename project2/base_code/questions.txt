@@ -52,7 +52,3 @@ dont understand the changed direction flag in
 utils.c ln 24
 
 if we are moving up, and i press up again, wouldn't this still return changed direction? Or are we meant to account for checking that current direction is up? what's the use of this flag?
-
-how do i use heap_display()?
-
-
