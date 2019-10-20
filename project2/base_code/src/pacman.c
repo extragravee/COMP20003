@@ -802,6 +802,7 @@ void MainLoop() {
             /**
              * ****** HERE IS WHERE YOUR SOLVER IS CALLED
              */
+            
             move_t selected_move = get_next_move( current_state, budget, propagation, ai_stats );
 
             /**

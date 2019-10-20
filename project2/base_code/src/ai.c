@@ -62,7 +62,7 @@ void copy_state(state_t* dst, state_t* src){
 node_t* create_init_node( state_t* init_state ){
 	node_t * new_n = (node_t *) malloc(sizeof(node_t));
 	new_n->parent = NULL;	
-	new_n->priority = 0;
+	new_n->priority = 55;
 	new_n->depth = 0;
 	new_n->num_childs = 0;
 	copy_state(&(new_n->state), init_state);
@@ -74,11 +74,10 @@ node_t* create_init_node( state_t* init_state ){
 
 float heuristic( node_t* n ){
 	float h = 0;
-	
 	//FILL IN MISSING CODE
-	//if eaten a fruit
-	if((n->state).Invincible == 1){
-		if((n->state).tleft == (11-(n->state).LevelNumber)){
+	//if in the previous state, there was a fruit where pac man is now, then fruit eaten
+	if(n->parent){
+		if((((n->parent)->state).Level[(n->state).Loc[4][0]][(n->state).Loc[4][1]])==3){
 			h+=10;
 		}
 	}
@@ -128,21 +127,30 @@ bool applyAction(node_t* n, node_t** new_node, move_t action ){
 
     //LN 12, applyAction
     (*new_node) = (node_t *) malloc(sizeof(node_t));
+
+    //applyAction 1
     (*new_node)->parent = n;
+
+    //applyAction 2
     copy_state(&((*new_node)->state), &(n->state));
+    changed_dir = execute_move_t( &((*new_node)->state), action );
 
-    changed_dir = execute_move_t( &((*new_node)->state), action );	
+    //if movement is not valid, rest of the actions not executed
+    if(changed_dir){
+    	//applyAction 3
+    	(*new_node)->priority = (n->priority) - 1;
+		(*new_node)->depth = (n->depth) + 1;
 
-	(*new_node)->priority = (n->priority) - 1;
-	(*new_node)->depth = (n->depth) + 1;
+		//applyAction 4, 5
+		//accumulated reward is reward of the own node + parent nodes accumulated reward
+		(*new_node)->acc_reward =  get_reward(*new_node) + n->acc_reward;
 
-	(*new_node)->acc_reward =  get_reward(*new_node);
+		//applyAction 6
+		(*new_node)->num_childs = 0;
+		(*new_node)->move = action;
+		n->num_childs += 1;
 
-	// (*new_node)->num_childs = 0;
-	// (*new_node)->move = action;
-	// n->num_childs += 1;
-    
-
+    }
 
 	return changed_dir;
 
@@ -156,7 +164,7 @@ bool applyAction(node_t* n, node_t** new_node, move_t action ){
 
 move_t get_next_move( state_t init_state, int budget, propagation_t propagation, char* stats ){
 	move_t best_action = rand() % 4; // this is taking a random value for the ai's next move
-
+	// move_t best_action;
 	float best_action_score[4]; // tracking the current best scores for the first 4 actions
 	for(unsigned i = 0; i < 4; i++)
 	    best_action_score[i] = INT_MIN;
@@ -174,14 +182,16 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	//LN 1
 	//Add the initial node
 	node_t* n = create_init_node( &init_state );
-	
+
 	//LN 3
 	//Frontier - containing initial node only
 	heap_push(&h,n);
-	
+
+
 	//FILL IN THE GRAPH ALGORITHM
 	//LN 4, 5
 	//while fronitier =/= empty
+	node_t* temp;
 	while(h.count>0){
 
 		//LN 6 - initial location y=22 (row) x = 13 (index)
@@ -194,35 +204,42 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 		if(expanded_nodes<budget){
 
 			//LN 10, 11
-			for (int nextMove=left; nextMove<=down; nextMove ++){
-				node_t* temp;
-
+			for (int nextMove=0; nextMove<=3; nextMove ++){
+				
 				//calling LN 12
 				is_valid_move = applyAction(n, &temp, nextMove);
-				break;
+
+				//if the move is valid, then add next move to heap
+				if (is_valid_move){
+					heap_push(&h, temp);
+				} else {
+					free(temp);
+				}
+				// break; // <<<<<<<<need this here or im getting a seg fault
+				//LN 13
+				//write propogateScoreBackToFirstAction
+				
 			}
 			
-
 			// free(temp); //do i need to free what is being pointed to by the parent pointer in the node struct? <<<<<<<<<<<<
+		} else{
+			break;
 		}
 
 	}
 	
-	sprintf(stats, "Max Depth: %d Expanded nodes: %d  Generated nodes: %d, X: %d, Y: %d\n Size of heap= %d\n",max_depth,expanded_nodes,generated_nodes, 
-		(n->state).Loc[4][1], (n->state).Loc[4][0], h.size);
+	//when there are seg faults this does not print (when there is break above, it does print)
+	sprintf(stats, "Max Depth: %d Expanded nodes: %d  Generated nodes: %d, Size of heap= %d\n",max_depth,expanded_nodes,generated_nodes, h.size);
 	//need to add sprintf(stats) and each item that is popped from the PQ plus their priorities
 
+	//free heap
+	emptyPQ(&h);
 
 	// memory management
 	// free explored array
 	for(int i=0; i<expanded_nodes; i++){
-			free(explored[i]);
+		free(explored[i]);
 	}
-	//free heap
-	if(h.size>0){
-		emptyPQ(&h);
-	}
-
 
 
 	if(best_action == left)
