@@ -156,8 +156,8 @@ bool applyAction(node_t* n, node_t** new_node, move_t action ){
 }
 
 /**
-* Checks if a life has been lost in a certain state
-**/
+ * Checks if a life has been lost in a certain state
+ */
 bool life_lost(node_t* node){
 	if(node->parent){
 		if(((node->state).Lives)<((node->parent)->state).Lives){
@@ -168,18 +168,71 @@ bool life_lost(node_t* node){
 }
 
 /**
+ * Propogates score back to the first action at depth 1
+ */
+void propogate_max_score_to_first_action(float* best_action_score, node_t* node){
+	int leaf_reward = node->acc_reward;
+	while(node->parent){
+		node = node->parent;
+		if(node->depth == 1){
+			if(leaf_reward > best_action_score[node->move]){
+				best_action_score[node->move] = leaf_reward;
+			}
+			return;
+		}
+	}
+}
+
+/**
+ * Chooses the best action based on MAX propagation
+ */
+int choose_best_action(float* best_action_score){
+
+	int best_action = 0;
+	int temp_score = best_action_score[0];
+	int top_scores[4] = {0,0,0,0};
+	int i;
+	for (i=1; i<4; i++){
+		if(best_action_score[i]>temp_score){
+			best_action = i;
+			temp_score = best_action_score[i];
+		}
+	}
+	//here we have a definite best action
+	int counter = 1;
+	top_scores[0] = best_action;
+
+	for (i = 0; i<4; i++){
+		if(i!=best_action){
+			if(best_action_score[i]==temp_score){
+				top_scores[counter++] = i;
+			}
+		}
+	}
+
+	if(counter==1){
+		return best_action;
+	} else {
+		return top_scores[rand()%counter];
+	}
+
+	
+}
+
+/**
  * Find best action by building all possible paths up to budget
  * and back propagate using either max or avg
  */
 
 move_t get_next_move( state_t init_state, int budget, propagation_t propagation, char* stats ){
-	move_t best_action = rand() % 4; // this is taking a random value for the ai's next move
+	move_t best_action;
+
 	// move_t best_action;
 	float best_action_score[4]; // tracking the current best scores for the first 4 actions
 	for(unsigned i = 0; i < 4; i++)
 	    best_action_score[i] = INT_MIN;
 
-	unsigned generated_nodes = 0;
+	unsigned generated_nodes = 1;
 	unsigned expanded_nodes = 0;
 	unsigned max_depth = 0;
 
@@ -216,26 +269,38 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 			//LN 10, 11
 			for (int nextMove=0; nextMove<=3; nextMove ++){
 				
-				//calling LN 12
+				//LN 12
 				is_valid_move = applyAction(n, &temp, nextMove);
+				generated_nodes++;
 
 				//if the move is valid, then add the next move to heap
 				if (is_valid_move){
-					//propogatescore
+
+					//LN 13
+					propogate_max_score_to_first_action(best_action_score, temp);
+
+					//LN 14, 15, 17, 18
+					//if life is not lost, keep node
 					if(!life_lost(temp)){
 						heap_push(&h, temp);
+
+						//keep track of max_depth
+						if((temp)->depth > max_depth){
+							max_depth = temp->depth;
+						}
+
+					//LN 15, 16
+					//if life lost, delete node
 					} else{
 						free(temp);
 					}
-
+				//if move is invalid, discard
 				} else {
 					free(temp);
 				}
-				//LN 13
-				
 				
 			}
-			
+		//if budged all used up, exit
 		} else{
 			break;
 		}
@@ -249,12 +314,14 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	//free heap
 	emptyPQ(&h);
 
-	// memory management
+	//LN 20
 	// free explored array
 	for(int i=0; i<expanded_nodes; i++){
 		free(explored[i]);
 	}
 
+	//LN 21
+	best_action = choose_best_action(best_action_score);
 
 	if(best_action == left)
 		sprintf(stats, "%sSelected action: Left\n",stats);
@@ -266,6 +333,9 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 		sprintf(stats, "%sSelected action: Down\n",stats);
 
 	sprintf(stats, "%sScore Left %f Right %f Up %f Down %f",stats,best_action_score[left],best_action_score[right],best_action_score[up],best_action_score[down]);
+	
+
+	//LN 22
 	return best_action;
 }
 
