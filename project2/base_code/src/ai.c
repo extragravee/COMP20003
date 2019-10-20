@@ -62,7 +62,7 @@ void copy_state(state_t* dst, state_t* src){
 node_t* create_init_node( state_t* init_state ){
 	node_t * new_n = (node_t *) malloc(sizeof(node_t));
 	new_n->parent = NULL;	
-	new_n->priority = 55;
+	new_n->priority = 0;
 	new_n->depth = 0;
 	new_n->num_childs = 0;
 	copy_state(&(new_n->state), init_state);
@@ -75,9 +75,9 @@ node_t* create_init_node( state_t* init_state ){
 float heuristic( node_t* n ){
 	float h = 0;
 	//FILL IN MISSING CODE
-	//if in the previous state, there was a fruit where pac man is now, then fruit eaten
+	//if previous
 	if(n->parent){
-		if((((n->parent)->state).Level[(n->state).Loc[4][0]][(n->state).Loc[4][1]])==3){
+		if((((n->parent)->state).GhostsInARow) != ((n->state).GhostsInARow)){
 			h+=10;
 		}
 	}
@@ -88,7 +88,6 @@ float heuristic( node_t* n ){
 			h-=10;
 		}
 	}
-	
 
 	//if the game is over (lost all lives)
 	if((n->state).Lives == 0){
@@ -156,6 +155,17 @@ bool applyAction(node_t* n, node_t** new_node, move_t action ){
 
 }
 
+/**
+* Checks if a life has been lost in a certain state
+**/
+bool life_lost(node_t* node){
+	if(node->parent){
+		if(((node->state).Lives)<((node->parent)->state).Lives){
+			return true;
+		}
+	}
+	return false;
+}
 
 /**
  * Find best action by building all possible paths up to budget
@@ -209,14 +219,20 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 				//calling LN 12
 				is_valid_move = applyAction(n, &temp, nextMove);
 
-				//if the move is valid, then add next move to heap
+				//if the move is valid, then add the next move to heap
 				if (is_valid_move){
-					heap_push(&h, temp);
+					//propogatescore
+					if(!life_lost(temp)){
+						heap_push(&h, temp);
+					} else{
+						free(temp);
+					}
+
 				} else {
 					free(temp);
 				}
 				//LN 13
-				//write propogateScoreBackToFirstAction
+				
 				
 			}
 			
