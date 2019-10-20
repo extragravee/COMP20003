@@ -215,13 +215,11 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 				} else {
 					free(temp);
 				}
-				// break; // <<<<<<<<need this here or im getting a seg fault
 				//LN 13
 				//write propogateScoreBackToFirstAction
 				
 			}
 			
-			// free(temp); //do i need to free what is being pointed to by the parent pointer in the node struct? <<<<<<<<<<<<
 		} else{
 			break;
 		}
