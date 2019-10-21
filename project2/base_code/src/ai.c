@@ -192,7 +192,7 @@ void propagate_max_score_to_first_action(float* best_action_score, node_t* node)
  * Propogates score back to the first action at depth 1
  */
 void propagate_avg_score_to_first_action(float* best_action_score, node_t* node, int* number_of_descendants){
-	if(best_action_score[node->move]<0){
+	if(best_action_score[node->move]== INT_MIN){
 		best_action_score[node->move] = node->acc_reward;
 	} else {
 		best_action_score[node->move] += node->acc_reward;
@@ -253,7 +253,7 @@ int choose_best_action(float* best_action_score, int propagation, int* number_of
  * Find best action by building all possible paths up to budget
  * and back propagate using either max or avg
  */
-extern double secs ; //
+
 extern int total_generated_nodes ; //
 extern int total_expanded_nodes ; //
 extern int absolute_max_depth ; //
@@ -386,11 +386,8 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 		sprintf(stats, "%sSelected action: Down\n",stats);
 
 	sprintf(stats, "%sScore Left %f Right %f Up %f Down %f",stats,best_action_score[left],best_action_score[right],best_action_score[up],best_action_score[down]);
-	
 
-	//summing up time taken in static time variable
-	secs += ((double) (clock() - start)) / CLOCKS_PER_SEC;
-	printf("\n%f", secs);
+
 	//LN 22
 	return best_action;
 }

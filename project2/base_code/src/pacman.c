@@ -85,6 +85,7 @@ propagation_t propagation; //Propagation type
 state_t current_state; //Contains a copy of the current game state
 char ai_stats[500]; //Info printed out about AI algorithm
 
+clock_t start;
 
 void print_usage(){
     printf("To run the AI solver: \n");
@@ -451,7 +452,7 @@ void DrawWindowState(state_t state) {
 * Returns:     none                                             *
 * Description: Gracefully end program                           *
 ****************************************************************/
-double secs = 0; //
+
 int total_generated_nodes = 0; //
 int total_expanded_nodes = 0; //
 int absolute_max_depth = 0; //
@@ -468,11 +469,12 @@ void ExitProgram(const char *message) {
         s1 = "Max\0";
     }
 
+    double secs= ((double) (clock() - start)) / CLOCKS_PER_SEC;
     //write results to file
     FILE* out_file = fopen("output.txt", "w");
     if(out_file!=NULL){
-        fprintf(out_file, "Propogation: %s\nBudget = %d\nMax Depth = %d\nTotal Generated = %d\nTotal Expanded = %d\nTime = %.2f\nExpanded/Second = %f s\nScore = %d",s1,budget, absolute_max_depth,
-                            total_generated_nodes, total_expanded_nodes, secs,
+        fprintf(out_file, "Propogation: %s\nBudget = %d\nMax Depth = %d\nTotal Generated = %d\nTotal Expanded = %d\nTime = %8.2fs\nExpanded/Second = %f\nScore = %d",
+                                    s1,          budget, absolute_max_depth, total_generated_nodes, total_expanded_nodes, secs,
                             total_expanded_nodes/secs, Points);
         fclose(out_file);
     }
@@ -800,6 +802,8 @@ void update_current_state(){
 * Description: Control the main execution of the game           *
 ****************************************************************/
 void MainLoop() {
+    //start timing
+    start= clock();
 
     DrawWindow();                    //Draw the screen
     wrefresh(win); wrefresh(status); //Refresh it just to make sure
