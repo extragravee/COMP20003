@@ -66,7 +66,7 @@ node_t* create_init_node( state_t* init_state ){
 	new_n->depth = 0;
 	new_n->num_childs = 0;
 	copy_state(&(new_n->state), init_state);
-	new_n->acc_reward =  get_reward( new_n );
+	new_n->acc_reward =  0;
 	return new_n;
 	
 }
