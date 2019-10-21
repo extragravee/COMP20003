@@ -11,6 +11,7 @@
 struct node_s{
     int priority;
     float acc_reward;
+    float average_of_children=0; //**** ADDED MEMBER ****//
     int depth;
     int num_childs;
     move_t move;
