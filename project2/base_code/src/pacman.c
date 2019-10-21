@@ -451,10 +451,31 @@ void DrawWindowState(state_t state) {
 * Returns:     none                                             *
 * Description: Gracefully end program                           *
 ****************************************************************/
+double secs = 0; //
+int total_generated_nodes = 0; //
+int total_expanded_nodes = 0; //
+int absolute_max_depth = 0; //
+
 void ExitProgram(const char *message) {
     endwin();                       //Uninitialize ncurses and destroy windows
     printf("%s\n", message);        //Display message
     printf("Final Score: %d\n",Points);
+    char* s1;
+
+    if(propagation == 1){
+        s1 = "Average\0";
+    } else {
+        s1 = "Max\0";
+    }
+
+    //write results to file
+    FILE* out_file = fopen("output.txt", "w");
+    if(out_file!=NULL){
+        fprintf(out_file, "Propogation: %s\nBudget = %d\nMax Depth = %d\nTotal Generated = %d\nTotal Expanded = %d\nTime = %.2f\nExpanded/Second = %f s\nScore = %d",s1,budget, absolute_max_depth,
+                            total_generated_nodes, total_expanded_nodes, secs,
+                            total_expanded_nodes/secs, Points);
+        fclose(out_file);
+    }
     exit(0);                        //End program, return 0
 }
 
@@ -796,6 +817,7 @@ void MainLoop() {
 	     * AI execution mode
 	     */
 	    if(ai_run){
+            
 
             update_current_state();
 

@@ -85,13 +85,13 @@ float heuristic( node_t* n ){
 	//if lost a life -10
 	if(n->parent){
 		if(((n->parent)->state).Lives > (n->state).Lives){
-			h-=10;
+			h-=100;
 		}
 	}
 
 	//if the game is over (lost all lives)
 	if((n->state).Lives == 0){
-		h-=100;
+		h-=1000;
 	}
 
 	return h;
@@ -111,7 +111,6 @@ float get_reward ( node_t* n ){
 	}
 
 	reward = heuristic(n) + (n->state).Points - parent_score;
-
 	float discount = pow(0.99,n->depth);
    	
 	return discount * reward;
@@ -181,15 +180,11 @@ bool life_lost(node_t* node){
  */
 void propagate_max_score_to_first_action(float* best_action_score, node_t* node){
 	float leaf_reward = node->acc_reward;
-	while(node->parent){
-		node = node->parent;
-		if(node->depth == 1){
-			if(leaf_reward > best_action_score[node->move]){
-				best_action_score[node->move] = leaf_reward;
-			}
-			return;
-		}
+
+	if(leaf_reward > best_action_score[node->move]){
+		best_action_score[node->move] = leaf_reward;
 	}
+
 }
 
 /**
@@ -258,8 +253,15 @@ int choose_best_action(float* best_action_score, int propagation, int* number_of
  * Find best action by building all possible paths up to budget
  * and back propagate using either max or avg
  */
+extern double secs ; //
+extern int total_generated_nodes ; //
+extern int total_expanded_nodes ; //
+extern int absolute_max_depth ; //
 
 move_t get_next_move( state_t init_state, int budget, propagation_t propagation, char* stats ){
+
+	//starting to record time for iterations
+	clock_t start= clock(); 
 	
 	move_t best_action;
 	unsigned i;
@@ -304,6 +306,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 
 		//LN 7
 		explored[expanded_nodes++] = n;
+		total_expanded_nodes++;
 
 		//LN 8, 9
 		if(expanded_nodes<budget){
@@ -314,6 +317,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 				//LN 12
 				is_valid_move = applyAction(n, &temp, nextMove);
 				generated_nodes++;
+				total_generated_nodes++;
 
 				//if the move is valid, then add the next move to heap
 				if (is_valid_move){
@@ -333,6 +337,9 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 						//keep track of max_depth
 						if((temp)->depth > max_depth){
 							max_depth = temp->depth;
+							if(max_depth>absolute_max_depth){
+								absolute_max_depth = max_depth;
+							}
 						}
 
 					//LN 15, 16
@@ -354,7 +361,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	}
 	
 	//when there are seg faults this does not print (when there is break above, it does print)
-	sprintf(stats, "Max Depth: %d Expanded nodes: %d  Generated nodes: %d, Size of heap= %d\n",max_depth,expanded_nodes,generated_nodes, h.size);
+	sprintf(stats, "Max Depth: %d Expanded nodes: %d  Generated nodes: %d\n",max_depth,expanded_nodes,generated_nodes);
 	//need to add sprintf(stats) and each item that is popped from the PQ plus their priorities
 
 	//free heap
@@ -381,7 +388,11 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	sprintf(stats, "%sScore Left %f Right %f Up %f Down %f",stats,best_action_score[left],best_action_score[right],best_action_score[up],best_action_score[down]);
 	
 
+	//summing up time taken in static time variable
+	secs += ((double) (clock() - start)) / CLOCKS_PER_SEC;
+	printf("\n%f", secs);
 	//LN 22
 	return best_action;
 }
+
 
