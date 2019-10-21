@@ -171,7 +171,7 @@ bool life_lost(node_t* node){
  * Propogates score back to the first action at depth 1
  */
 void propogate_max_score_to_first_action(float* best_action_score, node_t* node){
-	int leaf_reward = node->acc_reward;
+	float leaf_reward = node->acc_reward;
 	while(node->parent){
 		node = node->parent;
 		if(node->depth == 1){
@@ -210,6 +210,7 @@ int choose_best_action(float* best_action_score){
 		}
 	}
 
+	//randomly break ties based on indexes of highest scores
 	if(counter==1){
 		return best_action;
 	} else {
