@@ -168,9 +168,10 @@ bool life_lost(node_t* node){
 }
 
 /**
+ * MAX
  * Propogates score back to the first action at depth 1
  */
-void propogate_max_score_to_first_action(float* best_action_score, node_t* node){
+void propagate_max_score_to_first_action(float* best_action_score, node_t* node){
 	float leaf_reward = node->acc_reward;
 	while(node->parent){
 		node = node->parent;
@@ -184,12 +185,20 @@ void propogate_max_score_to_first_action(float* best_action_score, node_t* node)
 }
 
 /**
+ * AVG
+ * Propogates score back to the first action at depth 1
+ */
+void propagate_avg_score_to_first_action(float* best_action_score, node_t* node){
+	while()
+}
+
+/**
  * Chooses the best action based on MAX propagation
  */
 int choose_best_action(float* best_action_score){
 
 	int best_action = 0;
-	int temp_score = best_action_score[0];
+	float temp_score = best_action_score[0];
 	int top_scores[4] = {0,0,0,0};
 	int i;
 	for (i=1; i<4; i++){
@@ -240,7 +249,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	bool is_valid_move = false;
 	
 	//LN 2
-	//array of explored nodes - does this needs to be a dynamic array <<<<<<<<<<<<<<<<<<<<<<< no?
+	//array of explored nodes
 	node_t* explored[budget]; 
 
 	//LN 1
@@ -278,7 +287,11 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 				if (is_valid_move){
 
 					//LN 13
-					propogate_max_score_to_first_action(best_action_score, temp);
+					if(propagation == max){
+						propagate_max_score_to_first_action(best_action_score, temp);
+					} else {
+						propagate_avg_score_to_first_action(best_action_score, temp);
+					}
 
 					//LN 14, 15, 17, 18
 					//if life is not lost, keep node
