@@ -1,0 +1,577 @@
+./pacman 1 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 34652
+Total Expanded = 9619
+Time =   161.68s
+Expanded/Second = 59.493418
+Score = 289./pacman 1 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 25904
+Total Expanded = 7194
+Time =   120.40s
+Expanded/Second = 59.752005
+Score = 167./pacman 1 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 13528
+Total Expanded = 3752
+Time =    63.63s
+Expanded/Second = 58.962687
+Score = 161./pacman 1 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 26
+Total Generated = 392320
+Total Expanded = 99070
+Time =    79.16s
+Expanded/Second = 1251.446310
+Score = 684./pacman 1 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 42
+Total Generated = 319776
+Total Expanded = 80751
+Time =   135.92s
+Expanded/Second = 594.099515
+Score = 438./pacman 1 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 28
+Total Generated = 332528
+Total Expanded = 83970
+Time =   141.91s
+Expanded/Second = 591.712953
+Score = 393./pacman 1 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 38
+Total Generated = 3484528
+Total Expanded = 872004
+Time =   145.77s
+Expanded/Second = 5982.127625
+Score = 293./pacman 1 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 33
+Total Generated = 2897128
+Total Expanded = 725007
+Time =   121.56s
+Expanded/Second = 5964.363870
+Score = 277./pacman 1 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 39
+Total Generated = 3376944
+Total Expanded = 845081
+Time =   142.49s
+Expanded/Second = 5930.879731
+Score = 428./pacman 1 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 44
+Total Generated = 4046076
+Total Expanded = 1012025
+Time =   102.17s
+Expanded/Second = 9905.059512
+Score = 254./pacman 1 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 35
+Total Generated = 5397384
+Total Expanded = 1350021
+Time =   135.52s
+Expanded/Second = 9962.033289
+Score = 294./pacman 1 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 38
+Total Generated = 7732592
+Total Expanded = 1934115
+Time =    92.96s
+Expanded/Second = 20805.756677
+Score = 825./pacman 1 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 8
+Total Generated = 37224
+Total Expanded = 10339
+Time =   173.13s
+Expanded/Second = 59.718297
+Score = 248./pacman 1 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 22976
+Total Expanded = 6380
+Time =   106.93s
+Expanded/Second = 59.666725
+Score = 258./pacman 1 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 40084
+Total Expanded = 11130
+Time =   186.63s
+Expanded/Second = 59.638265
+Score = 181./pacman 1 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 39
+Total Generated = 420192
+Total Expanded = 106107
+Time =   180.41s
+Expanded/Second = 588.149420
+Score = 232./pacman 1 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 16
+Total Generated = 276848
+Total Expanded = 69911
+Time =   117.29s
+Expanded/Second = 596.077239
+Score = 246./pacman 1 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 24
+Total Generated = 439956
+Total Expanded = 111100
+Time =   185.09s
+Expanded/Second = 600.233672
+Score = 227./pacman 1 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 41
+Total Generated = 4148124
+Total Expanded = 1038069
+Time =   174.79s
+Expanded/Second = 5938.993428
+Score = 454./pacman 1 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 36
+Total Generated = 6586192
+Total Expanded = 1648196
+Time =   279.55s
+Expanded/Second = 5895.937066
+Score = 431./pacman 1 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 34
+Total Generated = 3009380
+Total Expanded = 753098
+Time =   127.55s
+Expanded/Second = 5904.147946
+Score = 268./pacman 1 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 39
+Total Generated = 10147640
+Total Expanded = 2538179
+Time =   255.72s
+Expanded/Second = 9925.506661
+Score = 346./pacman 1 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 63
+Total Generated = 11642908
+Total Expanded = 2912183
+Time =    91.59s
+Expanded/Second = 31796.720529
+Score = 787./pacman 1 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 33
+Total Generated = 5229448
+Total Expanded = 1308016
+Time =   131.72s
+Expanded/Second = 9930.430140
+Score = 260./pacman 2 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 18520
+Total Expanded = 5144
+Time =    86.08s
+Expanded/Second = 59.758899
+Score = 282./pacman 2 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 17428
+Total Expanded = 4833
+Time =    82.27s
+Expanded/Second = 58.743073
+Score = 333./pacman 2 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 48456
+Total Expanded = 13457
+Time =   130.28s
+Expanded/Second = 103.289886
+Score = 909./pacman 2 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 32
+Total Generated = 266336
+Total Expanded = 67256
+Time =   113.45s
+Expanded/Second = 592.810778
+Score = 335./pacman 2 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 27
+Total Generated = 274528
+Total Expanded = 69325
+Time =   116.74s
+Expanded/Second = 593.825052
+Score = 336./pacman 2 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 35
+Total Generated = 246612
+Total Expanded = 62275
+Time =   106.26s
+Expanded/Second = 586.071694
+Score = 436./pacman 2 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 29
+Total Generated = 2270220
+Total Expanded = 568123
+Time =    96.23s
+Expanded/Second = 5903.818910
+Score = 611./pacman 2 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 31
+Total Generated = 5115068
+Total Expanded = 1280047
+Time =    98.57s
+Expanded/Second = 12986.564350
+Score = 871./pacman 2 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 30
+Total Generated = 1982292
+Total Expanded = 496069
+Time =    84.35s
+Expanded/Second = 5881.012115
+Score = 395./pacman 2 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 32
+Total Generated = 4126044
+Total Expanded = 1032027
+Time =   104.54s
+Expanded/Second = 9872.162759
+Score = 602./pacman 2 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 45
+Total Generated = 3894140
+Total Expanded = 974022
+Time =    97.92s
+Expanded/Second = 9947.419272
+Score = 448./pacman 2 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 46
+Total Generated = 17767196
+Total Expanded = 4444021
+Time =   181.37s
+Expanded/Second = 24502.118640
+Score = 1634./pacman 2 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 25192
+Total Expanded = 6994
+Time =   117.41s
+Expanded/Second = 59.569558
+Score = 320./pacman 2 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 30896
+Total Expanded = 8580
+Time =   143.57s
+Expanded/Second = 59.763662
+Score = 548./pacman 2 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 20824
+Total Expanded = 5780
+Time =    97.40s
+Expanded/Second = 59.344067
+Score = 306./pacman 2 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 39
+Total Generated = 947080
+Total Expanded = 239161
+Time =   235.44s
+Expanded/Second = 1015.791366
+Score = 919./pacman 2 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 24
+Total Generated = 328952
+Total Expanded = 83068
+Time =   140.27s
+Expanded/Second = 592.221140
+Score = 548./pacman 2 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 29
+Total Generated = 437344
+Total Expanded = 110439
+Time =    41.99s
+Expanded/Second = 2630.426474
+Score = 543./pacman 2 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 31
+Total Generated = 3472704
+Total Expanded = 869045
+Time =   146.86s
+Expanded/Second = 5917.665713
+Score = 290./pacman 2 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 24
+Total Generated = 1751320
+Total Expanded = 438268
+Time =    73.54s
+Expanded/Second = 5959.192473
+Score = 564./pacman 2 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 35
+Total Generated = 2421792
+Total Expanded = 606054
+Time =   103.30s
+Expanded/Second = 5866.977102
+Score = 603./pacman 2 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 50
+Total Generated = 7940104
+Total Expanded = 1986019
+Time =   198.78s
+Expanded/Second = 9991.001946
+Score = 556./pacman 2 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 42
+Total Generated = 5837752
+Total Expanded = 1460168
+Time =   148.52s
+Expanded/Second = 9831.550116
+Score = 279./pacman 2 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 41
+Total Generated = 8156400
+Total Expanded = 2040120
+Time =   206.51s
+Expanded/Second = 9879.088187
+Score = 338./pacman 3 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 31384
+Total Expanded = 8717
+Time =   145.79s
+Expanded/Second = 59.791667
+Score = 383./pacman 3 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 17796
+Total Expanded = 4943
+Time =    82.58s
+Expanded/Second = 59.857305
+Score = 239./pacman 3 ai max 10
+Propogation: Max
+Budget = 10
+Max Depth = 9
+Total Generated = 28664
+Total Expanded = 7960
+Time =   133.41s
+Expanded/Second = 59.666211
+Score = 374./pacman 3 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 24
+Total Generated = 322824
+Total Expanded = 81521
+Time =   136.81s
+Expanded/Second = 595.868325
+Score = 576./pacman 3 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 29
+Total Generated = 481256
+Total Expanded = 121529
+Time =    87.53s
+Expanded/Second = 1388.497908
+Score = 852./pacman 3 ai max 100
+Propogation: Max
+Budget = 100
+Max Depth = 28
+Total Generated = 483948
+Total Expanded = 122208
+Time =   206.05s
+Expanded/Second = 593.097522
+Score = 457./pacman 3 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 27
+Total Generated = 2525536
+Total Expanded = 632016
+Time =   106.49s
+Expanded/Second = 5934.778622
+Score = 733./pacman 3 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 35
+Total Generated = 2865248
+Total Expanded = 717029
+Time =   120.93s
+Expanded/Second = 5929.074238
+Score = 507./pacman 3 ai max 1000
+Propogation: Max
+Budget = 1000
+Max Depth = 43
+Total Generated = 4678900
+Total Expanded = 1170895
+Time =    85.24s
+Expanded/Second = 13735.886987
+Score = 629./pacman 3 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 44
+Total Generated = 13089620
+Total Expanded = 3274042
+Time =   184.19s
+Expanded/Second = 17775.169146
+Score = 859./pacman 3 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 31
+Total Generated = 11146648
+Total Expanded = 2788056
+Time =    88.20s
+Expanded/Second = 31609.456457
+Score = 797./pacman 3 ai max 2000
+Propogation: Max
+Budget = 2000
+Max Depth = 54
+Total Generated = 12330808
+Total Expanded = 3084244
+Time =   184.19s
+Expanded/Second = 16745.002721
+Score = 795./pacman 3 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 36956
+Total Expanded = 10263
+Time =   171.71s
+Expanded/Second = 59.768813
+Score = 369./pacman 3 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 9
+Total Generated = 35336
+Total Expanded = 9813
+Time =   164.46s
+Expanded/Second = 59.669558
+Score = 375./pacman 3 ai avg 10
+Propogation: Average
+Budget = 10
+Max Depth = 6
+Total Generated = 28676
+Total Expanded = 7961
+Time =   133.58s
+Expanded/Second = 59.597472
+Score = 381./pacman 3 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 15
+Total Generated = 240068
+Total Expanded = 60623
+Time =   101.75s
+Expanded/Second = 595.780112
+Score = 358./pacman 3 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 26
+Total Generated = 723652
+Total Expanded = 182740
+Time =   306.10s
+Expanded/Second = 596.989756
+Score = 509./pacman 3 ai avg 100
+Propogation: Average
+Budget = 100
+Max Depth = 17
+Total Generated = 237228
+Total Expanded = 59906
+Time =   100.46s
+Expanded/Second = 596.323193
+Score = 420./pacman 3 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 29
+Total Generated = 5047052
+Total Expanded = 1263026
+Time =   211.80s
+Expanded/Second = 5963.407678
+Score = 495./pacman 3 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 26
+Total Generated = 3632432
+Total Expanded = 909017
+Time =   152.37s
+Expanded/Second = 5965.923062
+Score = 559./pacman 3 ai avg 1000
+Propogation: Average
+Budget = 1000
+Max Depth = 25
+Total Generated = 3404628
+Total Expanded = 852009
+Time =   142.68s
+Expanded/Second = 5971.398439
+Score = 371./pacman 3 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 35
+Total Generated = 15184644
+Total Expanded = 3798060
+Time =   380.99s
+Expanded/Second = 9968.953761
+Score = 454./pacman 3 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 18
+Total Generated = 8067964
+Total Expanded = 2018000
+Time =   201.73s
+Expanded/Second = 10003.527309
+Score = 447./pacman 3 ai avg 2000
+Propogation: Average
+Budget = 2000
+Max Depth = 56
+Total Generated = 41981056
+Total Expanded = 10500514
+Time =   828.37s
+Expanded/Second = 12676.119296
+Score = 956

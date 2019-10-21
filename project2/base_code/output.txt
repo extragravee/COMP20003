@@ -1,8 +1,8 @@
-Propogation: Max
-Budget = 100
-Max Depth = 14
-Total Generated = 127036
-Total Expanded = 32078
-Time =    84.06
-Expanded/Second = 381.610540 s
-Score = 128
+Propogation: Average
+Budget = 2000
+Max Depth = 56
+Total Generated = 41981056
+Total Expanded = 10500514
+Time =   828.37s
+Expanded/Second = 12676.119296
+Score = 956
