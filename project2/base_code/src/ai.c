@@ -197,7 +197,12 @@ void propagate_max_score_to_first_action(float* best_action_score, node_t* node)
  * Propogates score back to the first action at depth 1
  */
 void propagate_avg_score_to_first_action(float* best_action_score, node_t* node, int* number_of_descendants){
-	best_action_score[node->move] += node->acc_reward;
+	if(best_action_score[node->move]<0){
+		best_action_score[node->move] = node->acc_reward;
+	} else {
+		best_action_score[node->move] += node->acc_reward;
+	}
+	
 	number_of_descendants[node->move] += 1;
 }
 
@@ -208,12 +213,16 @@ int choose_best_action(float* best_action_score, int propagation, int* number_of
 	int i;
 	if(propagation == avg){
 		for(i =0; i<4; i++){
-			best_action_score[i] /= number_of_descendants[i];
+			if(number_of_descendants[i] > 0){
+				best_action_score[i] /= number_of_descendants[i];
+			}
 		}
 	}
 
 	int best_action = 0;
 	float temp_score = best_action_score[0];
+
+	//tracking indexes of highest scoring actions
 	int top_scores[4] = {0,0,0,0};
 	for (i=1; i<4; i++){
 		if(best_action_score[i]>temp_score){
@@ -251,11 +260,13 @@ int choose_best_action(float* best_action_score, int propagation, int* number_of
  */
 
 move_t get_next_move( state_t init_state, int budget, propagation_t propagation, char* stats ){
+	
 	move_t best_action;
+	unsigned i;
 
 	// move_t best_action;
 	float best_action_score[4]; // tracking the current best scores for the first 4 actions
-	for(unsigned i = 0; i < 4; i++)
+	for(i = 0; i < 4; i++)
 	    best_action_score[i] = INT_MIN;
 
 	int number_of_descendants[4]; //tracking number of descendants for each action
@@ -309,7 +320,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 
 					//LN 13
 					if(propagation == max){
-						propagate_max_score_to_first_action(best_action_score, temp, number_of_descendants);
+						propagate_max_score_to_first_action(best_action_score, temp);
 					} else if (propagation == avg) {
 						propagate_avg_score_to_first_action(best_action_score, temp, number_of_descendants);
 					}
@@ -356,7 +367,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	}
 
 	//LN 21
-	best_action = choose_best_action(best_action_score, propagation);
+	best_action = choose_best_action(best_action_score, propagation, number_of_descendants);
 
 	if(best_action == left)
 		sprintf(stats, "%sSelected action: Left\n",stats);
