@@ -474,9 +474,11 @@ void ExitProgram(const char *message) {
     FILE* out_file = fopen("output.txt", "w");
     if(out_file!=NULL){
         fprintf(out_file, "Propogation: %s\nBudget = %d\nMax Depth = %d\nTotal Generated = %d\nTotal Expanded = %d\nTime = %8.2fs\nExpanded/Second = %f\nScore = %d",
-                                    s1,          budget, absolute_max_depth, total_generated_nodes, total_expanded_nodes, secs,
-                            total_expanded_nodes/secs, Points);
+                                    s1,          budget, absolute_max_depth, total_generated_nodes, total_expanded_nodes, secs,total_expanded_nodes/secs, Points);
         fclose(out_file);
+    } else {
+        printf("Not enough memory...");
+        exit(0);
     }
     exit(0);                        //End program, return 0
 }
