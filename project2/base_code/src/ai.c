@@ -75,22 +75,23 @@ node_t* create_init_node( state_t* init_state ){
 float heuristic( node_t* n ){
 	float h = 0;
 	//FILL IN MISSING CODE
-	//if previous
+	//MODIFIED invincibility, so it not only prefers invincibility,
+	//but also prefers to eat ghosts in a row, and get additional fruits
 	if(n->parent){
 		if((((n->parent)->state).GhostsInARow) != ((n->state).GhostsInARow)){
 			h+=10;
 		}
 	}
 
-	//if lost a life -10
+	//if lost a life, MODIFIED so cost to losing a life is much higher
 	if(n->parent){
 		if(((n->parent)->state).Lives > (n->state).Lives){
 			h-=100;
 		}
 	}
 
-	//if the game is over (lost all lives)
-	if((n->state).Lives == 0){
+	//if the game is over (lost all lives) MODIFIED to make it a lot more averse to losing all lives
+	if((n->state).Lives < 0){
 		h-=1000;
 	}
 
