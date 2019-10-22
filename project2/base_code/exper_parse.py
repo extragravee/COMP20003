@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
+import matplotlib.pyplot as plt
 import pprint
-import tkinter
+
 
 pp = pprint.PrettyPrinter()
 
@@ -64,7 +65,35 @@ del df_avg['propagation']
 del df_avg['std_dev']
 del df_avg['samples']
 
-plot = df_max.plot(x = 'budget', y='average_sample_score', kind = 'line', title = 'Max propagation samples')
-print(df_max)
-print(df_avg)
+# PLOTTING MAX PROP
+df_max_1 = df_max[df_max['level']=="1"]
+df_max_2 = df_max[df_max['level']=="2"]
+df_max_3 = df_max[df_max['level']=="3"]
+
+plot = plt.scatter(df_max_1.budget.values, df_max_1.average_sample_score.values)
+plot = plt.scatter(df_max_2.budget.values, df_max_2.average_sample_score.values)
+plot = plt.scatter(df_max_3.budget.values, df_max_3.average_sample_score.values)
+plt.title("Max Propogation")
+plt.xlabel("Budget")
+plt.legend([1,2,3], title="Level")
+plt.ylabel("Average Scores")
+plt.show()
+
+#PLOTTING AVG PROP
+df_avg_1 = df_avg[df_avg['level']=="1"]
+df_avg_2 = df_avg[df_avg['level']=="2"]
+df_avg_3 = df_avg[df_avg['level']=="3"]
+
+plot = plt.scatter(df_avg_1.budget.values, df_avg_1.average_sample_score.values)
+plot = plt.scatter(df_avg_2.budget.values, df_avg_2.average_sample_score.values)
+plot = plt.scatter(df_avg_3.budget.values, df_avg_3.average_sample_score.values)
+plt.title("Avg Propogation")
+plt.xlabel("Budget")
+plt.legend([1,2,3], title="Level")
+plt.ylabel("Average Scores")
+plt.show()
+
+# mpl.pyplot.savefig("1.png")
+# print(df_max)
+# print(df_avg)
 
