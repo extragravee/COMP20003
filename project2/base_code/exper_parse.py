@@ -1,5 +1,8 @@
 import pandas as pd
+import numpy as np
+import matplotlib as mpl
 import pprint
+import tkinter
 
 pp = pprint.PrettyPrinter()
 
@@ -29,11 +32,11 @@ for elem in stream:
 	if "Score" in elem:
 		if(counter < 3):
 			elem = elem.split()
-			sample_scores.append(elem[-1])
+			sample_scores.append(int(elem[-1]))
 			counter+=1
 		if (counter==3):
 			counter = 0
-			current_row['samples'] = sample_scores
+			current_row['samples'] = np.array(sample_scores)
 			row_list.append(current_row)
 			current_row = {}
 			sample_scores = []
@@ -41,5 +44,27 @@ for elem in stream:
 
 # print(row_list)
 df = pd.DataFrame(row_list)
-print(df)
-# pp.pprint(sample_scores)
+sample_scores = df.samples.values
+# print(sample_scores)
+averages = []
+std_dev = []
+for i in sample_scores:
+	averages.append(np.mean(i))
+	std_dev.append(np.std(i))
+
+df['average_sample_score'] = averages
+df['std_dev'] = std_dev
+
+df_max = df[df['propagation']=="max"]
+df_avg = df[df['propagation']=="avg"]
+del df_max['propagation']
+del df_max['std_dev']
+del df_max['samples']
+del df_avg['propagation']
+del df_avg['std_dev']
+del df_avg['samples']
+
+plot = df_max.plot(x = 'budget', y='average_sample_score', kind = 'line', title = 'Max propagation samples')
+print(df_max)
+print(df_avg)
+
