@@ -77,7 +77,8 @@ plt.title("Max Propogation")
 plt.xlabel("Budget")
 plt.legend([1,2,3], title="Level")
 plt.ylabel("Average Scores")
-plt.show()
+plt.savefig("max.png")
+plt.close()
 
 #PLOTTING AVG PROP
 df_avg_1 = df_avg[df_avg['level']=="1"]
@@ -91,7 +92,7 @@ plt.title("Avg Propogation")
 plt.xlabel("Budget")
 plt.legend([1,2,3], title="Level")
 plt.ylabel("Average Scores")
-plt.show()
+plt.savefig("avg.png")
 
 # mpl.pyplot.savefig("1.png")
 # print(df_max)

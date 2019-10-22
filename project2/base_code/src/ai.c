@@ -285,7 +285,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	
 	//LN 2
 	//array of explored nodes
-	node_t* explored[budget]; 
+	node_t** explored = (node_t**)malloc(sizeof(node_t*) * budget); 
 
 	//LN 1
 	//Add the initial node
@@ -373,6 +373,7 @@ move_t get_next_move( state_t init_state, int budget, propagation_t propagation,
 	for(int i=0; i<expanded_nodes; i++){
 		free(explored[i]);
 	}
+	free(explored);
 
 	//LN 21
 	best_action = choose_best_action(best_action_score, propagation, number_of_descendants);
