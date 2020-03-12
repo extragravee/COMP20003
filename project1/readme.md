@@ -8,5 +8,5 @@ Please visit this following file for information reagarding the data file built,
 
 <hr>
 
-Please download the repo, then visit >>> [This File] (https://github.com/extragravee/COMP20003/blob/master/project1/assignment1%20(1).pdf) <<< for all details on compiling and running.
+Please download the repo, then visit >>> <a href="https://github.com/extragravee/COMP20003/blob/master/project1/assignment1%20(1).pdf">THIS FILE</a>  <<< for all details on compiling and running.
 
