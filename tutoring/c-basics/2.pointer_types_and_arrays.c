@@ -36,14 +36,16 @@ int main(int argc, char**argv){
 	- can do indexing or pointer arithmetic + derefrencing
 	*/
 
+	int my_array[] = {1,7,8};
+
 	int i;
 	ptr = &my_array[0]; /* point our pointer to the first // or we can do ptr = myarray
 						   element of the array */
 
 	printf("\n\n");
 	
-	for (i = 0; i < 6; i++){
-		printf("my_array[%d] = %d ",i,my_array[i]); /*<-- A */
+	for (i = 0; i < 3; i++){
+		printf("my_array[%d] = %d | ",i,my_array[i]); /*<-- A */
 		printf("ptr + %d = %d\n",i, *(ptr + i));    //or we can do *(ptr++)
 	}
 
@@ -92,7 +94,7 @@ int main(int argc, char**argv){
 
 	- C won't allow us to compare (int *) and (long *), both of these
 		can be compared to a void pointer
-		
+
 
 	*/
 
