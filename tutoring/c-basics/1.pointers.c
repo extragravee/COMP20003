@@ -49,6 +49,7 @@ int main(int argc, char** argv){
 	size(int) > size(int*)
 	*/
 
+	ptr = &k;
 	(*ptr) = k; //what's wrong here? draw it out
 
 	
