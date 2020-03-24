@@ -14,10 +14,11 @@ int main(int argc, char* argv[]){
 			c[i][j] = 5+i+j;
 			printf("%4d \n", *(*(c+i)+j));
 		}
-		
+		puts("=======");
 	}
 
 
 
 	return 0;
 }
+
